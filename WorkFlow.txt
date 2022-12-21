@@ -1,0 +1,56 @@
+Le flow de l'appli finale sera comme suis :
+A) Création du personnage 
+
+    1) On nous demande notre pseudo
+        Bonus : Donner la possibilité de customiser plus son personnage avec pourquoi un background, une ville d'origine,etc.
+
+    2) On nous propose de choisir une Race (Humain, Elfe, Nain, Troll, Gobelin)
+        La race a une influence sur les statistiques, exemple, les Elfes sont plus Agile par exemple.
+        Bonus : Donner une possibilité de s'informer sur l'histoire de la race
+        Bonus : En fonction de la race, on ne pourra pas faire toutes les classes (exemple, un Nain ne peut pas devenir archer, ou un Humain devenir un Mage).
+        Bonus : Rajouter des talents passif de race : exemple, les Elfes peuvent voir dans la nuit, les Troll gagnent 2 de force quand leur pv<50%,...
+        Bonus : Rajouter des races.
+
+    3) On nous propose de choisir une Classe (Archer, Guerrier, Mage, Voleur)
+        La classe a une influence sur les statistiques comme la race, mais aussi sur les sorts que l'on va avoir au cours de la partie. Exemple, un Mage va apprendre des sorts de magie élémentaire ou de soin, un guerrier va plutôt apprendre des techniques de combats au corps à corps,
+        Bonus : Donner une possibilité de s'informer sur la classe, ce qu'elle va débloquer, le style de jeu.
+        Bonus : Rajouter des Classes
+
+    4) On nous propose de répartir 5 points dans les caractéristiques que l'on veut (Force, Intelligence, Agilité, Dextérité, Constitution). Attention a bien afficher combien la personne a déjà de points dans chacune des stats en fonction de son choix de race et de classe !
+        Bonus : Donner la possibilités de s'informer sur chacune des caractéristiques.
+        Bonus : Générer les statistiques des personnages après choix des classes avec des "jets" aléatoires. Exemple, un Elfe Archer aura entre +2 et +4 en agilité et entre +1 et -1 en force,... Le joueur peut toujours répartir 5 points ensuite.
+
+B) Notre personnage enchaînera au hasard des combats contre des monstres et des challenges.
+
+    Bonus : Rajouter des évènements, comme trouver une boutique où  acheter des équipements et des potions, un feu de camp abandonné pour se régénérer, un village où dormir,... Ces évènements ne doivent pas être aléatoire et peuvent constituer l'histoire de notre héro !
+
+    Challenge :
+        Ce sont des épreuves que l'on pourrait rencontrer dans la vie de tous les jours si on était dans un monde fantastique d'aventure. Exemple : Vous vous trouvez devant un pont en ruine, que faites-vous ? 
+        De là, l'utilisateur pourra choisir plusieurs propositions, soit il pourra essayer de sauter au dessus des ruines, au risque de tomber et se blesser, ou il pourra faire le tour au risque de rencontrer un ennemis, ou de se tordre la cheville, soyez inventifs ! Ces choix seront basés sur des statistique. Ainsi, dans le cas du pont, sauter demandera un certain score d'agilité, tandis que faire le tour ne demande rien.
+        
+        1) Le programme propose le choix entre plusieurs possibilité en fonction de si on a les statistiques suffisantes. Il doit toujours y avoir un choix de base faisable !
+
+        2) En fonction du choix que l'on fait, un jet de dès se fait. Si on a le score suffisant, on réussi, on est potentiellement récompensé, si on rate, on est forcé de faire le choix de base et on est potentiellement puni.
+
+        Bonus : Rajouter des possibilités de choix en fonction de l'arme que l'on a, notre race ou notre classe. Exemple, un passage enneigé, un nain devra contourner alors qu'un elfe pourra marcher dessus et le franchir sans difficulté. Une porte pourra être défoncée si on a une hache, plus difficilement avec un grimoire,...
+
+    Ennemi :
+
+        1) Un combat contre un ennemi se lance, les deux jettent un dés d'agilité, le plus haut score commence
+        Bonus : incorporer un système de prise par surprise
+
+        2) Le joueur a le choix entre différentes actions, soit lancer un sort si il en a et si il a le mana suffisant, soit attaquer avec son arme. Si il décide d'attaquer, un jet de dés se lance entre son score min et max de dégâts, ajouté à ça les éventuels bonus de statistiques du personnages, moins la resistance de l'adversaire en fonction de sa constitution ou intelligence. L'adversaire fait un jet d'esquive basé sur son agilité dans le cas d'une attaque avec l'arme, si c'est réussi, l'ennemi esquive le coup. Sinon, l'adversaire perd des points de vie en fonction des dégâts calculés.
+        Bonus : Ajouter la possibilité de coup critique qui fait le double de dégâts en fonction de la dextérité.
+        Bonus : Donner aux ennemis la possibilité d'avoir des armures et donc des resistances bonus.
+        Bonus : Ajouter la possibilité au joueur de se soigner ou de se bénir.
+        Bonus : Créer des combats à plus que 1 contre 1, avec soit des alliés soit des ennemis en plus.
+
+        3) L'ennemi réplique avec soit un sort, soit une attaque à l'arme au hasard, sinon le reste est plus ou moins le même.
+        Bonus : créer des comportements d'IA plus complexe, exemple si la vie de l'adversaire est basse, il va essayer de le soigner.
+        
+        4) les tours s'enchaînent jusqu'à la mort d'un des deux adversaires. Si le joueur meurt, la partie est finie, si le joueur gagne, il gagne de l'experience pour monter de niveau, de l'or et un équipement. 
+        Bonus : Rajouter des consommables (potions de soin, de mana,...) ainsi que la possibilité de l'utiliser en plein combat.
+
+C) Lorsque le personnage arrive niveau 10, il se bat contre un boss et si il gagne, gagne la partie.
+Bonus : Si vous avez une histoire, et des évènements fixe, la partie se termine lorsque l'histoire se termine.
+

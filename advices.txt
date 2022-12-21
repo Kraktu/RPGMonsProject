@@ -1,0 +1,21 @@
+A votre place, je ne m'attaquerai qu'à des fractions de programmes à la fois. 
+
+0) Réflexion au différents éléments du jeu, les classes, les races, les ennemis, etc. Comment tout ça va plus ou moins s'articuler.
+1) Réflexion, Répartition et création des classes avec constructeur, getter, setter, toString() et equals(). 
+2) Mise en commun de tout le travail préalable.
+3) Réflexion et répartition des 4 chantiers :
+- Les challenges (+ dur)
+- Les combats (+ moyen)
+- La création du personnage (+simple)
+- L'histoire (Bonus !)
+4) Créations des Datas dans des fichiers séparés (créations de tous les sorts dans un fichiers, tous les ennemis dans un autre, tous  les équipements,...). Dans des SINGLETONS en public ou en statique ! (Design Pattern, vous pouvez me poser des questions dessus où vous renseigner sur comment faire en ligne.). Une personne doit être en charge de tout ce qui concerne le fonctionnement du jeu. C'est lui qui pourra dire qu'il y a un sort qui s'appelle boule de feu, qui fait 5 à 7 dégâts magique de feu et qui s'apprend au niveau 7 de la classe Mage par exemple.
+5) Création de Script "Manager". Un ChallengeManager sera en charge de gérer le choix du challenge, et son déroulement quand le joueur en aura un. Un FightManager gérera le flow d'un combat, traquera quand le combat est fini, les récompenses, etc, le StoryManager qui géreras le flow de l'histoire, les évènements et les combats fixes. Ces scripts devraient être des SINGLETONS !
+6) Vos trois parties devraient fonctionner indépendamment les unes des autres. Si c'est le cas, c'est le moment de créer un GameManager qui devra faire d'abord la création du personne, et puis choisir si la personne devra :
+
+- faire de l'histoire (bonus)
+- faire un challenge
+- se battre contre un ennemi
+
+Et qui passera la main au Manager en question.
+
+7) Faites toutes les parties les plus SIMPLES possible. le combat avec un comportement de monstre aléatoire, un calcul simple de dégât, pas la possibilité de lancer de sorts, etc. Et rajoutez plus de possibilités ensuites ! Mieux vaut un petit projet qui marche que pas de projet du tout !!

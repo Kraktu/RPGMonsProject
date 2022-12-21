@@ -1,0 +1,88 @@
+Constantes => Valeur déclarer une fois dans le main
+
+int[] XpToLevelUp
+
+Class Player
+
+string name;
+Race race;
+int level, money, xp, health, mana;
+Class class;
+Stat strength, intelligence, agility, dexterity, constitution;
+Equipement[] Equipements;
+
+
+Class Race
+
+string name, background;
+Stat strengthModifier, intelligenceModifier, agilityModifier, dexterityModifier, constitutionModifier;
+
+
+Class Class
+
+string name, explanation;
+Stat strengthModifier, intelligenceModifier, agilityModifier, dexterityModifier, constitutionModifier;
+Spell[] classSpells;
+
+
+Class Stat 
+
+string name, explanation;
+int value;
+
+
+Class Spell
+
+string name, description;
+int unlockLevel;
+int minDamage,maxDamage, manaCost;
+bool isDamage; // Si false, c'est un soin.
+Element element;
+
+
+Class Equipement
+
+string name,description, rarity;
+int price;
+Stat strengthModifier, intelligenceModifier, agilityModifier, dexterityModifier, constitutionModifier;
+
+
+Class Weapon : Equipement
+
+string type; // Si c'est une épée, une dague,... Héritage ?
+int minDamage,maxDamage;
+Element element;
+
+
+Class Armor : Equipement
+
+string type; // Si c'est un casque, un plastron,... Héritage ?
+int armorBonus
+
+
+Class Element
+
+string name;
+Element beatenElement, loosingElement;
+int bonusAgainstBeatenElement, malusAgainstLoosingElement;
+
+
+Class Enemy
+
+string name;
+Race race;
+int level, health, mana, flatXPgiven, bonusXPPerLevel;
+Weapon weapon;
+Class class;
+Stat strength, intelligence, agility, dexterity, constitution;
+Equipement[] possibleLoot;
+
+
+Class Challenge => Mauvaise classe, à refactoriser en temps voulu !
+
+string name, description, defaultChoice;
+string[] possibleChoices, malusType, rewardType;
+Stat[] neededStat;
+int level,flatXPgiven,bonusXPPerLevel;
+int[] malusValue, rewardValue;
+Equipement[] possibleLoot:

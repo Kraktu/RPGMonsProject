@@ -1,0 +1,24 @@
+A) Weapon 
+
+1) Corps à Corps
+
+Dague (DEX)
+Epée (FOR)
+Hache (FOR)
+lance (FOR)
+Masse (FOR)
+
+2) Distance
+
+Arc (DEX)
+Arbalète (DEX)
+Bâton Magique (INT)
+Grimoire (INT)
+
+B) Armor
+
+Casque
+Plastron
+Gants
+Jambière
+Bottes

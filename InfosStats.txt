@@ -1,0 +1,13 @@
+Les caractéristiques :
+
+Chaque personnage commence avec 5 dans chaque caractéristiques ! Ensuite, le choix de race et de classe peut augmenter/diminuer ces nombres.
+
+1) La Force : Statistiques prise en compte pour les actions physique, et augmente les dégats fait au corps à corps avec presque toutes les armes non magique.
+
+2) L'Intelligence : Statistiques prise en compte pour les actions Magique et de Savoir. Augmente les dégats et les soins prodigués par les armes magiques et les sorts Magiques. Augmente aussi la résistance à la Magie.
+
+3) Agilité : Statistique prise en comptes pour les actions de Déplacement et de Vitesse. Permet de déterminer si le joueur est premier à agir en combat, augmente les chances d'esquives des attaques adverses.
+
+4) Dextérité : Statistiques prise en comptes pour les actions précise qui demande de la patience ou de la minutie, exemple ouvrir une porte fermée, réparer un objet. Augmente les dégâts fait avec les Arcs ou autres armes physique à distance (arme de jet, Arbalètes, ...) et les petites armes au corps à corps style Dague.
+
+5) Constitution : Statistiques prise en compte pour les actions qui demande de la resistance physique (ne pas se blesser quand il se prend un piège, ne pas se faire empoisonner, resister aux maladies,...). Augmente le nombre total de point de vie, la qualité des armures qu'il peut porter et la resistance aux dégâts.
