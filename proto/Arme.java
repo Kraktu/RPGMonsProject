@@ -15,6 +15,14 @@ public class Arme extends Equipement {
         
         super(_nom, _description, _rarete, _prix);
 
+        // forceBonus= _forceBonus;
+        // intelligenceBonus = _intelligenceBonus;
+        // agiliteBonus = _agilityBonus;
+        // dexteriteBonus = _dexteriteBonus;
+        // constitutionBonus = _constitutionBonus;
+
+
+
         type = _type;
         minDegat = _minDegat;
         maxDegat = _maxDegat;
