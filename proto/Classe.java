@@ -1,6 +1,6 @@
 package proto;
 /**
- * InnerClasse
+ * Creer par David.
  */
 public class Classe {
 

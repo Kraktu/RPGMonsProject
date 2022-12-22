@@ -1,7 +1,7 @@
 package proto;
 
 /**
- * Arme
+ * Creer par David.
  */
 public class Arme extends Equipement {
 
