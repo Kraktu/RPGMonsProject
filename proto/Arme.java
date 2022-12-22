@@ -11,17 +11,9 @@ public class Arme extends Equipement {
 
     //private Element
 
-    public Arme(String _nom, String _description, String _rarete, int _prix, String _type, int _minDegat, int _maxDegat){
+    public Arme(String _nom, String _description, String _rarete, int _prix, Statistique _forceBonus,Statistique _intelligenceBonus, Statistique _agiliteBonus, Statistique _dexteriteBonus, Statistique _constitutionBonus, String _type, int _minDegat, int _maxDegat){
         
-        super(_nom, _description, _rarete, _prix);
-
-        // forceBonus= _forceBonus;
-        // intelligenceBonus = _intelligenceBonus;
-        // agiliteBonus = _agilityBonus;
-        // dexteriteBonus = _dexteriteBonus;
-        // constitutionBonus = _constitutionBonus;
-
-
+        super(_nom, _description, _rarete, _prix, _forceBonus, _intelligenceBonus, _agiliteBonus, _dexteriteBonus, _constitutionBonus);
 
         type = _type;
         minDegat = _minDegat;

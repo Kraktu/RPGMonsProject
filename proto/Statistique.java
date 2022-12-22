@@ -19,30 +19,30 @@ public class Statistique {
     /**
      * getters
      */
-    public String GetForce() {
+    public String GetNom() {
         return nom;
     }
 
-    public String GetIntelligence() {
+    public String GetDescription() {
         return description;
     }
 
-    public int GetAgilite() {
+    public int GetValeur() {
         return valeur;
     }
 
     /**
      * setters
      */
-    public void SetForce(String _nom) {
+    public void SetNom(String _nom) {
         nom = _nom;
     }
 
-    public void SetIntelligence(String _description) {
+    public void SetDescription(String _description) {
         description = _description;
     }
 
-    public void SetAgilite(int _valeur) {
+    public void SetValeur(int _valeur) {
         valeur = _valeur;
     }
 
