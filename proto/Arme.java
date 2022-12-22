@@ -18,8 +18,29 @@ public class Arme extends Equipement {
         type = _type;
         minDegat = _minDegat;
         maxDegat = _maxDegat;
-        
+
     }
+
+    public String GetType(){
+        return type;
+    }
+    public int GetMinDegat(){
+        return minDegat;
+    }
+    public int GetMaxDegat(){
+        return maxDegat;
+    }
+
+    public void SetType(String _type){
+        type = _type;
+    }
+    public void SetMinDegat(String _minDegat){
+        type = _minDegat;
+    }
+    public void SetMaxDegat(String _maxDegat){
+        type = _maxDegat;
+    }
+
 
 
 
