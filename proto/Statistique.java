@@ -5,65 +5,45 @@ package proto;
  */
 public class Statistique {
 
-    private int force;
-    private int intelligence;
-    private int agilite;
-    private int dexterite;
-    private int constitution;
+    private String nom;
+    private String description;
+    private int valeur;
 
-    public Statistique(int _force, int _intelligence, int _agilite, int _dexterite, int _constitution) {
+    public Statistique (String _nom, String _description, int _valeur) {
 
-        force = _force;
-        intelligence = _intelligence;
-        agilite = _agilite;
-        dexterite = _dexterite;
-        constitution = _constitution;
+        nom = _nom;
+        description = _description;
+        valeur = _valeur;
     }
 
     /**
      * getters
      */
-    public int GetForce() {
-        return force;
+    public String GetNom() {
+        return nom;
     }
 
-    public int GetIntelligence() {
-        return intelligence;
+    public String GetDescription() {
+        return description;
     }
 
-    public int GetAgilite() {
-        return agilite;
-    }
-
-    public int GetDexterite() {
-        return dexterite;
-    }
-
-    public int GetConstitution() {
-        return constitution;
+    public int GetValeur() {
+        return valeur;
     }
 
     /**
      * setters
      */
-    public void SetForce(int _newForce) {
-        force = _newForce;
+    public void SetNom(String _nom) {
+        nom = _nom;
     }
 
-    public void SetIntelligence(int _newIntelligence) {
-        intelligence = _newIntelligence;
+    public void SetDescription(String _description) {
+        description = _description;
     }
 
-    public void SetAgilite(int _newAgilite) {
-        agilite = _newAgilite;
+    public void SetValeur(int _valeur) {
+        valeur = _valeur;
     }
 
-    public void SetDexterite(int _newDexterite) {
-        dexterite = _newDexterite;
-
-    }
-
-    public void SetConstitution(int _newConstitution) {
-        constitution = _newConstitution;
-    }
 }
