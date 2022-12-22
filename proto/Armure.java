@@ -54,7 +54,7 @@ public class Armure extends Equipement {
             return false;
         }
         Armure _armure = (Armure)_o;
-        if(_armure.nom.equals(nom) && _armure.rarete.equals(rarete) && _armure.description.equals(description)&& _armure.prix==prix && _armure.forceBonus.equals(forceBonus) && _armure.intelligenceBonus.equals(intelligenceBonus) &&_armure.agiliteBonus.equals(agiliteBonus)&& _armure.dexteriteBonus.equals(dexteriteBonus)&&_armure.constitutionBonus.equals(constitutionBonus))
+        if(_armure.nom.equals(nom) && _armure.rarete.equals(rarete) && _armure.description.equals(description)&& _armure.prix==prix && _armure.forceBonus.equals(forceBonus) && _armure.intelligenceBonus.equals(intelligenceBonus) &&_armure.agiliteBonus.equals(agiliteBonus)&& _armure.dexteriteBonus.equals(dexteriteBonus)&&_armure.constitutionBonus.equals(constitutionBonus)&& _armure.armureBonus== armureBonus&& _armure.type.equals(type))
         {
             return true;
         }
