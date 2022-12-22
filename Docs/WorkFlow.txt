@@ -2,7 +2,7 @@ Le flow de l'appli finale sera comme suis :
 A) Création du personnage 
 
     1) On nous demande notre pseudo
-        Bonus : Donner la possibilité de customiser plus son personnage avec pourquoi un background, une ville d'origine,etc.
+        Bonus : Donner la possibilité de customiser plus son personnage avec pourquoi pas un background, une ville d'origine,etc.
 
     2) On nous propose de choisir une Race (Humain, Elfe, Nain, Troll, Gobelin)
         La race a une influence sur les statistiques, exemple, les Elfes sont plus Agile par exemple.
