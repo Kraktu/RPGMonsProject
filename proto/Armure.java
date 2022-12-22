@@ -34,7 +34,6 @@ public class Armure extends Equipement {
     //Overrides
     @Override
     public String toString() {
-           // TODO Auto-generated method stub
            String returnString = "Nom : " + nom +"\tEmplacement : " + type +  "\t rareté : " + rarete + 
            "\nprix : " + prix + "G"+
            "\n\nDescription" + description +
@@ -44,7 +43,6 @@ public class Armure extends Equipement {
     }
     @Override
     public boolean equals(Object _o) {
-        // TODO Auto-generated method stub
         if(_o == null)
         {
             return false;

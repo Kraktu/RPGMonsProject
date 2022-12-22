@@ -102,7 +102,6 @@ public class Equipement {
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
         String returnString = "Nom : " + nom + "\t rareté : " + rarete + 
         "\nprix : " + prix + "G"+
         "\n\nDescription" + description;
@@ -111,7 +110,6 @@ public class Equipement {
     }
     @Override
     public boolean equals(Object _o) {
-        // TODO Auto-generated method stub
         if(_o == null)
         {
             return false;
