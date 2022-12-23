@@ -6,8 +6,8 @@ public class Classe {
 
     // Propriétés
 
-    private String nom;
-    private String description;
+    protected String nom;
+    protected String description;
 
     public Classe(String _nom, String _description){
         nom = _nom;
@@ -34,27 +34,26 @@ public class Classe {
         description = _description;
     }
 
+    //Overrides
 
-        //Overrides
+    @Override
+    public String toString() {
+        String str = "Nom : " + nom + "\nDescription" + description;
+        return str;
+    }
 
-        @Override
-        public String toString() {
-            String str = "Nom : " + nom + "\nDescription" + description;
-            return str;
-        }
-
-        @Override
-        public boolean equals(Object _o) {
-            if(_o == null){
-                return false;
-            }
-            if(_o.getClass()!=getClass()) {
-                return false;
-            }
-            Classe _classe = (Classe)_o;
-            if(_classe.nom.equals(nom) && _classe.description.equals(description)) {
-                return true;
-            }
+    @Override
+    public boolean equals(Object _o) {
+        if(_o == null){
             return false;
         }
+        if(_o.getClass()!=getClass()) {
+            return false;
+        }
+        Classe _classe = (Classe)_o;
+        if(_classe.nom.equals(nom) && _classe.description.equals(description)) {
+            return true;
+        }
+        return false;
+    }
 }

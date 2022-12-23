@@ -5,9 +5,9 @@ package proto;
  */
 public class Arme extends Equipement {
 
-    private String type;
-    private int minDegat;
-    private int maxDegat;
+    protected String type;
+    protected int minDegat;
+    protected int maxDegat;
 
     //private Element
 
