@@ -34,10 +34,27 @@ public class Classe {
         description = _description;
     }
 
+
+        //Overrides
+
+        @Override
+        public String toString() {
+            String str = "Nom : " + nom + "\nDescription" + description;
+            return str;
+        }
+
+        @Override
+        public boolean equals(Object _o) {
+            if(_o == null){
+                return false;
+            }
+            if(_o.getClass()!=getClass()) {
+                return false;
+            }
+            Classe _classe = (Classe)_o;
+            if(_classe.nom.equals(nom) && _classe.description.equals(description)) {
+                return true;
+            }
+            return false;
+        }
 }
-
-// string name, explanation;
-
-// Stat strengthModifier, intelligenceModifier, agilityModifier, dexterityModifier, constitutionModifier;
-
-// Spell[] classSpells;
