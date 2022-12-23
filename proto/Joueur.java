@@ -1,8 +1,4 @@
 package proto;
-
-import proto.Equipement;
-import proto.Personnage;
-
 /**
  * Joueur créé par Seb
  */
