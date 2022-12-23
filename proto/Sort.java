@@ -117,7 +117,7 @@ public void SetIsDommage(boolean _isDommage) {
 
 	// fonction toString
 
-	@Override
+	//@Override
 
     @Override
 
@@ -140,7 +140,7 @@ public void SetIsDommage(boolean _isDommage) {
         return returnString;
     }
 
-    @Override
+    //@Override
 
     @Override
 

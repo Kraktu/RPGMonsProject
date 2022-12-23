@@ -1,3 +1,5 @@
+package proto;
+
 import proto.Equipement;
 import proto.Personnage;
 
@@ -12,11 +14,10 @@ public class Joueur extends Personnage {
 
     // constructeur
 
-    public Joueur(String _nom, Race _race, Classe _classe, int _niveau, int _vie, int _mana, Statistique _force,
-            Statistique _intelligence, Statistique _agilite, Statistique _dexterite, Statistique _constitution,
-            Equipement _equipement, int experiance, int argent) {
-        super(_nom, _race, _classe, _niveau, _vie, _mana, _constitution, _constitution, _constitution, _constitution,
-                _constitution);
+    public Joueur(String _nom, Race _race, Classe _classe, int _niveau, int _vie, int _mana, Statistique _force, Statistique _intelligence, Statistique _agilite, Statistique _dexterite, Statistique _constitution, Equipement _equipement, int _experience, int _argent) {
+
+        super(_nom, _race, _classe, _niveau, _vie, _mana, _force, _intelligence, _agilite, _dexterite, _constitution);
+
         equipement = _equipement;
         experience = _experience;
         argent = _argent;
@@ -24,7 +25,7 @@ public class Joueur extends Personnage {
 
     // getters
 
-    public Equipement GEtEquipement() {
+    public Equipement GetEquipement() {
         return equipement;
     }
 
