@@ -1,3 +1,5 @@
+package proto;
+
 public class Intelligence extends Statistique {
 
     public Intelligence(int _valeur) {

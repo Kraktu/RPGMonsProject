@@ -1,3 +1,5 @@
+package proto;
+
 import proto.Statistique;
 
 public class Agilite extends Statistique {
