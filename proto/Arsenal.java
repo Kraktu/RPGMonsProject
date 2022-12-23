@@ -1,6 +1,24 @@
 package proto;
+/**
+ * Arsenal Créé par David, base de donnée des armes.
+ */
+public final class Arsenal {
 
-public class Arsenal {
+    private static Arsenal instance;
+
+    // constructeur privé.
+    private Arsenal(){
+
+    }
+
+    public static Arsenal GetInstance(){
+        if (instance == null) {
+            instance = new Arsenal();
+        }
+        return instance;
+    }
+
+
 
     // Corps à corps.
 
@@ -9,9 +27,9 @@ public class Arsenal {
     "commun",
     50,
     new Force(0),
-    null,
-    null,
-    null,
+    new Intelligence(0),
+    new Agilite(0),
+    new Dexterite(0),
     new Constitution(0),
     "DEX",
     1,
@@ -22,9 +40,9 @@ public class Arsenal {
     "commun",
     100,
     new Force(1),
-    null,
-    null,
-    null,
+    new Intelligence(0),
+    new Agilite(0),
+    new Dexterite(0),
     new Constitution(0),
     "FOR",
     2,
@@ -35,9 +53,9 @@ public class Arsenal {
     "commun",
     120,
     new Force(2),
-    null,
-    null,
-    null,
+    new Intelligence(0),
+    new Agilite(0),
+    new Dexterite(0),
     new Constitution(0),
     "FOR",
     2,
@@ -48,9 +66,9 @@ public class Arsenal {
     "commun",
     80,
     new Force(0),
-    null,
-    null,
-    null,
+    new Intelligence(0),
+    new Agilite(0),
+    new Dexterite(0),
     new Constitution(0),
     "FOR",
     2,
@@ -61,9 +79,9 @@ public class Arsenal {
     "commun",
     100,
     new Force(3),
-    null,
-    null,
-    null,
+    new Intelligence(0),
+    new Agilite(0),
+    new Dexterite(0),
     new Constitution(0),
     "FOR",
     3,
@@ -76,14 +94,44 @@ public class Arsenal {
     "commun",
     70,
     new Force(1),
-    null,
-    null,
-    null,
+    new Intelligence(0),
+    new Agilite(0),
+    new Dexterite(0),
     new Constitution(0),
     "DEX",
     2,
     4);
 
+    Arme arbalete  = new Arme("arbalète ",
+    "ca va pas si loin",
+    "commun",
+    80,
+    new Force(2),
+    new Intelligence(0),
+    new Agilite(0),
+    new Dexterite(0),
+    new Constitution(0),
+    "DEX",
+    3,
+    5);
+
+
+
     // Armure.
     
+
+
+
+    // Getters
+
+    public Arme getDague(){
+        return dague;
+    }
+
+    // Setters
+
+    public void setDague(Arme _dague){
+        dague = _dague;
+    }
+
 }
