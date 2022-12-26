@@ -1,7 +1,7 @@
 package proto;
 
 /**
- * Force par David
+ * Constitution par David
  */
 
 public class Constitution extends Statistique {

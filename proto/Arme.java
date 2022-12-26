@@ -9,11 +9,14 @@ public class Arme extends Equipement {
     protected int minDegat;
     protected int maxDegat;
 
-    //private Element
+    // private Element
 
-    public Arme(String _nom, String _description, String _rarete, int _prix, Statistique _forceBonus,Statistique _intelligenceBonus, Statistique _agiliteBonus, Statistique _dexteriteBonus, Statistique _constitutionBonus, String _type, int _minDegat, int _maxDegat){
-        
-        super(_nom, _description, _rarete, _prix, _forceBonus, _intelligenceBonus, _agiliteBonus, _dexteriteBonus, _constitutionBonus);
+    public Arme(String _nom, String _description, String _rarete, int _prix, Statistique _forceBonus,
+            Statistique _intelligenceBonus, Statistique _agiliteBonus, Statistique _dexteriteBonus,
+            Statistique _constitutionBonus, String _type, int _minDegat, int _maxDegat) {
+
+        super(_nom, _description, _rarete, _prix, _forceBonus, _intelligenceBonus, _agiliteBonus, _dexteriteBonus,
+                _constitutionBonus);
 
         type = _type;
         minDegat = _minDegat;
@@ -21,37 +24,44 @@ public class Arme extends Equipement {
 
     }
 
-    public String GetType(){
+    public String GetType() {
         return type;
     }
-    public int GetMinDegat(){
+
+    public int GetMinDegat() {
         return minDegat;
     }
-    public int GetMaxDegat(){
+
+    public int GetMaxDegat() {
         return maxDegat;
     }
 
-    public void SetType(String _type){
+    public void SetType(String _type) {
         type = _type;
     }
-    public void SetMinDegat(String _minDegat){
+
+    public void SetMinDegat(String _minDegat) {
         type = _minDegat;
     }
-    public void SetMaxDegat(String _maxDegat){
+
+    public void SetMaxDegat(String _maxDegat) {
         type = _maxDegat;
     }
 
+    // Overrides
 
+    @Override
+    public String toString() {
+        String str = "Nom : " + nom +
+                "\ndescription : " + description +
+                "\n rareté : " + rarete +
+                "\tprix : " + prix + "G" +
+                "\nforce Bonus : " + forceBonus +
+                "\nintelligence Bonus : " + intelligenceBonus +
+                "\nagilite Bonus : " + agiliteBonus +
+                "\ndexterite Bonus : " + dexteriteBonus +
+                "\nconstitution Bonus : " + constitutionBonus;
+        return str;
+    }
 
-
-// string name,description, rarity;
-// int price;
-// Stat strengthModifier, intelligenceModifier, agilityModifier, dexterityModifier, constitutionModifier;
-
-
-// Class Weapon : Equipement
-
-// string type; // Si c'est une épée, une dague,... Héritage ?
-// int minDamage,maxDamage;
-// Element element;
 }
