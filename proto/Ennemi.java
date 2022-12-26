@@ -1,4 +1,4 @@
-
+package proto;
 /**
 * Créé par Simon 
 * Ennemi
