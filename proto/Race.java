@@ -14,7 +14,7 @@ private Constitution constitution;
     private Force force;
     private Intelligence intelligence;
     // constructeur
-    public Race(String nom, Agilite agilite, Constitution constitution, Dexterite dexterite, Force force, Intelligence intelligence) {
+    public Race(String _nom, Agilite _agilite, Constitution _constitution, Dexterite _dexterite, Force _force, Intelligence _intelligence) {
         nom = _nom;
         agilite = _agilite;
         constitution = _constitution;
