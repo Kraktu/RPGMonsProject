@@ -1,7 +1,21 @@
 package proto;
+
 /**
- * Creer par David.
+ * Classe, modifier par Bruno.
  */
+
+// Les différentes Classe = (Archer, Guerrier, Mage, Voleur)
+
+// les propriétés de Classe.
+// string name
+// string explanation
+// ForceBonus strengthModifier
+// IntelligenceBonus intelligenceModifier
+// AgiliteBonus agilityModifier
+// DexteriteBonus dexterityModifier
+// ConstitutionBonus constitutionModifier
+// Spell[] classSpells
+
 public class Classe {
 
     // Propriétés
@@ -9,32 +23,32 @@ public class Classe {
     protected String nom;
     protected String description;
 
-    public Classe(String _nom, String _description){
+    public Classe(String _nom, String _description) {
         nom = _nom;
         description = _description;
     }
-    
+
     // getters
 
-    public String GetNom(){
+    public String GetNom() {
         return nom;
     }
 
-    public String GetDescription(){
+    public String GetDescription() {
         return description;
     }
 
     // setters
 
-    public void SetNom(String _nom){
+    public void SetNom(String _nom) {
         nom = _nom;
     }
 
-    public void SetDescription(String _description){
+    public void SetDescription(String _description) {
         description = _description;
     }
 
-    //Overrides
+    // Overrides
 
     @Override
     public String toString() {
@@ -44,14 +58,14 @@ public class Classe {
 
     @Override
     public boolean equals(Object _o) {
-        if(_o == null){
+        if (_o == null) {
             return false;
         }
-        if(_o.getClass()!=getClass()) {
+        if (_o.getClass() != getClass()) {
             return false;
         }
-        Classe _classe = (Classe)_o;
-        if(_classe.nom.equals(nom) && _classe.description.equals(description)) {
+        Classe _classe = (Classe) _o;
+        if (_classe.nom.equals(nom) && _classe.description.equals(description)) {
             return true;
         }
         return false;
