@@ -18,46 +18,54 @@ public class Race {
 
     // propriete
     private String nom;
-    private Agilite agilite;
-    private Constitution constitution;
-    private Dexterite dexterite;
-    private Force force;
-    private Intelligence intelligence;
+    private String description;
+    private StatistiqueBonus forceBonus;
+    private StatistiqueBonus intelligenceBonus;
+    private StatistiqueBonus agiliteBonus;
+    private StatistiqueBonus dexteriteBonus;
+    private StatistiqueBonus constitutionBonus;
 
     // constructeur
-    public Race(String _nom, Agilite _agilite, Constitution _constitution, Dexterite _dexterite, Force _force,
-            Intelligence _intelligence) {
+    public Race(String _nom, String _description, StatistiqueBonus _forceBonus, StatistiqueBonus _intelligenceBonus, StatistiqueBonus _agiliteBonus, StatistiqueBonus _constitutionBonus, StatistiqueBonus _dexteriteBonus) {
+
         nom = _nom;
-        agilite = _agilite;
-        constitution = _constitution;
-        dexterite = _dexterite;
-        force = _force;
-        intelligence = _intelligence;
+        description = _description;
+
+        forceBonus = _forceBonus;
+        intelligenceBonus = _intelligenceBonus;
+        agiliteBonus = _agiliteBonus;
+        dexteriteBonus = _dexteriteBonus;
+        constitutionBonus = _constitutionBonus;
     }
+
     // Getters
 
     public String GetNom() {
         return nom;
     }
 
-    public Agilite GetAgilite() {
-        return agilite;
+    public String GetDescription() {
+        return description;
     }
 
-    public Constitution GetConstitution() {
-        return constitution;
+    public StatistiqueBonus GetforceBonus() {
+        return forceBonus;
     }
 
-    public Dexterite GetDexterite() {
-        return dexterite;
+    public StatistiqueBonus GetIntelligenceBonus() {
+        return intelligenceBonus;
     }
 
-    public Force GetForce() {
-        return force;
+    public StatistiqueBonus GetAgiliteBonus() {
+        return agiliteBonus;
     }
 
-    public Intelligence GetIntelligence() {
-        return intelligence;
+    public StatistiqueBonus GetDexteriteBonus() {
+        return dexteriteBonus;
+    }
+
+    public StatistiqueBonus GetConstitutionBonus() {
+        return constitutionBonus;
     }
 
     // Setters
@@ -66,23 +74,27 @@ public class Race {
         nom = _nom;
     }
 
-    public void SetAgilite(Agilite _agilite) {
-        agilite = _agilite;
+    public void SetDescription(String _description) {
+        description = _description;
     }
 
-    public void SetConstitution(Constitution _constitution) {
-        constitution = _constitution;
+    public void SetForceBonus(StatistiqueBonus _forceBonus) {
+        forceBonus = _forceBonus;
     }
 
-    public void SetDexterite(Dexterite _dexterite) {
-        dexterite = _dexterite;
+    public void SetAgiliteBonus(StatistiqueBonus _agiliteBonus) {
+        agiliteBonus = _agiliteBonus;
     }
 
-    public void SetForce(Force _force) {
-        force = _force;
+    public void SetConstitutionBonus(StatistiqueBonus _constitutionBonus) {
+        constitutionBonus = _constitutionBonus;
     }
 
-    public void SetIntelligence(Intelligence _intelligence) {
-        intelligence = _intelligence;
+    public void SetDexteriteBonus(StatistiqueBonus _dexteriteBonus) {
+        dexteriteBonus = _dexteriteBonus;
+    }
+
+    public void SetIntelligenceBonus(StatistiqueBonus _intelligenceBonus) {
+        intelligenceBonus = _intelligenceBonus;
     }
 }
