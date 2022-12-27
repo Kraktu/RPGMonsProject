@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         // Création du joueur.
+        // tout remettre sur une ligne a la fin
         Joueur joueur = new Joueur(
                 "le nouveau",
                 null,
