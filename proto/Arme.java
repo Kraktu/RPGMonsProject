@@ -54,14 +54,30 @@ public class Arme extends Equipement {
     public String toString() {
         String str = "Nom : " + nom +
                 "\ndescription : " + description +
-                "\n rareté : " + rarete +
+                "\nrareté : " + rarete +
                 "\tprix : " + prix + "G" +
-                "\nforce Bonus : " + forceBonus +
-                "\nintelligence Bonus : " + intelligenceBonus +
-                "\nagilite Bonus : " + agiliteBonus +
-                "\ndexterite Bonus : " + dexteriteBonus +
-                "\nconstitution Bonus : " + constitutionBonus;
+                "\nforce Bonus : " + forceBonus.GetValeur() +
+                "\nintelligence Bonus : " + intelligenceBonus.GetValeur() +
+                "\nagilite Bonus : " + agiliteBonus.GetValeur() +
+                "\ndexterite Bonus : " + dexteriteBonus.GetValeur() +
+                "\nconstitution Bonus : " + constitutionBonus.GetValeur();
         return str;
-    }
 
+    }
+/*
+    @Override
+    public boolean equals(Object _o) {
+        if (_o == null) {
+            return false;
+        }
+        if (_o.getClass() != getClass()) {
+            return false;
+        }
+        Classe _classe = (Classe) _o;
+        if (_classe.nom.equals(nom) && _classe.description.equals(description)) {
+            return true;
+        }
+        return false;
+    }
+*/
 }

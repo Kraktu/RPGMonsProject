@@ -28,7 +28,7 @@ public class Main {
         System.out.println(Arsenal.GetInstance().epee.toString());
 
         // Le print de joueur est assez envahissant, faut que je jette un oeil à ca.
-        //System.out.println(joueur.toString());
+        // System.out.println(joueur.toString());
 
     }
 
