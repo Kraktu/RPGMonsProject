@@ -13,7 +13,7 @@ public class Race {
 
     // constructeur
 
-    public Race(String _nom, Statistique _stat) {
+        public Race(String _nom, Statistique _stat) {
         nom = _nom;
         stat = _stat;
     }

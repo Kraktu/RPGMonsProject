@@ -133,7 +133,7 @@ public class Personnage {
     }
 
     @Override
-    public boolean equals(Object o) {
+     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Personnage _personnage = (Personnage) o;
