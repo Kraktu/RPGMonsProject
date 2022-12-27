@@ -2,6 +2,7 @@ package proto;
 
 /**
  * Guerrier
+ * Créé par Simon
  */
 public class Guerrier extends Classe {
 
