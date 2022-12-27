@@ -82,19 +82,20 @@ public class Race {
         forceBonus = _forceBonus;
     }
 
-    public void SetAgiliteBonus(StatistiqueBonus _agiliteBonus) {
-        agiliteBonus = _agiliteBonus;
+    public void SetIntelligenceBonus(StatistiqueBonus _intelligenceBonus) {
+        intelligenceBonus = _intelligenceBonus;
     }
 
-    public void SetConstitutionBonus(StatistiqueBonus _constitutionBonus) {
-        constitutionBonus = _constitutionBonus;
+    public void SetAgiliteBonus(StatistiqueBonus _agiliteBonus) {
+        agiliteBonus = _agiliteBonus;
     }
 
     public void SetDexteriteBonus(StatistiqueBonus _dexteriteBonus) {
         dexteriteBonus = _dexteriteBonus;
     }
 
-    public void SetIntelligenceBonus(StatistiqueBonus _intelligenceBonus) {
-        intelligenceBonus = _intelligenceBonus;
+    public void SetConstitutionBonus(StatistiqueBonus _constitutionBonus) {
+        constitutionBonus = _constitutionBonus;
     }
+
 }
