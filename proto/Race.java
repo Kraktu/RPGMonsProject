@@ -1,20 +1,32 @@
 package proto;
 
 /**
- * fait par Seb
+ * Race, fait par Seb
  */
+
+// Les différentes races = Humain, Elfe, Nain, Troll, Gobelin.
+// propriétés
+// string name
+// string background
+// Stat strengthModifier
+// Stat intelligenceModifier
+// Stat agilityModifier
+// Stat dexterityModifier
+// Stat constitutionModifier;
 
 public class Race {
 
     // propriete
     private String nom;
     private Agilite agilite;
-private Constitution constitution;
+    private Constitution constitution;
     private Dexterite dexterite;
     private Force force;
     private Intelligence intelligence;
+
     // constructeur
-    public Race(String _nom, Agilite _agilite, Constitution _constitution, Dexterite _dexterite, Force _force, Intelligence _intelligence) {
+    public Race(String _nom, Agilite _agilite, Constitution _constitution, Dexterite _dexterite, Force _force,
+            Intelligence _intelligence) {
         nom = _nom;
         agilite = _agilite;
         constitution = _constitution;
@@ -22,8 +34,7 @@ private Constitution constitution;
         force = _force;
         intelligence = _intelligence;
     }
-// Getters
-
+    // Getters
 
     public String GetNom() {
         return nom;
@@ -50,7 +61,6 @@ private Constitution constitution;
     }
 
     // Setters
-
 
     public void SetNom(String _nom) {
         nom = _nom;
