@@ -6,13 +6,13 @@ package proto;
 public class Main {
 
     public static void main(String[] args) {
-
+/*
         EntreUtilisateur eUtil = new EntreUtilisateur();
 
         String race = eUtil.EntreeUtilisateur("Veuillez choisir une race : ");
 
         System.out.println(race);
-
+*/
         // Création du joueur.
         // tout remettre sur une ligne a la fin
         Joueur joueur = new Joueur(
@@ -31,6 +31,10 @@ public class Main {
                 50,
                 50);
 
+                System.out.println(joueur.toString());
+
     }
 
 }
+
+
