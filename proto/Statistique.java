@@ -49,7 +49,7 @@ public class Statistique {
 	// Override
 
 	@Override
-
+/*
 	public String toString() {
 
 		String returnString = "Nom : " + nom +
@@ -59,6 +59,15 @@ public class Statistique {
 				"\nValeur statistique : " + valeur;
 
 		return returnString;
+
+	}
+*/
+	public String toString() {
+
+		String returnString = " : " + valeur;
+
+		return returnString;
+
 	}
 
 	@Override

@@ -10,7 +10,7 @@ public class Main {
         // tout remettre sur une ligne a la fin
         Joueur joueur = new Joueur(
                 "le nouveau",
-                null,
+                ToutesLesRaces.GetInstance().humain,
                 null,
                 5,
                 100,
@@ -25,10 +25,12 @@ public class Main {
                 50);
 
         // print d'un toString
-        System.out.println(Arsenal.GetInstance().epee.toString());
+        // System.out.println(Arsenal.GetInstance().epee.toString());
 
         // Le print de joueur est assez envahissant, faut que je jette un oeil à ca.
-        // System.out.println(joueur.toString());
+        System.out.println(joueur.toString());
+
+        // System.out.println(joueur.GetEquipement());
 
     }
 
