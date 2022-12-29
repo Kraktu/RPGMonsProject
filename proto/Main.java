@@ -11,7 +11,7 @@ public class Main {
         Joueur joueur = new Joueur(
                 "le nouveau",
                 ToutesLesRaces.GetInstance().humain,
-                null,
+                ToutesLesClasses.GetInstance().guerrier,
                 5,
                 100,
                 100,
@@ -27,7 +27,6 @@ public class Main {
         // print d'un toString
         // System.out.println(Arsenal.GetInstance().epee.toString());
 
-        // Le print de joueur est assez envahissant, faut que je jette un oeil à ca.
         System.out.println(joueur.toString());
 
         // System.out.println(joueur.GetEquipement());
