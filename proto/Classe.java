@@ -1,7 +1,7 @@
 package proto;
 
 /**
- * Classe, modifier par Bruno.
+ * Classe Créer par Bruno.
  */
 
 // Les différentes Classe = (Archer, Guerrier, Mage, Voleur)
@@ -18,56 +18,124 @@ package proto;
 
 public class Classe {
 
-    // Propriétés
+	// Propriétés
 
-    protected String nom;
-    protected String description;
+	protected String nom;
 
-    public Classe(String _nom, String _description) {
-        nom = _nom;
-        description = _description;
-    }
+	protected String description;
 
-    // getters
+	private StatistiqueBonus forceBonus;
 
-    public String GetNom() {
-        return nom;
-    }
+	private StatistiqueBonus intelligenceBonus;
 
-    public String GetDescription() {
-        return description;
-    }
+	private StatistiqueBonus agiliteBonus;
 
-    // setters
+	private StatistiqueBonus dexteriteBonus;
 
-    public void SetNom(String _nom) {
-        nom = _nom;
-    }
+	private StatistiqueBonus constitutionBonus;
 
-    public void SetDescription(String _description) {
-        description = _description;
-    }
+	private Sort sort;
 
-    // Overrides
+	public Classe(String _nom, String _description, StatistiqueBonus _forceBonus, StatistiqueBonus _intelligenceBonus, StatistiqueBonus _agiliteBonus, StatistiqueBonus _dexteriteBonus, StatistiqueBonus _constitutionBonus, Sort _Sort) {
 
-    @Override
-    public String toString() {
-        String str = "Nom : " + nom + "\nDescription" + description;
-        return str;
-    }
+		nom = _nom;
 
-    @Override
-    public boolean equals(Object _o) {
-        if (_o == null) {
-            return false;
-        }
-        if (_o.getClass() != getClass()) {
-            return false;
-        }
-        Classe _classe = (Classe) _o;
-        if (_classe.nom.equals(nom) && _classe.description.equals(description)) {
-            return true;
-        }
-        return false;
-    }
+		description = _description;
+
+		forceBonus = _forceBonus;
+
+		intelligenceBonus = _intelligenceBonus;
+
+		agiliteBonus = _agiliteBonus;
+
+		dexteriteBonus = _dexteriteBonus;
+		constitutionBonus = _constitutionBonus;
+
+		sort = _Sort;
+	}
+
+	// Getters :
+
+	public String GetNom() {
+
+		return nom;
+	}
+
+	public String GetDescription() {
+
+		return description;
+	}
+
+	public StatistiqueBonus GetforceBonus() {
+
+		return forceBonus;
+	}
+
+	public StatistiqueBonus GetIntelligenceBonus() {
+
+		return intelligenceBonus;
+	}
+
+	public StatistiqueBonus GetAgiliteBonus() {
+
+		return agiliteBonus;
+	}
+
+	public StatistiqueBonus GetDexteriteBonus() {
+
+		return dexteriteBonus;
+	}
+
+	public StatistiqueBonus GetConstitutionBonus() {
+
+		return constitutionBonus;
+	}
+
+	public Sort getSort() {
+
+		return sort;
+	}
+
+	// Setters :
+
+	public void SetNom(String _nom) {
+
+		nom = _nom;
+	}
+
+	public void SetDescription(String _description) {
+
+		description = _description;
+	}
+
+	public void SetForceBonus(StatistiqueBonus _forceBonus) {
+
+		forceBonus = _forceBonus;
+	}
+
+	public void SetIntelligenceBonus(StatistiqueBonus _intelligenceBonus) {
+
+		intelligenceBonus = _intelligenceBonus;
+	}
+
+	public void SetAgiliteBonus(StatistiqueBonus _agiliteBonus) {
+
+		agiliteBonus = _agiliteBonus;
+	}
+
+	public void SetDexteriteBonus(StatistiqueBonus _dexteriteBonus) {
+
+		dexteriteBonus = _dexteriteBonus;
+	}
+
+	public void SetConstitutionBonus(StatistiqueBonus _constitutionBonus) {
+
+		constitutionBonus = _constitutionBonus;
+	}
+
+	public void SetSort(Sort _Sort) {
+
+		sort = _Sort;
+
+	}
 }
