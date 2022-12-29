@@ -7,7 +7,7 @@ package proto;
 public class Nain extends Race {
     // Constructeur
     public Nain(String _nom, String _description, StatistiqueBonus _forceBonus, StatistiqueBonus _intelligenceBonus, StatistiqueBonus _agiliteBonus, StatistiqueBonus _constitutionBonus, StatistiqueBonus _dexteriteBonus) {
-        super("Nain", "C'est un nain", new StatistiqueBonus(0), new StatistiqueBonus(5), new StatistiqueBonus(0), new StatistiqueBonus(0), new StatistiqueBonus(0));
+        super("Nain", "Les nains sont de petite taille mais ils sont plus trapus que les gobelins. Leur atouts sont la force physique et leur intelligence. Ils combattent généralement à la hache ou au marteau.", new StatistiqueBonus(0), new StatistiqueBonus(5), new StatistiqueBonus(0), new StatistiqueBonus(0), new StatistiqueBonus(0));
     }
 
 }
