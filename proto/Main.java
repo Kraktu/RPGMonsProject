@@ -1,10 +1,17 @@
 package proto;
+
 /**
  * main, créé par David
  */
 public class Main {
 
     public static void main(String[] args) {
+
+        EntreUtilisateur eUtil = new EntreUtilisateur();
+
+        String race = eUtil.EntreeUtilisateur("Veuillez choisir une race : ");
+
+        System.out.println(race);
 
         // Création du joueur.
         // tout remettre sur une ligne a la fin
@@ -24,12 +31,7 @@ public class Main {
                 50,
                 50);
 
-        // print d'un toString
-        // System.out.println(Arsenal.GetInstance().epee.toString());
-
-        System.out.println(joueur.toString());
-
-        // System.out.println(joueur.GetEquipement());
+                
 
     }
 

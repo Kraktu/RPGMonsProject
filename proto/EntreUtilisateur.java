@@ -5,11 +5,18 @@ package proto;
 import java.util.Scanner;
 
 public class EntreUtilisateur {
-    public Scanner entre = new Scanner(System.in);
 
-    public String EntreUtilisateur(String _question) {
+    public String EntreeUtilisateur(String _question) {
+
+        Scanner entree = new Scanner(System.in);
+
         System.out.println(_question);
-        return entre.nextLine();
+
+        String reponse = entree.nextLine();
+        
+        entree.close();
+
+        return reponse;
     }
 
 }
