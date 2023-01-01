@@ -13,17 +13,17 @@ public class Sort {
 
     private int niveauObtention;
 
-    private int dommageMin;
+    private int degatMin;
 
-    private int dommageMax;
+    private int degatMax;
 
     private int coutMana;
 
-    private boolean isDommage;
+    private boolean isDegat;
 
     //Constructeur
 
-    public Sort(String _nom, String _description, int _niveauObtention, int _dommageMin, int _dommageMax, int _coutMana, Boolean _isDommage) {
+    public Sort(String _nom, String _description, int _niveauObtention, int _degatMin, int _degatMax, int _coutMana, boolean _isDegat) {
 
         nom = _nom;
 
@@ -31,13 +31,13 @@ public class Sort {
 
         niveauObtention = _niveauObtention;
 
-        dommageMin = _dommageMin;
+        degatMin = _degatMin;
 
-        dommageMax = _dommageMax;
+        degatMax = _degatMax;
 
         coutMana = _coutMana;
 
-        isDommage = _isDommage;
+        isDegat = _isDegat;
     }
 
     // Getters
@@ -57,14 +57,14 @@ public class Sort {
         return niveauObtention;
     }
 
-    public int GetDommageMin() {
+    public int GetDegatMin() {
 
-        return dommageMin;
+        return degatMin;
     }
 
-    public int GetGommageMax() {
+    public int GetDegatMax() {
 
-        return dommageMax;
+        return degatMax;
     }
 
     public int GetCoutMana() {
@@ -72,9 +72,9 @@ public class Sort {
         return coutMana;
     }
 
-    public boolean GetIsDommage() {
+    public boolean GetIsDegat() {
 
-        return isDommage;
+        return isDegat;
     }
 
     // Setters
@@ -94,14 +94,14 @@ public class Sort {
         niveauObtention = _niveauObtention;
     }
 
-    public void SetDommageMin(int _dommageMin) {
+    public void SetDegatMin(int _degatMin) {
 
-       dommageMin = _dommageMin;
+       degatMin = _degatMin;
    }
 
-   public void SetDommageMax(int _dommageMax) {
+   public void SetDegatMax(int _degatMax) {
 
-   dommageMax = _dommageMax;
+   degatMax = _degatMax;
 }
 
 public void SetCoutMana(int _coutMana) {
@@ -109,15 +109,11 @@ public void SetCoutMana(int _coutMana) {
    coutMana = _coutMana;
 }
 
-public void SetIsDommage(boolean _isDommage) {
-    isDommage = _isDommage;
+public void SetIsDegat(boolean _isDegat) {
+    isDegat = _isDegat;
 }
 
-// fonctions magiques :
-
-	// fonction toString
-
-	//@Override
+// Overrides :
 
     @Override
 
@@ -129,13 +125,13 @@ public void SetIsDommage(boolean _isDommage) {
 
         "\nNiveau pour le débloquer : " + niveauObtention +
 
-        "\nDommage minimum causé : " + dommageMin +
+        "\nDégat minimum causé : " + degatMin +
 
-        "\nDommage Maximum causé : " + dommageMax +
+        "\nDégat Maximum causé : " + degatMax +
 
         "\nLa magie a causé " + coutMana + " vies." +
 
-        "Dommage ? " + isDommage;
+        "Dégat ? " + isDegat;
 
         return returnString;
     }
@@ -159,7 +155,7 @@ public void SetIsDommage(boolean _isDommage) {
 
         Sort _sort = (Sort)_o;
 
-        if (nom.equals(_sort.nom) && description.equals(_sort.description) && niveauObtention == _sort.niveauObtention && dommageMin == _sort.dommageMin && dommageMax == _sort.dommageMax && isDommage == _sort.isDommage) {
+        if (nom.equals(_sort.nom) && description.equals(_sort.description) && niveauObtention == _sort.niveauObtention && degatMin == _sort.degatMin && degatMax == _sort.degatMax && coutMana == _sort.coutMana && isDegat == _sort.isDegat) {
 
             return true;
         }
