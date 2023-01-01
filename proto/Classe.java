@@ -138,4 +138,33 @@ public class Classe {
 		sort = _Sort;
 
 	}
+
+	// Override
+
+	@Override
+	public java.lang.String toString() {
+		return "Classe{" +
+				"nom='" + nom + '\'' +
+				", description='" + description + '\'' +
+				", forceBonus=" + forceBonus +
+				", intelligenceBonus=" + intelligenceBonus +
+				", agiliteBonus=" + agiliteBonus +
+				", dexteriteBonus=" + dexteriteBonus +
+				", constitutionBonus=" + constitutionBonus +
+				", sort=" + sort +
+				'}';
+	}
+
+	@Override
+
+	public boolean equals(Object object) {
+		if (this == object) return true;
+
+		if (object == null || getClass() != object.getClass()) return false;
+		if (!super.equals(object)) return false;
+
+		Classe classe = (Classe) object;
+
+		return java.util.Objects.equals(nom, classe.nom) && java.util.Objects.equals(description, classe.description) && java.util.Objects.equals(forceBonus, classe.forceBonus) && java.util.Objects.equals(intelligenceBonus, classe.intelligenceBonus) && java.util.Objects.equals(agiliteBonus, classe.agiliteBonus) && java.util.Objects.equals(dexteriteBonus, classe.dexteriteBonus) && java.util.Objects.equals(constitutionBonus, classe.constitutionBonus) && java.util.Objects.equals(sort, classe.sort);
+	}
 }
