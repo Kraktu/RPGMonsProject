@@ -45,4 +45,15 @@ public class Joueur extends Personnage {
     public void SetArgent(int _argent) {
         argent = _argent;
     }
+
+    @Override
+    public String toString() {
+        return
+        "\nforce = " + force +
+        "\nintelligence = " + intelligence +
+        "\nagilite = " + agilite +
+        "\ndexterite = " + dexterite +
+        "\nconstitution = " + constitution
+        ;
+    }
 }

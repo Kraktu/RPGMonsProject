@@ -4,6 +4,9 @@ package proto;
  * ToutesLesClasses Créé par David, base de donnée des classes.
  */
 
+// Archer, Guerrier, Mage, Voleur
+// Force, Intelligence, Agilité, Dextérité, Constitution
+
 public final class ToutesLesClasses {
 
     private static ToutesLesClasses instance;
@@ -20,14 +23,25 @@ public final class ToutesLesClasses {
         return instance;
     }
 
+    Classe archer = new Classe("Archer",
+    "c'est un archer",
+    new StatistiqueBonus(-2),
+    new StatistiqueBonus(0),
+    new StatistiqueBonus(2),
+    new StatistiqueBonus(3),
+    new StatistiqueBonus(-2),
+    new Sort(null, null, 0, 0, 0, 0, false)
+    );
+
     Classe guerrier = new Classe("Guerrier",
     "c'est un guerrier.",
+    new StatistiqueBonus(2),
+    new StatistiqueBonus(-1),
+    new StatistiqueBonus(-2),
     new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new Sort(null, null, 0, 0, 0, 0, false));
+    new StatistiqueBonus(3),
+    new Sort(null, null, 0, 0, 0, 0, false)
+    );
 
     // Getters
 
