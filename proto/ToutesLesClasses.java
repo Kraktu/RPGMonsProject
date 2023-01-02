@@ -27,19 +27,39 @@ public final class ToutesLesClasses {
     "c'est un archer",
     new StatistiqueBonus(-2),
     new StatistiqueBonus(0),
-    new StatistiqueBonus(2),
     new StatistiqueBonus(3),
-    new StatistiqueBonus(-2),
+    new StatistiqueBonus(2),
+    new StatistiqueBonus(1),
     new Sort(null, null, 0, 0, 0, 0, false)
     );
 
     Classe guerrier = new Classe("Guerrier",
     "c'est un guerrier.",
     new StatistiqueBonus(2),
-    new StatistiqueBonus(-1),
-    new StatistiqueBonus(-2),
     new StatistiqueBonus(0),
+    new StatistiqueBonus(-2),
+    new StatistiqueBonus(1),
     new StatistiqueBonus(3),
+    new Sort(null, null, 0, 0, 0, 0, false)
+    );
+
+    Classe mage = new Classe("Mage",
+    "c'est un mage.",
+    new StatistiqueBonus(-2),
+    new StatistiqueBonus(3),
+    new StatistiqueBonus(0),
+    new StatistiqueBonus(1),
+    new StatistiqueBonus(2),
+    new Sort(null, null, 0, 0, 0, 0, false)
+    );
+
+    Classe voleur = new Classe("Voleur",
+    "c'est un voleur.",
+    new StatistiqueBonus(-2),
+    new StatistiqueBonus(1),
+    new StatistiqueBonus(2),
+    new StatistiqueBonus(3),
+    new StatistiqueBonus(0),
     new Sort(null, null, 0, 0, 0, 0, false)
     );
 

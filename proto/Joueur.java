@@ -48,12 +48,16 @@ public class Joueur extends Personnage {
 
     @Override
     public String toString() {
-        return
-        "\nforce = " + force +
-        "\nintelligence = " + intelligence +
-        "\nagilite = " + agilite +
-        "\ndexterite = " + dexterite +
-        "\nconstitution = " + constitution
+        return "\nDescription de votre personnage :\n" +
+        "\nnom : " + nom +
+        "\nrace : " + race.GetNom() +
+        "\nclasse : " + classe.GetNom() +
+        "\n" +
+        "\nforce" + force +
+        "\nintelligence" + intelligence +
+        "\nagilite" + agilite +
+        "\ndexterite" + dexterite +
+        "\nconstitution" + constitution
         ;
     }
 }
