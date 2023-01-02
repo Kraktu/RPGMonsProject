@@ -20,20 +20,20 @@ public class EntreUtilisateur {
     }
 
 public int ChoixClasse () {
-        int choix=EntreeUtilisateur("Choisissez votre classe [tapez 1" pour guerrier, \n2" pour mage, \n3" pour voleur, \n4" pour archer")) {
-switch (choix) {
+        int _choix=EntreeUtilisateur("Choisissez votre classe [tapez 1 pour guerrier, \n2 pour mage, \n3 pour voleur, \n4 pour archer");
+switch (_choix) {
     case "1" :
         System.out.println("Vous avez choisi guerrier.");
-        break;
+        return _choix;
     case "2" :
         System.out.println("Vous avez choisi mage.");
-        break;
+        return _choix;
     case "3" :
         System.out.println("Vous avez choisi voleur.");
-        break;
+        return _choix;
     case "4" :
         System.out.println("Vous avez choisi archer.");
-        break;
+        return _choix;
     default:
         System.out.println("Erreur, veuillez choisir un nombre compris entre 1 et 4.");
         ChoixClasse();
