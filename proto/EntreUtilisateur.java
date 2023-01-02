@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class EntreUtilisateur {
 
-    public String EntreeUtilisateur(String _question) {
+    public String EntreeUtilisateurString(String _question) {
 
         Scanner entree = new Scanner(System.in);
 
@@ -20,7 +20,7 @@ public class EntreUtilisateur {
         return reponse;
     }
 
-    public int EntreeUtilisateur(String _question) {
+    public int EntreeUtilisateurInt(String _question) {
 
         Scanner entree = new Scanner(System.in);
 
@@ -34,7 +34,7 @@ public class EntreUtilisateur {
     }
 
     public int ChoixClasse() {
-        int _choix = EntreeUtilisateur(
+        int _choix = EntreeUtilisateurInt(
                 "Choisissez votre classe [tapez 1 pour guerrier, \n2 pour mage, \n3 pour voleur, \n4 pour archer");
         switch (_choix) {
             case 1:
@@ -59,7 +59,7 @@ public class EntreUtilisateur {
     }
 
     public int ChoixRace() {
-        int _choix = EntreeUtilisateur(
+        int _choix = EntreeUtilisateurInt(
                 "Choisissez votre race [tapez 1 pour humain\n2 pour gobelin\n3 pour nain\n4 pour troll\n5 pour elfe");
         switch (_choix) {
             case 1:
