@@ -15,6 +15,15 @@ public class Main {
 */
         // Création du joueur.
         // tout remettre sur une ligne a la fin
+
+        NbrAleatoire rng = new NbrAleatoire();
+
+        for (int i = 0; i < 10; i++) {
+
+                System.out.println(rng.GenererNbrAleatoireBorne(1, 5));
+
+        }
+
         Joueur joueur = new Joueur(
                 "le nouveau",
                 ToutesLesRaces.GetInstance().humain,
@@ -31,7 +40,7 @@ public class Main {
                 50,
                 50);
 
-                System.out.println(joueur.toString());
+                //System.out.println(joueur.toString());
 
     }
 

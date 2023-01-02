@@ -11,7 +11,7 @@ public class NbrAleatoire {
 
 		Random random = new Random();
 
-		int _nbrAleatoire = random.nextInt(_nbrMax + _nbrMin) + _nbrMin;
+		int _nbrAleatoire = random.nextInt(_nbrMax + (_nbrMin - 1)) + _nbrMin;
 
 		return _nbrAleatoire;
 	}
