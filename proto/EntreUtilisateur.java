@@ -13,7 +13,7 @@ public class EntreUtilisateur {
 
         System.out.println(_question);
 
-        String reponse = entree.nextLine();
+        String reponse = entree.nextInt();
 
         entree.close();
 
