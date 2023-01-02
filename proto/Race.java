@@ -98,4 +98,27 @@ public class Race {
         constitutionBonus = _constitutionBonus;
     }
 
+    // Overrides
+
+
+    @Override
+    public String toString() {
+        return "Race{" +
+                "nom='" + nom + '\'' +
+                ", description='" + description + '\'' +
+                ", forceBonus=" + forceBonus +
+                ", intelligenceBonus=" + intelligenceBonus +
+                ", agiliteBonus=" + agiliteBonus +
+                ", dexteriteBonus=" + dexteriteBonus +
+                ", constitutionBonus=" + constitutionBonus +
+                '}';
+    }
+
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        if (!super.equals(object)) return false;
+        Race race = (Race) object;
+        return java.util.Objects.equals(nom, race.nom) && java.util.Objects.equals(description, race.description) && java.util.Objects.equals(forceBonus, race.forceBonus) && java.util.Objects.equals(intelligenceBonus, race.intelligenceBonus) && java.util.Objects.equals(agiliteBonus, race.agiliteBonus) && java.util.Objects.equals(dexteriteBonus, race.dexteriteBonus) && java.util.Objects.equals(constitutionBonus, race.constitutionBonus);
+    }
 }
