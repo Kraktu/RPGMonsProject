@@ -5,31 +5,41 @@ package proto;
  */
 public class Main {
 
+/*
+
+A) Création du personnage 
+
+        1) On nous demande notre pseudo
+        2) On nous propose de choisir une Race (Humain, Elfe, Nain, Troll, Gobelin)
+        3) On nous propose de choisir une Classe (Archer, Guerrier, Mage, Voleur)
+        4) On nous propose de répartir 5 points dans les caractéristiques que l'on veut (Force, Intelligence, Agilité, Dextérité, Constitution).
+
+*/
+
     public static void main(String[] args) {
 /*
         EntreUtilisateur eUtil = new EntreUtilisateur();
 
-        String race = eUtil.EntreeUtilisateur("Veuillez choisir une race : ");
+        String race = eUtil.EntreeUtilisateur("Veuillez choisir une race,\nVoici les différentes races possible :\nHumain - Elfe - Nain - Troll - Gobelin ");
 
         System.out.println(race);
 */
+
+        String joueurPseudo = "le bleu";
+        Race joueurRace = ToutesLesRaces.GetInstance().humain;
+        Classe joueurClasse = ToutesLesClasses.GetInstance().guerrier;
+        int joueurNiveauInitial = 5;
+        int joueurVieDeBase = 100;
+
+
         // Création du joueur.
         // tout remettre sur une ligne a la fin
-
-        NbrAleatoire rng = new NbrAleatoire();
-
-        for (int i = 0; i < 10; i++) {
-
-                System.out.println(rng.GenererNbrAleatoireBorne(1, 5));
-
-        }
-
         Joueur joueur = new Joueur(
-                "le nouveau",
-                ToutesLesRaces.GetInstance().humain,
-                ToutesLesClasses.GetInstance().guerrier,
-                5,
-                100,
+                joueurPseudo,
+                joueurRace,
+                joueurClasse,
+                joueurNiveauInitial,
+                joueurVieDeBase,
                 100,
                 new Force(5),
                 new Intelligence(5),
@@ -38,9 +48,14 @@ public class Main {
                 new Constitution(5),
                 Arsenal.GetInstance().epee,
                 50,
-                50);
+                50
+        );
 
-                //System.out.println(joueur.toString());
+
+
+        System.out.println(joueur.toString());
+
+
 
     }
 
