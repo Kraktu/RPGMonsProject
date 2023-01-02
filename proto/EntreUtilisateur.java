@@ -22,16 +22,16 @@ public class EntreUtilisateur {
 public int ChoixClasse () {
         int _choix=EntreeUtilisateur("Choisissez votre classe [tapez 1 pour guerrier, \n2 pour mage, \n3 pour voleur, \n4 pour archer");
 switch (_choix) {
-    case "1" :
+    case 1 :
         System.out.println("Vous avez choisi guerrier.");
         return _choix;
-    case "2" :
+    case 2 :
         System.out.println("Vous avez choisi mage.");
         return _choix;
-    case "3" :
+    case 3 :
         System.out.println("Vous avez choisi voleur.");
         return _choix;
-    case "4" :
+    case 4 :
         System.out.println("Vous avez choisi archer.");
         return _choix;
     default:
@@ -39,7 +39,7 @@ switch (_choix) {
         ChoixClasse();
         break;
 }
-return choix;
+return _choix;
 
 
 }
