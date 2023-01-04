@@ -40,7 +40,7 @@ public class EntreUtilisateur {
         System.out.println(_question);
 
         int _reponse = _entree.nextInt();
-
+_entree.nextLine();
         // _entree.close();
 
         return _reponse;
@@ -94,11 +94,12 @@ public class EntreUtilisateur {
                     System.out.println("Vous avez choisi gobelin.");
                     _raceSelection = ToutesLesRaces.GetInstance().gobelin;
                     break;
+
                 default:
                     System.out.println("Erreur, vous devez choisir un nombre compris entre 1 et 5.");
                     break;
             }
-        } while (ConfirmationChoix());
+        } while (_choix<1 || _choix>5);
         // _entree.close();
 
         return _raceSelection;
@@ -138,7 +139,7 @@ public class EntreUtilisateur {
                     System.out.println("Erreur, veuillez choisir un nombre compris entre 1 et 4.");
                     break;
             }
-        } while (ConfirmationChoix());
+        } while (_choix<1 || _choix>4);
 
         // _entree.close();
 
