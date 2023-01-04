@@ -34,12 +34,14 @@ A) Création du personnage.
         String joueurPseudo;
         Race joueurRace;
         Classe joueurClasse;
+        Equipement joueurArme;
 
         if (passerCreationPersonnage) {
 
                 joueurPseudo = "Sans nom";
                 joueurRace = ToutesLesRaces.GetInstance().elfe;
                 joueurClasse = ToutesLesClasses.GetInstance().archer;
+                joueurArme = Arsenal.GetInstance().dague;
 
         } else {
 
@@ -53,6 +55,8 @@ A) Création du personnage.
 
         // Definition de la classe.
         joueurClasse = eUtil.ChoixClasse();
+
+        joueurArme = Arsenal.GetInstance().dague;
 
         }
 
@@ -84,7 +88,7 @@ A) Création du personnage.
                 joueurAgiliteDeBase,
                 joueurDexteriteDeBase,
                 joueurConstitutionDeBase,
-                Arsenal.GetInstance().epee,
+                joueurArme,
                 50,
                 50
         );
