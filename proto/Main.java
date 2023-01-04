@@ -41,7 +41,7 @@ A) Création du personnage.
                 joueurPseudo = "Sans nom";
                 joueurRace = ToutesLesRaces.GetInstance().elfe;
                 joueurClasse = ToutesLesClasses.GetInstance().archer;
-                joueurArme = Arsenal.GetInstance().dague;
+                joueurArme = null;
 
         } else {
 
@@ -56,7 +56,7 @@ A) Création du personnage.
         // Definition de la classe.
         joueurClasse = eUtil.ChoixClasse();
 
-        joueurArme = Arsenal.GetInstance().dague;
+        joueurArme = null;
 
         }
 
