@@ -88,7 +88,7 @@ A) Création du personnage.
                 joueurAgiliteDeBase,
                 joueurDexteriteDeBase,
                 joueurConstitutionDeBase,
-                joueurArme,
+                null,
                 50,
                 50
         );
