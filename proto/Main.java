@@ -29,19 +29,20 @@ A) Création du personnage.
         EntreUtilisateur eUtil = new EntreUtilisateur();
         Personnage persoDeBase = new Personnage(
                 "default", null, null, 5, 100, 100, new Force(5), new Intelligence(5), new Agilite(5), new Dexterite(5), new Constitution(5));
+        Combat combatClass = new Combat();
 
 
         String joueurPseudo;
         Race joueurRace;
         Classe joueurClasse;
-        Equipement joueurArme;
+        //Equipement joueurArme;
 
         if (passerCreationPersonnage) {
 
                 joueurPseudo = "Sans nom";
                 joueurRace = ToutesLesRaces.GetInstance().elfe;
                 joueurClasse = ToutesLesClasses.GetInstance().archer;
-                joueurArme = null;
+                //joueurArme = Arsenal.GetInstance().dague2;
 
         } else {
 
@@ -56,7 +57,7 @@ A) Création du personnage.
         // Definition de la classe.
         joueurClasse = eUtil.ChoixClasse();
 
-        joueurArme = null;
+        //joueurArme = Arsenal.GetInstance().dague2;
 
         }
 
@@ -94,6 +95,10 @@ A) Création du personnage.
         );
 
         System.out.println(joueur.toString());
+
+        System.out.println("");
+
+        combatClass.SeBattre();
 
 
         // Fermeture du scanner de EntreeUtilisateur. (test)
