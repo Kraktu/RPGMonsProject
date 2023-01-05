@@ -56,28 +56,11 @@ public final class TousLesEnnemis{
 
 	// La race
 
-	new Race("humain",
-	"C'est un humain",
-	new StatistiqueBonus(2), //Stat Force
-	new StatistiqueBonus(5), //Stat Intelligence
-	new StatistiqueBonus(3),// Stat Agilite
-	new StatistiqueBonus(2),// Stat dexterite
-	new StatistiqueBonus(3)// Stat Constitution
-	),
+	ToutesLesRaces.GetInstance().humain,
 
 	// Classe
 
-	new Classe("Voleur",
-	"C'est un voleur",
-	new StatistiqueBonus(2),// Stat Force
-	new StatistiqueBonus(5),// Stat Intelligence
-	new StatistiqueBonus(5),// Stat Agilite
-	new StatistiqueBonus(3),// Stat Dexterite
-	new StatistiqueBonus(4), // Stat Constitution
-
-	// Sort de la Classe
-	
-	new Sort(null, null, 0, 0, 0, 0, false)),
+	ToutesLesClasses.GetInstance().voleur,
 
 	1, // Niveau
 
@@ -93,44 +76,11 @@ public final class TousLesEnnemis{
 
 	// Armes
 
-	new Arme("Couteau",
-	
-	"ça coupe",
-
-	"Pas rare",
-
-	0,// Prix
-
-	new StatistiqueBonus(2),// Stat Force
-	new StatistiqueBonus(1),// Stat Intelligence
-	new StatistiqueBonus(3),// Stat Agilite
-	new StatistiqueBonus(3),// Stat Dexterite
-	new StatistiqueBonus(2), // Stat Constitution
-
-	"arme blanche",// Type
-
-	1,// Degat minimum
-
-	2// degat maximum
-	),
+	Arsenal.GetInstance().dague,
 
 	// équipement
 
-	new Equipement("Couteau",
-	
-	"ça coupe",
-
-	"Pas rare",
-
-	0,// Prix
-
-	new StatistiqueBonus(2),// Stat Force
-	new StatistiqueBonus(1),// Stat Intelligence
-	new StatistiqueBonus(3),// Stat Agilite
-	new StatistiqueBonus(3),// Stat Dexterite
-	new StatistiqueBonus(2) // Stat Constitution
-	
-	)
+	null
 	);
 
 	// Getters :
