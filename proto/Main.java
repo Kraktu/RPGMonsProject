@@ -97,7 +97,7 @@ A) Création du personnage.
                 50,
                 50
         );
-
+/*
         System.out.println(persoEnCombat.lePersonnageJouable.GetNom());
 
         System.out.println("");
@@ -110,13 +110,12 @@ A) Création du personnage.
 
         System.out.println(persoEnCombat.lePersonnageJouable.GetNom());
 
-/*
         System.out.println(joueur.toString());
 
         System.out.println("");
-
-        combatClass.SeBattre();
 */
+        combatClass.SeBattre();
+
 
         // Fermeture du scanner de EntreeUtilisateur. (test)
         eUtil.fermerScanner();
