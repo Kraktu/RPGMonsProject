@@ -132,8 +132,6 @@ public final class Arsenal {
     // Armure.
     
 
-
-
     // Getters
 
     public Arme getDague(){

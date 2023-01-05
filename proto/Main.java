@@ -25,24 +25,27 @@ A) Création du personnage.
         // true pour avoir un personnage par defaut, false pour créer le personnage manuellement.
         boolean passerCreationPersonnage = false;
 
-
+        Main monMain = new Main();
         EntreUtilisateur eUtil = new EntreUtilisateur();
+        lesPersonnagesEnCombat persoEnCombat = new lesPersonnagesEnCombat();
+
         Personnage persoDeBase = new Personnage(
                 "default", null, null, 5, 100, 100, new Force(5), new Intelligence(5), new Agilite(5), new Dexterite(5), new Constitution(5));
+
         Combat combatClass = new Combat();
 
 
         String joueurPseudo;
         Race joueurRace;
         Classe joueurClasse;
-        //Equipement joueurArme;
+        Equipement joueurArme;
 
         if (passerCreationPersonnage) {
 
                 joueurPseudo = "Sans nom";
                 joueurRace = ToutesLesRaces.GetInstance().elfe;
                 joueurClasse = ToutesLesClasses.GetInstance().archer;
-                //joueurArme = Arsenal.GetInstance().dague2;
+                joueurArme = Arsenal.GetInstance().getDague();
 
         } else {
 
@@ -57,7 +60,7 @@ A) Création du personnage.
         // Definition de la classe.
         joueurClasse = eUtil.ChoixClasse();
 
-        //joueurArme = Arsenal.GetInstance().dague2;
+        joueurArme = Arsenal.GetInstance().getDague();
 
         }
 
@@ -75,6 +78,7 @@ A) Création du personnage.
         
         Constitution joueurConstitutionDeBase = new Constitution(persoDeBase.GetConstitution().GetValeur() + joueurRace.GetConstitutionBonus().GetValeur() + joueurClasse.GetConstitutionBonus().GetValeur());
 
+
         // Création de l'objet joueur.
         // post-it : tout remettre sur une ligne a la fin
         Joueur joueur = new Joueur(
@@ -89,25 +93,34 @@ A) Création du personnage.
                 joueurAgiliteDeBase,
                 joueurDexteriteDeBase,
                 joueurConstitutionDeBase,
-                null,
+                joueurArme,
                 50,
                 50
         );
 
+        System.out.println(persoEnCombat.lePersonnageJouable.GetNom());
+
+        System.out.println("");
+
+        persoEnCombat.lePersonnageJouable.equals(joueur);
+
+        persoEnCombat.lePersonnageJouable.SetNom(joueurPseudo);
+
+        System.out.println("");
+
+        System.out.println(persoEnCombat.lePersonnageJouable.GetNom());
+
+/*
         System.out.println(joueur.toString());
 
         System.out.println("");
 
         combatClass.SeBattre();
-
+*/
 
         // Fermeture du scanner de EntreeUtilisateur. (test)
         eUtil.fermerScanner();
-
-    }
-
-    void Testage(){
-        System.out.println("Hello world");
+        
     }
 
 }
