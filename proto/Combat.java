@@ -5,11 +5,12 @@ package proto;
  */
 public class Combat {
     public int JetDeDe() {
+int _jet=0;
         NbrAleatoire nbrAl = new NbrAleatoire();
         try {
             System.out.println("Le dé est lancé.");
             Thread.sleep(1000);
-            int _jet = nbrAl.GenererNbrAleatoireBorne(1, 6);
+            _jet = nbrAl.GenererNbrAleatoireBorne(1, 6);
         } catch (Exception e) {
             // TODO: handle exception
             System.out.println("Erreur.");
