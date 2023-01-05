@@ -50,11 +50,11 @@ public final class TousLesEnnemis{
 		return instance;
 	}
 
-	// création du premier et demie, Bruno humain
+	// création du premier ennemie, Bruno humain
 
 	Ennemi bruno = new Ennemi("Bruno",
 
-	// La race
+	// Les races
 
 	ToutesLesRaces.GetInstance().humain,
 
@@ -85,14 +85,7 @@ public final class TousLesEnnemis{
 
 	// Getters :
 
-	public Ennemi GetBruno() {
-		return bruno;
-	}
-
 	// Setters :
 
-
-	public void SetBruno(Ennemi _bruno) {
-		bruno = _bruno;
-	}
+	
 }
