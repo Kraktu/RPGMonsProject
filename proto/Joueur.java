@@ -62,7 +62,11 @@ public class Joueur extends Personnage {
         "\nintelligence" + intelligence +
         "\nagilite" + agilite +
         "\ndexterite" + dexterite +
-        "\nconstitution" + constitution
+        "\nconstitution" + constitution +
+        "\n" +
+        "\nequipement : " + equipement +
+        "\nexperience : " + experience +
+        "\nargent : " + argent
         ;
     }
 }
