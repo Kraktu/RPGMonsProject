@@ -68,10 +68,6 @@ public final class ToutesLesRaces {
 
         // Getters :
 
-        public static proto.Race.ToutesLesRaces getInstance() {
-                return instance;
-        }
-
         public Race GetHumain() {
                 return humain;
         }

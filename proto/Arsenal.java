@@ -137,10 +137,6 @@ public final class Arsenal {
 
     // Getters :
 
-    public static proto.Arsenal getInstance() {
-        return instance;
-    }
-
     public Arme GetDague() {
         return dague;
     }

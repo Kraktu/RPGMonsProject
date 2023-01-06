@@ -68,10 +68,6 @@ public final class ToutesLesClasses {
 
     // Getters :
 
-    public static proto.Classes.ToutesLesClasses getInstance() {
-        return instance;
-    }
-
     public Classe GetArcher() {
         return archer;
     }
