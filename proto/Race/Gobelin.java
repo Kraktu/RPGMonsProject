@@ -1,4 +1,7 @@
-package proto;
+package proto.Race;
+
+import proto.Stat.StatistiqueBonus;
+
 /**
  * Gobelin, créer par Seb
  */

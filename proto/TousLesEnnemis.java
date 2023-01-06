@@ -1,5 +1,8 @@
 package proto;
 
+import proto.Race.ToutesLesRaces;
+import proto.Stat.StatistiqueBonus;
+
 /**
  * TousLesEnnemis Créé par Bruno
  * Base de données des ennemis 

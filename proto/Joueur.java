@@ -1,4 +1,9 @@
 package proto;
+
+import proto.Classes.Classe;
+import proto.Race.Race;
+import proto.Stat.Statistique;
+
 /**
  * Joueur créé par Seb
  */

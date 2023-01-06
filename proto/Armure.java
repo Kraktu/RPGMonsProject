@@ -1,5 +1,7 @@
 package proto;
 
+import proto.Stat.Statistique;
+
 /**
  * Armure Créé par Philip
  */

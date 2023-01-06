@@ -1,4 +1,4 @@
-package proto;
+package proto.Stat;
 
 /**
  * Dexterite modifié par David

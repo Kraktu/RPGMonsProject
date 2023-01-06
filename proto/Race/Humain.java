@@ -1,4 +1,6 @@
-package proto;
+package proto.Race;
+
+import proto.Stat.StatistiqueBonus;
 
 /**
  * Humain, créer par Seb

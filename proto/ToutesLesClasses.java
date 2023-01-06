@@ -1,5 +1,8 @@
 package proto;
 
+import proto.Classes.Classe;
+import proto.Stat.StatistiqueBonus;
+
 /**
  * ToutesLesClasses Créé par David, base de donnée des classes.
  */

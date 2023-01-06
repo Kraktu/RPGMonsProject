@@ -5,8 +5,8 @@ package proto;
  */
 public class lesPersonnagesEnCombat {
 
-    Joueur lePersonnageJouable = new Joueur (null, null, null, 0, 0, 0, null, null, null, null, null, null, 0, 0);
-    
+    Joueur lePersonnageJouable = new Joueur(null, null, null, 0, 0, 0, null, null, null, null, null, null, 0, 0);
+
     Ennemi ennemisActuel = new Ennemi(null, null, null, 0, 0, 0, null, null, null, null, null, null, null);
 
 }

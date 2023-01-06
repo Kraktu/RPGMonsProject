@@ -2,6 +2,10 @@ package proto;
 
 import java.util.Objects;
 
+import proto.Classes.Classe;
+import proto.Race.Race;
+import proto.Stat.Statistique;
+
 /**
  * Personnage créé par Philip
  */

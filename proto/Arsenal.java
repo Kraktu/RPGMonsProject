@@ -1,4 +1,7 @@
 package proto;
+
+import proto.Stat.StatistiqueBonus;
+
 /**
  * Arsenal Créé par David, base de donnée des armes.
  */

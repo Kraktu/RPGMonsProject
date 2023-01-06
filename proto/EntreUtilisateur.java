@@ -5,6 +5,9 @@ package proto;
  */
 import java.util.Scanner;
 
+import proto.Classes.Classe;
+import proto.Race.*;
+
 // post-it : trouver le bon moment ou la bonne méthode pour fermer les scanners.
 
 public class EntreUtilisateur {

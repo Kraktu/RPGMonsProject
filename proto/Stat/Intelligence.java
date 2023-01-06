@@ -1,4 +1,4 @@
-package proto;
+package proto.Stat;
 
 /**
  * Intelligence par David

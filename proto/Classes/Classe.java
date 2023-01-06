@@ -1,4 +1,7 @@
-package proto;
+package proto.Classes;
+
+import proto.Sort;
+import proto.Stat.StatistiqueBonus;
 
 /**
  * Classe Créer par Bruno.

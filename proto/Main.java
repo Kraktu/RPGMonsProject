@@ -1,4 +1,8 @@
 package proto;
+import proto.Classes.Classe;
+import proto.Race.Race;
+import proto.Race.ToutesLesRaces;
+import proto.Stat.*;
 
 /**
  * main, créé par David
@@ -96,7 +100,7 @@ A) Création du personnage.
                 joueurArme,
                 50,
                 50
-        );
+        ); // peut etre obsolete !!!
 /*
         System.out.println(persoEnCombat.lePersonnageJouable.GetNom());
 

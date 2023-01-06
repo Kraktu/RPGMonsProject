@@ -1,4 +1,8 @@
 package proto;
+
+import proto.Race.Race;
+import proto.Stat.StatistiqueBonus;
+
 /**
  * Nain, créer par Seb
  */
