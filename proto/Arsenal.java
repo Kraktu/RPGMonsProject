@@ -135,16 +135,73 @@ public final class Arsenal {
     // Armure.
     
 
-    // Getters
+    // Getters :
 
-    public Arme getDague(){
+    public static proto.Arsenal getInstance() {
+        return instance;
+    }
+
+    public Arme GetDague() {
         return dague;
     }
 
-    // Setters
+    public Arme GetEpee() {
+        return epee;
+    }
 
-    public void setDague(Arme _dague){
+    public Arme GetHache() {
+        return hache;
+    }
+
+    public Arme GetLance() {
+        return lance;
+    }
+
+    public Arme GetMasse() {
+        return masse;
+    }
+
+    public Arme GetArc() {
+        return arc;
+    }
+
+    public Arme GetArbalete() {
+        return arbalete;
+    }
+
+
+    // Setters :
+
+
+    public static void SetInstance(proto.Arsenal _instance) {
+        Arsenal.instance = _instance;
+    }
+
+    public void SetDague(Arme _dague) {
         dague = _dague;
     }
 
+    public void SetEpee(Arme _epee) {
+        epee = _epee;
+    }
+
+    public void SetHache(Arme _hache) {
+        hache = _hache;
+    }
+
+    public void SetLance(Arme _lance) {
+        lance = _lance;
+    }
+
+    public void SetMasse(Arme _masse) {
+        masse = _masse;
+    }
+
+    public void SetArc(Arme _arc) {
+        arc = _arc;
+    }
+
+    public void SetArbalete(Arme _arbalete) {
+        arbalete = _arbalete;
+    }
 }

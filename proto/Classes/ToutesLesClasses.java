@@ -66,16 +66,49 @@ public final class ToutesLesClasses {
     new Sort(null, null, 0, 0, 0, 0, false)
     );
 
-    // Getters
+    // Getters :
 
-    public Classe getGuerrier() {
+    public static proto.Classes.ToutesLesClasses getInstance() {
+        return instance;
+    }
+
+    public Classe GetArcher() {
+        return archer;
+    }
+
+    public Classe GetGuerrier() {
         return guerrier;
     }
 
-    // Setters
+    public Classe GetMage() {
+        return mage;
+    }
 
-    public void setGuerrier(Classe _guerrier) {
+    public Classe GetVoleur() {
+        return voleur;
+    }
+
+
+    // Setters :
+
+
+    public static void SetInstance(proto.Classes.ToutesLesClasses _instance) {
+        ToutesLesClasses.instance = _instance;
+    }
+
+    public void SetArcher(Classe _archer) {
+        archer = _archer;
+    }
+
+    public void SetGuerrier(Classe _guerrier) {
         guerrier = _guerrier;
     }
 
+    public void SetMage(Classe _mage) {
+        mage = _mage;
+    }
+
+    public void SetVoleur(Classe _voleur) {
+        voleur = _voleur;
+    }
 }

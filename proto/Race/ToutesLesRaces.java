@@ -66,4 +66,55 @@ public final class ToutesLesRaces {
                         new StatistiqueBonus(2),
                         new StatistiqueBonus(-2));
 
+        // Getters :
+
+        public static proto.Race.ToutesLesRaces getInstance() {
+                return instance;
+        }
+
+        public Race GetHumain() {
+                return humain;
+        }
+
+        public Race GetElfe() {
+                return elfe;
+        }
+
+        public Race GetNain() {
+                return nain;
+        }
+
+        public Race GetTroll() {
+                return troll;
+        }
+
+        public Race GetGobelin() {
+                return gobelin;
+        }
+
+        // Setters :
+
+        public static void setInstance(proto.Race.ToutesLesRaces _instance) {
+                ToutesLesRaces.instance = _instance;
+        }
+
+        public void SetHumain(Race _humain) {
+                humain = _humain;
+        }
+
+        public void SetElfe(Race _elfe) {
+                elfe = _elfe;
+        }
+
+        public void SetNain(Race _nain) {
+                nain = _nain;
+        }
+
+        public void SetTroll(Race _troll) {
+                troll = _troll;
+        }
+
+        public void SetGobelin(Race _gobelin) {
+                gobelin = _gobelin;
+        }
 }
