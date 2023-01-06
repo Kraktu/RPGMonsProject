@@ -1,6 +1,6 @@
 package proto.Fonctions;
 
-import proto.Fonctions.EntreUtilisateur;
+//import proto.Fonctions.EntreUtilisateur;
 
 /**
  * ChoixEntreLesCombats, Créer par David.
