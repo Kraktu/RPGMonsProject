@@ -30,11 +30,8 @@ A) Création du personnage.
         Main monMain = new Main();
         EntreUtilisateur eUtil = new EntreUtilisateur();
         lesPersonnagesEnCombat persoEnCombat = new lesPersonnagesEnCombat();
-
         Personnage persoDeBase = new Personnage("default", null, null, 5, 100, 100, new Force(5), new Intelligence(5), new Agilite(5), new Dexterite(5), new Constitution(5));
-
         Combat combatClass = new Combat();
-
 
         String joueurPseudo;
         Race joueurRace;
@@ -70,13 +67,13 @@ A) Création du personnage.
         int joueurManaDeBase = 100;
 
         Force joueurForceDeBase = new Force(persoDeBase.GetForce().GetValeur() + joueurRace.GetforceBonus().GetValeur() + joueurClasse.GetforceBonus().GetValeur());
-        
+
         Intelligence joueurIntelligenceDeBase = new Intelligence(persoDeBase.GetIntelligence().GetValeur() + joueurRace.GetIntelligenceBonus().GetValeur() + joueurClasse.GetIntelligenceBonus().GetValeur());
-        
+
         Agilite joueurAgiliteDeBase = new Agilite(persoDeBase.GetAgilite().GetValeur() + joueurRace.GetAgiliteBonus().GetValeur() + joueurClasse.GetAgiliteBonus().GetValeur());
-        
+
         Dexterite joueurDexteriteDeBase = new Dexterite(persoDeBase.GetDexterite().GetValeur() + joueurRace.GetDexteriteBonus().GetValeur() + joueurClasse.GetDexteriteBonus().GetValeur());
-        
+
         Constitution joueurConstitutionDeBase = new Constitution(persoDeBase.GetConstitution().GetValeur() + joueurRace.GetConstitutionBonus().GetValeur() + joueurClasse.GetConstitutionBonus().GetValeur());
 
 
@@ -97,13 +94,15 @@ A) Création du personnage.
                 joueurArme,
                 50,
                 50
-        ); // peut etre obsolete !!!
+        ); // peut être obsolete !!!
 
-        combatClass.SeBattre();
+        
+
+        //combatClass.SeBattre();
 
         // Fermeture du scanner de EntreeUtilisateur. (test)
         eUtil.fermerScanner();
-        
+
     }
 
 }
