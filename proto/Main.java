@@ -19,9 +19,7 @@ A) Création du personnage.
         Task : créer une fonction "DemanderOuiOuNon" pour toute confirmation.
 
         Question pour Philip :
-        1. Comment bien gérer les dossiers (problème d'import lors des tests) ?
-        2. Comment appeler une fonction créée dans le main.java, voir exemple test tout en bas ?
-        3. Quand peut-on fermer le ou les scanners dans le fichier "Entrée utilisateur" ?
+        1. Quand peut-on fermer le ou les scanners dans le fichier "Entrée utilisateur" ?
 */
     public static void main(String[] args) {
 
@@ -33,8 +31,7 @@ A) Création du personnage.
         EntreUtilisateur eUtil = new EntreUtilisateur();
         lesPersonnagesEnCombat persoEnCombat = new lesPersonnagesEnCombat();
 
-        Personnage persoDeBase = new Personnage(
-                "default", null, null, 5, 100, 100, new Force(5), new Intelligence(5), new Agilite(5), new Dexterite(5), new Constitution(5));
+        Personnage persoDeBase = new Personnage("default", null, null, 5, 100, 100, new Force(5), new Intelligence(5), new Agilite(5), new Dexterite(5), new Constitution(5));
 
         Combat combatClass = new Combat();
 
@@ -101,25 +98,8 @@ A) Création du personnage.
                 50,
                 50
         ); // peut etre obsolete !!!
-/*
-        System.out.println(persoEnCombat.lePersonnageJouable.GetNom());
 
-        System.out.println("");
-
-        persoEnCombat.lePersonnageJouable.equals(joueur);
-
-        persoEnCombat.lePersonnageJouable.SetNom(joueurPseudo);
-
-        System.out.println("");
-
-        System.out.println(persoEnCombat.lePersonnageJouable.GetNom());
-
-        System.out.println(joueur.toString());
-
-        System.out.println("");
-*/
         combatClass.SeBattre();
-
 
         // Fermeture du scanner de EntreeUtilisateur. (test)
         eUtil.fermerScanner();
