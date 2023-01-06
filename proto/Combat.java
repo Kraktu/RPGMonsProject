@@ -38,10 +38,14 @@ public class Combat {
             _pointDeVieRestant=formuleCombat(50, 6, 5);
             System.out.println(
                     "Vous attaquez votre adversaire.\nSes points de vie restants sont " + _pointDeVieRestant);
+                    _MenuCombat.ChoixMenuCombat();
+
         } else if (_jetDeVotreAdversaire > _votreJet) {
             _pointDeVieRestant=formuleCombat(50, 9, 2);
             System.out.println(
                     "Votre adversaire vous attaque. Vos points de vie restant sont " + _pointDeVieRestant);
+                    _MenuCombat.ChoixMenuCombat();
+
         } else {
             System.out.println("égalité.");
             SeBattre();
