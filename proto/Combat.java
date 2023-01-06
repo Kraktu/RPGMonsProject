@@ -19,12 +19,11 @@ int _jet=0;
     }
 
     public int formuleCombat(int _pointDeVie, int _force, int _constitution) {
-        int _pointDeVieRestant = _pointDeVie - (_constitution - _force);
-        return _pointDeVieRestant;
+return        _pointDeVie - (_constitution - _force);
     }
 
     public void SeBattre() {
-
+int _pointDeVieRestant;
             int _votreJet = JetDeDe();
             System.out.println("Vous avez obtenu " + _votreJet + ".");
             int _jetDeVotreAdversaire = JetDeDe();
