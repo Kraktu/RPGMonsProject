@@ -1,11 +1,12 @@
-package proto;
+package proto.Fonctions;
+
+import proto.Classes.*;
 
 /**
  * EntreUtilisateur, Créer par Seb.
  */
 import java.util.Scanner;
 
-import proto.Classes.Classe;
 import proto.Race.*;
 
 // post-it : trouver le bon moment ou la bonne méthode pour fermer les scanners.

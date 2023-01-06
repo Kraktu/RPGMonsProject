@@ -1,5 +1,6 @@
 package proto;
 
+import proto.Classes.ToutesLesClasses;
 import proto.Race.ToutesLesRaces;
 import proto.Stat.StatistiqueBonus;
 

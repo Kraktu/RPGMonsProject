@@ -1,4 +1,4 @@
-package proto;
+package proto.Fonctions;
 
 import java.util.Random;
 

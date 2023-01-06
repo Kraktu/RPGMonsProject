@@ -2,6 +2,7 @@ package proto.Race;
 
 import proto.Stat.StatistiqueBonus;
 
+
 /**
  * ToutesLesRaces Créé par David, base de donnée des races.
  */

@@ -1,6 +1,6 @@
-package proto;
+package proto.Classes;
 
-import proto.Classes.Classe;
+import proto.Sort;
 import proto.Stat.StatistiqueBonus;
 
 /**
@@ -26,7 +26,7 @@ public final class ToutesLesClasses {
         return instance;
     }
 
-    Classe archer = new Classe("Archer",
+    public Classe archer = new Classe("Archer",
     "c'est un archer",
     new StatistiqueBonus(-2),
     new StatistiqueBonus(0),
@@ -36,7 +36,7 @@ public final class ToutesLesClasses {
     new Sort(null, null, 0, 0, 0, 0, false)
     );
 
-    Classe guerrier = new Classe("Guerrier",
+    public Classe guerrier = new Classe("Guerrier",
     "c'est un guerrier.",
     new StatistiqueBonus(2),
     new StatistiqueBonus(0),
@@ -46,7 +46,7 @@ public final class ToutesLesClasses {
     new Sort(null, null, 0, 0, 0, 0, false)
     );
 
-    Classe mage = new Classe("Mage",
+    public Classe mage = new Classe("Mage",
     "c'est un mage.",
     new StatistiqueBonus(-2),
     new StatistiqueBonus(3),
@@ -56,7 +56,7 @@ public final class ToutesLesClasses {
     new Sort(null, null, 0, 0, 0, 0, false)
     );
 
-    Classe voleur = new Classe("Voleur",
+    public Classe voleur = new Classe("Voleur",
     "c'est un voleur.",
     new StatistiqueBonus(-2),
     new StatistiqueBonus(1),

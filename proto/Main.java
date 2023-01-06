@@ -1,8 +1,8 @@
 package proto;
-import proto.Classes.Classe;
-import proto.Race.Race;
-import proto.Race.ToutesLesRaces;
+import proto.Classes.*;
+import proto.Race.*;
 import proto.Stat.*;
+import proto.Fonctions.*;
 
 /**
  * main, créé par David

@@ -1,4 +1,5 @@
 package proto;
+import proto.Fonctions.*;
 
 /**
  * Combat crée par Seb
