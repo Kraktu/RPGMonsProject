@@ -25,7 +25,7 @@ A) Création du personnage.
 
         // variable boolean pour pouvoir passer la création de personnage.
         // true pour avoir un personnage par defaut, false pour créer le personnage manuellement.
-        final boolean passerCreationPersonnage = true;
+        final boolean passerCreationPersonnage = false;
         // défini si le jeu en lui même est en cours ou non
         boolean aventureEnCours = false;
 
@@ -103,54 +103,40 @@ A) Création du personnage.
 
         aventureEnCours = true;
 
+        int choixEntreLesCombats;
 
-while (aventureEnCours) {
+        while (aventureEnCours) {
 
-        monMain.choixEntreLesCombats(eUtil, combatClass, aventureEnCours);
-        System.out.println("end");
+                do {
 
-}
+                        choixEntreLesCombats = eUtil.EntreeUtilisateurInt("Que voulez-vous faire ?\n[1 : continuer]\n[2 : autre]\n[3 : quitter]");
 
+                        switch (choixEntreLesCombats) {
+                                case 1:
+                                        System.out.println("Vous vous battez !");
+                                        combatClass.SeBattre();
+                                        break;
+                                case 2:
+                                        System.out.println("Un autre évènement se produit !");
+                                        break;
+                                case 3:
+                                        System.out.println("Au revoir.");
+                                        aventureEnCours = false;
+                                        break;
+                                default:
+                                        System.out.println("ERREUR.");
+                                        break;
+                        }
 
-        //combatClass.SeBattre();
+                } while (choixEntreLesCombats < 1 || choixEntreLesCombats > 3);
+
+        }
 
         // Fermeture du scanner de EntreeUtilisateur. (test)
         eUtil.fermerScanner();
 
     }
 
-
-
-    // fonction
-
-    private void choixEntreLesCombats(EntreUtilisateur _eUtil, Combat _combatClass, boolean _aventureEnCours){
-
-        int choixEntreLesCombats;
-
-        do {
-
-                choixEntreLesCombats = _eUtil.EntreeUtilisateurInt("Que voulez-vous faire ?\n[1 : continuer]\n[2 : autre]\n[3 : quitter]");
-
-                switch (choixEntreLesCombats) {
-                        case 1:
-                                System.out.println("Vous vous battez !");
-                                _combatClass.SeBattre();
-                                break;
-                        case 2:
-                                System.out.println("Un autre évènement se produit !");
-                                break;
-                        case 3:
-                                System.out.println("Au revoir.");
-                                _aventureEnCours = false;
-                                break;
-                        default:
-                                System.out.println("ERREUR.");
-                                break;
-                }
-                
-        } while (choixEntreLesCombats < 1 || choixEntreLesCombats > 2);
-
-    }
 }
 
 
