@@ -20,7 +20,6 @@ public class Personnage {
     //Magic
     //Constructeur
 
-
     public Personnage(String _nom, Race _race, Classe _classe, int _niveau, int _vie, int _mana, Statistique _force, Statistique _intelligence, Statistique _agilite, Statistique _dexterite, Statistique _constitution) {
         nom = _nom;
         race = _race;
@@ -36,6 +35,7 @@ public class Personnage {
     }
 
     //Getters
+
     public String GetNom() {
         return nom;
     }
@@ -69,6 +69,7 @@ public class Personnage {
     public Statistique GetConstitution() {
         return constitution;
     }
+
     //Setters
 
     public void SetNom(String _nom) {
@@ -115,9 +116,7 @@ public class Personnage {
         constitution = _constitution;
     }
 
-
     //Override
-
 
     @Override
     public String toString() {

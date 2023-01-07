@@ -39,6 +39,7 @@ public class Joueur extends Personnage {
     }
 
     // setters
+
     public void SetEquipement(Equipement _Equipement) {
         equipement = _Equipement;
     }

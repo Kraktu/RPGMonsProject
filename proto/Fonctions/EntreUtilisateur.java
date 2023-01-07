@@ -44,7 +44,9 @@ public class EntreUtilisateur {
         System.out.println(_question);
 
         int _reponse = _entree.nextInt();
-_entree.nextLine();
+
+        _entree.nextLine();
+
         // _entree.close();
 
         return _reponse;
@@ -52,16 +54,27 @@ _entree.nextLine();
     }
 
     public boolean ConfirmationChoix() {
+
         System.out.println("Confirmez-vous votre choix ? [o/n]");
+
         String _choix = _entree.nextLine();
+
         if (_choix.toLowerCase().equals("o")) {
+
             return true;
+
         } else if (_choix.toLowerCase().equals("n")) {
+
             return false;
+
         } else {
+
             System.out.println("Erreur.");
+
             return ConfirmationChoix();
+
         }
+
     }
 
     public Race ChoixRace() {
@@ -69,6 +82,7 @@ _entree.nextLine();
         // Scanner _entree = new Scanner(System.in);
 
         int _choix;
+
         Race _raceSelection = ToutesLesRaces.GetInstance().elfe;
 
         do {
@@ -103,7 +117,7 @@ _entree.nextLine();
                     System.out.println("Erreur, vous devez choisir un nombre compris entre 1 et 5.");
                     break;
             }
-        } while (_choix<1 || _choix>5);
+        } while (_choix < 1 || _choix > 5);
         // _entree.close();
 
         return _raceSelection;
@@ -143,7 +157,7 @@ _entree.nextLine();
                     System.out.println("Erreur, veuillez choisir un nombre compris entre 1 et 4.");
                     break;
             }
-        } while (_choix<1 || _choix>4);
+        } while (_choix < 1 || _choix > 4);
 
         // _entree.close();
 

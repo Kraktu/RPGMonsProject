@@ -39,16 +39,16 @@ public final class Arsenal {
     3);
 
     Equipement dague2 = new Equipement(
-        "dague2",
-        "c'est petit mais ca pique",
-        "commun",
-        50,
-        new StatistiqueBonus(0),
-        new StatistiqueBonus(0),
-        new StatistiqueBonus(0),
-        new StatistiqueBonus(0),
-        new StatistiqueBonus(0)
-        );
+    "dague2",
+    "c'est petit mais ca pique",
+    "commun",
+    50,
+    new StatistiqueBonus(0),
+    new StatistiqueBonus(0),
+    new StatistiqueBonus(0),
+    new StatistiqueBonus(0),
+    new StatistiqueBonus(0)
+    );
 
     Arme epee = new Arme("epee",
     "ca coupe",

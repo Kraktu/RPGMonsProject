@@ -75,8 +75,13 @@ public class Arme extends Equipement {
         if (_o.getClass() != getClass()) {
             return false;
         }
-        Classe _classe = (Classe) _o;
-        if (_classe.nom.equals(nom) && _classe.description.equals(description)) {
+        Arme _arme = (Arme) _o;
+        if (_arme.nom.equals(nom) && _arme.description.equals(description) && _arme.rarete.equals(rarete)
+                && _arme.prix.equals(prix) && _arme.forceBonus.equals(forceBonus)
+                && _arme.intelligenceBonus.equals(intelligenceBonus) && _arme.agiliteBonus.equals(agiliteBonus)
+                && _arme.dexteriteBonus.equals(dexteriteBonus) && _arme.constitutionBonus.equals(constitutionBonus)
+                && _arme.type.equals(type) && _arme.minDegat.equals(minDegat) && _arme.maxDegat.equals(maxDegat))
+        {
             return true;
         }
         return false;

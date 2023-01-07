@@ -30,6 +30,9 @@ A) Création du personnage.
         lesPersonnagesEnCombat lesPersos = new lesPersonnagesEnCombat();
         Combat combatClass = new Combat();
 
+
+        // Création du personnage joueur.
+
         if (passerCreationPersonnage) {
                creationDePersonnage.CreerJoueurRapide();
                System.out.println(creationDePersonnage.lePersonnageJouable.toString());
@@ -39,6 +42,7 @@ A) Création du personnage.
         }
 
 
+        // Début de l'aventure.
 
         int choixEntreLesCombats;
         aventureEnCours = true;

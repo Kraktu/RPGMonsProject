@@ -16,9 +16,9 @@ public class Statistique {
 		valeur = _valeur;
 	}
 
-	/**
-	 * getters
-	 */
+
+	 // getters.
+	 
 	public String GetNom() {
 		return nom;
 	}
@@ -31,9 +31,9 @@ public class Statistique {
 		return valeur;
 	}
 
-	/**
-	 * setters
-	 */
+	
+	// setters.
+	
 	public void SetNom(String _nom) {
 		nom = _nom;
 	}
@@ -77,6 +77,7 @@ public class Statistique {
 		if (_o == null) {
 
 			return false;
+
 		}
 
 		if (_o.getClass() != getClass()) {
@@ -90,8 +91,10 @@ public class Statistique {
 		if (nom.equals(_statistique.nom) && description.equals(_statistique.description) && valeur == _statistique.valeur) {
 
 			return true;
+
 		}
 
 		return false;
+
 	}
 }

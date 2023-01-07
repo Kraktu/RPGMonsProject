@@ -5,7 +5,6 @@ import proto.Stat.StatistiqueBonus;
 /**
  * Nain, créer par Seb
  */
-
 public class Nain extends Race {
 
     // Constructeur

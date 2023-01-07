@@ -10,7 +10,9 @@ public class GestionExperience {
     // instruction : le calcul du nouveau montant total d'experience.
     // sortie : le montant final d'experience en int.
     public int GainExperience(int _xpActuelle, int _xpMontante) {
+
         return _xpActuelle+_xpMontante;
+
     }
 
 }

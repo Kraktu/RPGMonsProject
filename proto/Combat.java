@@ -25,31 +25,30 @@ public class Combat {
     }
 
     public void SeBattre() {
-        int _pointDeVieRestant=0;
-    MenuCombat _MenuCombat = new MenuCombat();
-       do  {
-            
-        
-        int _votreJet = JetDeDe();
-        System.out.println("Vous avez obtenu " + _votreJet + ".");
-        int _jetDeVotreAdversaire = JetDeDe();
-        System.out.println("Votre adversaire a obtenu " + _jetDeVotreAdversaire + ".");
-        if (_votreJet > _jetDeVotreAdversaire) {
-            _pointDeVieRestant=formuleCombat(50, 6, 5);
-            System.out.println(
-                    "Vous attaquez votre adversaire.\nSes points de vie restants sont " + _pointDeVieRestant);
-                    _MenuCombat.ChoixMenuCombat();
+        int _pointDeVieRestant = 0;
+        MenuCombat _MenuCombat = new MenuCombat();
+        do {
 
-        } else if (_jetDeVotreAdversaire > _votreJet) {
-            _pointDeVieRestant=formuleCombat(50, 9, 2);
-            System.out.println(
-                    "Votre adversaire vous attaque. Vos points de vie restant sont " + _pointDeVieRestant);
-                    _MenuCombat.ChoixMenuCombat();
+            int _votreJet = JetDeDe();
+            System.out.println("Vous avez obtenu " + _votreJet + ".");
+            int _jetDeVotreAdversaire = JetDeDe();
+            System.out.println("Votre adversaire a obtenu " + _jetDeVotreAdversaire + ".");
+            if (_votreJet > _jetDeVotreAdversaire) {
+                _pointDeVieRestant = formuleCombat(50, 6, 5);
+                System.out.println(
+                        "Vous attaquez votre adversaire.\nSes points de vie restants sont " + _pointDeVieRestant);
+                _MenuCombat.ChoixMenuCombat();
 
-        } else {
-            System.out.println("égalité.");
-            SeBattre();
-        }
-    } while (_pointDeVieRestant>0);
+            } else if (_jetDeVotreAdversaire > _votreJet) {
+                _pointDeVieRestant = formuleCombat(50, 9, 2);
+                System.out.println(
+                        "Votre adversaire vous attaque. Vos points de vie restant sont " + _pointDeVieRestant);
+                _MenuCombat.ChoixMenuCombat();
+
+            } else {
+                System.out.println("égalité.");
+                SeBattre();
+            }
+        } while (_pointDeVieRestant > 0);
     }
 }
