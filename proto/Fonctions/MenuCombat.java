@@ -23,7 +23,7 @@ public class MenuCombat {
                 
                 case 1:
                     System.out.println("C'est parti.");
-                    _Combat.SeBattre();
+                    _Combat.QuiCommence();
                     break;
                 
                 case 2:
