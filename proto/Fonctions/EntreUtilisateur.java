@@ -77,6 +77,30 @@ public class EntreUtilisateur {
 
     }
 
+    public boolean DemanderOuiOuNon(String _Question) {
+
+        String _choix;
+
+        do {
+
+            System.out.println(_Question + "\n[o/n]");
+
+            _choix = _entree.nextLine().toLowerCase();
+    
+            if (_choix.equals("o")) {
+    
+                return true;
+    
+            } else  {
+    
+                return false;
+    
+            }
+
+        } while (!(_choix.equals("o") || _choix.equals("n")));
+
+    }
+
     public Race ChoixRace() {
 
         // Scanner _entree = new Scanner(System.in);

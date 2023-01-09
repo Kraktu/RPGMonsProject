@@ -20,11 +20,12 @@ A) Création du personnage.
 
         // variable boolean pour pouvoir passer la création de personnage.
         // true pour avoir un personnage par defaut, false pour créer le personnage manuellement.
-        final boolean passerCreationPersonnage = false;
+        //final boolean passerCreationPersonnage = false;
 
         // défini si le jeu en lui même est en cours ou non
         boolean aventureEnCours = false;
 
+        Main monFichierMain = new Main();
         EntreUtilisateur eUtil = new EntreUtilisateur();
         CreationDePersonnage creationDePersonnage = new CreationDePersonnage();
         lesPersonnagesEnCombat lesPersos = new lesPersonnagesEnCombat();
@@ -32,62 +33,17 @@ A) Création du personnage.
 
 
         // Création du personnage joueur.
+        monFichierMain.CreationDuPersonnage(eUtil, creationDePersonnage);
 
-        if (passerCreationPersonnage) {
-               creationDePersonnage.CreerJoueurRapide();
-               System.out.println(creationDePersonnage.GetLePersonnageJouable().toString());
-        } else {
-                creationDePersonnage.CreerJoueur();
-                System.out.println(creationDePersonnage.GetLePersonnageJouable().toString());
-        }
-
+        // TEMPORAIRE ; Explication concernant l'enregistrement des variables.
+        monFichierMain.ExplicationEnregistrementVariable(eUtil, lesPersos, creationDePersonnage);
 
         // Début de l'aventure.
 
-        eUtil.TexteQuiAttend("\nBonjour, je vais vous expliquer le principe de stocker nos personnages dans un autre fichier");
-
-        eUtil.TexteQuiAttend("Quand le joueur est creer toutes ses informations sont stocké dans un autre fichier qui sert de mémoire.");
-        eUtil.TexteQuiAttend("Se fichier s'appelle les personnages en combat.");
-        eUtil.TexteQuiAttend("Vu que le jeu propose des combats en 1 contre 1, le fichier ne contient que un joueur et un ennemis.");
-
-        eUtil.TexteQuiAttend("passons au concret");
-
-        eUtil.TexteQuiAttend("d'abord, je print les valeurs nom, force et constitution du joueur qui se trouve dans le fichier les personnages en combats");
-
-        eUtil.TexteQuiAttend("Pour le nom par exemple, je fait un print de lesPersos.GetLePersonnageJouable().GetNom()");
-        eUtil.TexteQuiAttend("les résultats pour nom, force et constitution est :");
-
-        System.out.println(lesPersos.GetLePersonnageJouable().GetNom());
-        System.out.println(lesPersos.GetLePersonnageJouable().GetForce());
-        System.out.println(lesPersos.GetLePersonnageJouable().GetConstitution());
-
-        System.out.println("\n");
-
-        eUtil.TexteQuiAttend("tout es null car l'objet de base est vide");
-        eUtil.TexteQuiAttend("maintenant je vais remplir le fichier avec les valeurs generé par la création de personnage");
-        eUtil.TexteQuiAttend("pour ca j'utilise la commande :");
-        eUtil.TexteQuiAttend("lesPersos.SetLePersonnageJouable(creationDePersonnage.GetLePersonnageJouable());");
-
-        lesPersos.SetLePersonnageJouable(creationDePersonnage.GetLePersonnageJouable());
-
-        //System.out.println(lesPersos.GetLePersonnageJouable().toString());
-        System.out.println(lesPersos.GetLePersonnageJouable().GetNom());
-        System.out.println(lesPersos.GetLePersonnageJouable().GetForce());
-        System.out.println(lesPersos.GetLePersonnageJouable().GetConstitution());
-
-        eUtil.TexteQuiAttend("voila, maintenant, les informations de la création de personnage sont stockée dans le fichier les personnages en combat.");
-
-        System.out.println("\n");
-
-
-
+        aventureEnCours = true;
         int choixEntreLesCombats;
 
-
-        // OFF
-        aventureEnCours = false;
-
-        System.out.println("");
+        System.out.println("A présent, votre aventure commence.\n");
 
         while (aventureEnCours) {
 
@@ -121,4 +77,55 @@ A) Création du personnage.
 
     }
 
+
+    private void ExplicationEnregistrementVariable(EntreUtilisateur eUtil, lesPersonnagesEnCombat lesPersos, CreationDePersonnage creationDePersonnage){
+
+        if (eUtil.DemanderOuiOuNon("Souhaitez vous relire les explications concernant l'enregistrement de fichier ?")) {
+
+        eUtil.TexteQuiAttend("\nBonjour, je vais vous expliquer le principe de stocker nos personnages dans un autre fichier");
+
+        eUtil.TexteQuiAttend("Quand le joueur est creer toutes ses informations sont stocké dans un autre fichier qui sert de mémoire.");
+        eUtil.TexteQuiAttend("Se fichier s'appelle les personnages en combat.");
+        eUtil.TexteQuiAttend("Vu que le jeu propose des combats en 1 contre 1, le fichier ne contient que un joueur et un ennemis.");
+
+        eUtil.TexteQuiAttend("passons au concret");
+
+        eUtil.TexteQuiAttend("d'abord, je print les valeurs nom, force et constitution du joueur qui se trouve dans le fichier les personnages en combats");
+
+        eUtil.TexteQuiAttend("Pour le nom par exemple, je fait un print de lesPersos.GetLePersonnageJouable().GetNom()");
+        eUtil.TexteQuiAttend("les résultats pour nom, force et constitution est :");
+
+        System.out.println(lesPersos.GetLePersonnageJouable().GetNom());
+        System.out.println(lesPersos.GetLePersonnageJouable().GetForce());
+        System.out.println(lesPersos.GetLePersonnageJouable().GetConstitution());
+
+        eUtil.TexteQuiAttend("toute les valeurs sont null car l'objet de base est vide");
+        eUtil.TexteQuiAttend("maintenant je vais remplir le fichier avec les valeurs generé par la création de personnage");
+        eUtil.TexteQuiAttend("pour ca j'utilise la commande :");
+        eUtil.TexteQuiAttend("lesPersos.SetLePersonnageJouable(creationDePersonnage.GetLePersonnageJouable());");
+
+        lesPersos.SetLePersonnageJouable(creationDePersonnage.GetLePersonnageJouable());
+
+        //System.out.println(lesPersos.GetLePersonnageJouable().toString());
+        System.out.println(lesPersos.GetLePersonnageJouable().GetNom());
+        System.out.println(lesPersos.GetLePersonnageJouable().GetForce());
+        System.out.println(lesPersos.GetLePersonnageJouable().GetConstitution());
+
+        eUtil.TexteQuiAttend("voila, maintenant, les informations de la création de personnage sont stockée dans le fichier les personnages en combat.");
+
+        }
+
+    }
+
+    private void CreationDuPersonnage(EntreUtilisateur eUtil, CreationDePersonnage creationDePersonnage){
+
+        if (eUtil.DemanderOuiOuNon("Creer votre personnage ?")) {
+                creationDePersonnage.CreerJoueur();
+                System.out.println(creationDePersonnage.GetLePersonnageJouable().toString());
+        } else {
+                creationDePersonnage.CreerJoueurRapide();
+                System.out.println(creationDePersonnage.GetLePersonnageJouable().toString());
+        }
+
+    }
 }
