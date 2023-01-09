@@ -33,7 +33,13 @@ public class CreationDePersonnage {
     private int experience;
     private int argent;
 
-    public Joueur lePersonnageJouable;
+    private Joueur lePersonnageJouable;
+
+    // getters
+
+    public Joueur GetLePersonnageJouable(){
+        return lePersonnageJouable;
+    }
 
     // Fonctions
 

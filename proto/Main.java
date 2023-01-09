@@ -35,10 +35,11 @@ A) Création du personnage.
 
         if (passerCreationPersonnage) {
                creationDePersonnage.CreerJoueurRapide();
-               System.out.println(creationDePersonnage.lePersonnageJouable.toString());
+               //System.out.println(creationDePersonnage.lePersonnageJouable.toString());
+               System.out.println(creationDePersonnage.GetLePersonnageJouable().toString());
         } else {
                 creationDePersonnage.CreerJoueur();
-                System.out.println(creationDePersonnage.lePersonnageJouable.toString());
+                System.out.println(creationDePersonnage.GetLePersonnageJouable().toString());
         }
 
 
