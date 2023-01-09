@@ -35,10 +35,10 @@ return _force.GetValeur()-_constitution.GetValeur();
         else if (_jetDeVotreAdversaire > _votreJet) {
 System.out.println("Votre adversaire commence.");
         }
-        else {}
+        else {
         System.out.println("égalité.");
         QuiCommence();
-    
+        }
     }
 
  /*         public void SeBattre() {
