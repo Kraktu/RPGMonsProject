@@ -33,7 +33,7 @@ public class CreationDePersonnage {
     private int experience;
     private int argent;
 
-    protected Joueur lePersonnageJouable;
+    public Joueur lePersonnageJouable;
 
     // Fonctions
 
