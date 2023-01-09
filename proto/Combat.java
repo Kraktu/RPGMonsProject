@@ -1,6 +1,7 @@
 package proto;
 
 import proto.Fonctions.*;
+import proto.Stat.*;
 
 /**
  * Combat crée par Seb
@@ -19,36 +20,44 @@ public class Combat {
         }
         return _jet;
     }
+public int FormuleDegat(Force _force, Constitution _constitution)  {
+return _force.GetValeur()-_constitution.GetValeur();
 
-    public int formuleCombat(int _pointDeVie, int _force, int _constitution) {
-        return _pointDeVie - (_constitution - _force);
+}
+    public void QuiCommence() {
+        int _votreJet = JetDeDe();
+        System.out.println("Vous avez obtenu " + _votreJet + ".");
+        int _jetDeVotreAdversaire = JetDeDe();
+        System.out.println("Votre adversaire a obtenu " + _jetDeVotreAdversaire + ".");
+        if (_votreJet > _jetDeVotreAdversaire) {
+        System.out.println("C'est à vous de commencer.");
+        }
+        else if (_jetDeVotreAdversaire > _votreJet) {
+System.out.println("Votre adversaire commence.");
+        }
+        else {}
+        System.out.println("égalité.");
+        QuiCommence();
+    
     }
 
-    public void SeBattre() {
-        int _pointDeVieRestant = 0;
-        MenuCombat _MenuCombat = new MenuCombat();
-        do {
+ /*         public void SeBattre() {
+        int _pointDeVieRestant=0;
+    MenuCombat _MenuCombat = new MenuCombat();
+       do  {
+            
+        
+                _pointDeVieRestant=FormuleDegat(6, 5);
 
-            int _votreJet = JetDeDe();
-            System.out.println("Vous avez obtenu " + _votreJet + ".");
-            int _jetDeVotreAdversaire = JetDeDe();
-            System.out.println("Votre adversaire a obtenu " + _jetDeVotreAdversaire + ".");
-            if (_votreJet > _jetDeVotreAdversaire) {
-                _pointDeVieRestant = formuleCombat(50, 6, 5);
-                System.out.println(
-                        "Vous attaquez votre adversaire.\nSes points de vie restants sont " + _pointDeVieRestant);
-                _MenuCombat.ChoixMenuCombat();
+            System.out.println("Vous attaquez votre adversaire.\nSes points de vie restants sont " + _pointDeVieRestant );
+                    _MenuCombat.ChoixMenuCombat();
 
-            } else if (_jetDeVotreAdversaire > _votreJet) {
-                _pointDeVieRestant = formuleCombat(50, 9, 2);
-                System.out.println(
-                        "Votre adversaire vous attaque. Vos points de vie restant sont " + _pointDeVieRestant);
-                _MenuCombat.ChoixMenuCombat();
+            _pointDeVieRestant=formuleCombat(50, 9, 2);
+            System.out.println(
+                    "Votre adversaire vous attaque. Vos points de vie restant sont " + _pointDeVieRestant);
+                    _MenuCombat.ChoixMenuCombat();
 
-            } else {
-                System.out.println("égalité.");
-                SeBattre();
-            }
-        } while (_pointDeVieRestant > 0);
-    }
+        
+    } while (_pointDeVieRestant>0);
+    }. */
 }
