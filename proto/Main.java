@@ -61,23 +61,23 @@ A) Création du personnage.
 
                                         switch (ennemiAleatoireIndex) {
                                                 case 1:
-                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().bruno);
+                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().GetBruno());
                                                 eUtil.TexteQuiAttend(lesPersos.GetEnnemisActuel().toString());
                                                         break;
                                                 case 2:
-                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().leRater);
+                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().GetLeRater());
                                                 eUtil.TexteQuiAttend(lesPersos.GetEnnemisActuel().toString());
                                                         break;
                                                 case 3:
-                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().leRuser);
+                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().GetLeRuser());
                                                 eUtil.TexteQuiAttend(lesPersos.GetEnnemisActuel().toString());
                                                         break;
                                                 case 4:
-                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().flecheur);
+                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().GetFlecheur());
                                                 eUtil.TexteQuiAttend(lesPersos.GetEnnemisActuel().toString());
                                                         break;
                                                 case 5:
-                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().lePtitGars);
+                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().GetLePtitGars());
                                                 eUtil.TexteQuiAttend(lesPersos.GetEnnemisActuel().toString());
                                                         break;
                                         }
