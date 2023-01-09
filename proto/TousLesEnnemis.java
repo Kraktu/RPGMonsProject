@@ -80,7 +80,7 @@ public final class TousLesEnnemis{
 
 	// Armes
 
-	Arsenal.GetInstance().dague,
+	ToutesLesArmes.GetInstance().dague,
 
 	// équipement
 
@@ -114,7 +114,7 @@ public final class TousLesEnnemis{
 
 	// Armes
 
-	Arsenal.GetInstance().hache,
+	ToutesLesArmes.GetInstance().hache,
 
 	// équipement
 
@@ -147,7 +147,7 @@ public final class TousLesEnnemis{
 
 	// Armes
 
-	Arsenal.GetInstance().dague,
+	ToutesLesArmes.GetInstance().dague,
 
 	// équipement
 
@@ -180,7 +180,7 @@ public final class TousLesEnnemis{
 
 	// Armes
 
-	Arsenal.GetInstance().arc,
+	ToutesLesArmes.GetInstance().arc,
 
 	// équipement
 
@@ -213,7 +213,7 @@ public final class TousLesEnnemis{
 
 	// Armes
 
-	Arsenal.GetInstance().masse,
+	ToutesLesArmes.GetInstance().masse,
 
 	// équipement
 

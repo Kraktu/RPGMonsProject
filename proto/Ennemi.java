@@ -41,10 +41,13 @@ public class Ennemi extends Personnage {
 
     @Override
     public String toString() {
-        return "Ennemi{" +
-                "arme=" + arme +
-                ", equipement=" + equipement +
-                '}';
+        return "nom : " + nom +
+               "\nrace : " + race.GetNom() +
+               "\nclasse : " + classe.GetNom() +
+               "\narme : " + arme.GetNom() +
+               "\nniveau : " + niveau +
+               "\nsanté maximale : " + vie
+               ;
     }
 
     public boolean equals(Object object) {

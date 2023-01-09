@@ -27,6 +27,7 @@ A) Création du personnage.
 
         Main monFichierMain = new Main();
         EntreUtilisateur eUtil = new EntreUtilisateur();
+        NbrAleatoire nombreGenererAleatoirement = new NbrAleatoire();
         CreationDePersonnage creationDePersonnage = new CreationDePersonnage();
         lesPersonnagesEnCombat lesPersos = new lesPersonnagesEnCombat();
         Combat combatClass = new Combat();
@@ -54,6 +55,33 @@ A) Création du personnage.
                         switch (choixEntreLesCombats) {
                                 case 1:
                                         System.out.println("Vous vous battez !");
+
+                                        int ennemiAleatoireIndex = nombreGenererAleatoirement.GenererNbrAleatoireBorne(1, 5);
+                                        eUtil.TexteQuiAttend("le nombre générer est : " + ennemiAleatoireIndex);
+
+                                        switch (ennemiAleatoireIndex) {
+                                                case 1:
+                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().bruno);
+                                                eUtil.TexteQuiAttend(lesPersos.GetEnnemisActuel().toString());
+                                                        break;
+                                                case 2:
+                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().leRater);
+                                                eUtil.TexteQuiAttend(lesPersos.GetEnnemisActuel().toString());
+                                                        break;
+                                                case 3:
+                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().leRuser);
+                                                eUtil.TexteQuiAttend(lesPersos.GetEnnemisActuel().toString());
+                                                        break;
+                                                case 4:
+                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().flecheur);
+                                                eUtil.TexteQuiAttend(lesPersos.GetEnnemisActuel().toString());
+                                                        break;
+                                                case 5:
+                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().lePtitGars);
+                                                eUtil.TexteQuiAttend(lesPersos.GetEnnemisActuel().toString());
+                                                        break;
+                                        }
+
                                         combatClass.QuiCommence();
                                         break;
                                 case 2:
