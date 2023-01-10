@@ -55,8 +55,8 @@ public class Combat {
 
     public void SeBattre() {
 
-        int _pointDeVieRestantDuJoueur = 0;
-        int _pointDeVieRestantDeEnnemi = 0;
+        int _pointDeVieRestantDuJoueur;
+        int _pointDeVieRestantDeEnnemi;
         boolean leJoueurCommence = QuiCommence();
 
         do {

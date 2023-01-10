@@ -30,12 +30,15 @@ A) Création du personnage.
         NbrAleatoire nombreGenererAleatoirement = new NbrAleatoire();
         CreationDePersonnage creationDePersonnage = new CreationDePersonnage();
         lesPersonnagesEnCombat lesPersos = new lesPersonnagesEnCombat();
-        Combat combatClass = new Combat();
+        CombatManageur combatManageur = new CombatManageur();
         ChallengeFonctions challengeFonction = new ChallengeFonctions();
 
 
         // Création du personnage joueur.
-        monFichierMain.CreationDuPersonnage(eUtil, creationDePersonnage);
+        Joueur leJoueur = monFichierMain.CreationDuPersonnage(eUtil, creationDePersonnage);
+
+        // Enregistrement du personnage nouvellement créé dans le fichier LesPersonnagesEnCombat.
+        lesPersos.SetLePersonnageJouable(leJoueur);
 
         // TEMPORAIRE ; Explication concernant l'enregistrement des variables.
         monFichierMain.ExplicationEnregistrementVariable(eUtil, lesPersos, creationDePersonnage);
@@ -82,8 +85,8 @@ A) Création du personnage.
                                                 eUtil.TexteQuiAttend(lesPersos.GetEnnemisActuel().toString());
                                                         break;
                                         }
-
-                                        combatClass.QuiCommence();
+                                        System.out.println(lesPersos.GetLePersonnageJouable().GetNom());
+                                        combatManageur.SeBattre(lesPersos);
                                         break;
                                 case 2:
                                         System.out.println("Challenge !");
@@ -107,6 +110,21 @@ A) Création du personnage.
 
     }
 
+    private Joueur CreationDuPersonnage(EntreUtilisateur eUtil, CreationDePersonnage creationDePersonnage){
+
+        Joueur _joueur;
+
+        if (eUtil.DemanderOuiOuNon("Creer votre personnage ?")) {
+                _joueur = creationDePersonnage.CreerJoueur();
+                System.out.println(creationDePersonnage.GetLePersonnageJouable().toString());
+                return _joueur;
+        } else {
+                _joueur = creationDePersonnage.CreerJoueurRapide();
+                System.out.println(creationDePersonnage.GetLePersonnageJouable().toString());
+                return _joueur;
+        }
+
+    }
 
     private void ExplicationEnregistrementVariable(EntreUtilisateur eUtil, lesPersonnagesEnCombat lesPersos, CreationDePersonnage creationDePersonnage){
 
@@ -147,15 +165,4 @@ A) Création du personnage.
 
     }
 
-    private void CreationDuPersonnage(EntreUtilisateur eUtil, CreationDePersonnage creationDePersonnage){
-
-        if (eUtil.DemanderOuiOuNon("Creer votre personnage ?")) {
-                creationDePersonnage.CreerJoueur();
-                System.out.println(creationDePersonnage.GetLePersonnageJouable().toString());
-        } else {
-                creationDePersonnage.CreerJoueurRapide();
-                System.out.println(creationDePersonnage.GetLePersonnageJouable().toString());
-        }
-
-    }
 }

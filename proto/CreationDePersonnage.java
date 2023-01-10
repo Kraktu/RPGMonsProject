@@ -11,7 +11,7 @@ import proto.Stat.*;
 public class CreationDePersonnage {
 
     EntreUtilisateur entreUtilisateur = new EntreUtilisateur();
-    lesPersonnagesEnCombat lesPersonnages = new lesPersonnagesEnCombat();
+    //lesPersonnagesEnCombat lesPersonnages = new lesPersonnagesEnCombat();
     Personnage persoDeBase = new Personnage("default", null, null, 5, 100, 100, new Force(5), new Intelligence(5), new Agilite(5), new Dexterite(5), new Constitution(5));
 
     // Les propiétés.
@@ -43,7 +43,7 @@ public class CreationDePersonnage {
 
     // Fonctions
 
-    public void CreerJoueurRapide(){
+    public Joueur CreerJoueurRapide(){
         pseudo = "No Name";
         race = ToutesLesRaces.GetInstance().GetHumain();
         classe = ToutesLesClasses.GetInstance().GetGuerrier();
@@ -63,9 +63,11 @@ public class CreationDePersonnage {
 
         // Construction du personnage jouable.
         lePersonnageJouable = new Joueur(pseudo, race, classe, joueurNiveauInitial, joueurVieDeBase, joueurManaDeBase, joueurForceDeBase, joueurIntelligenceDeBase, joueurAgiliteDeBase, joueurDexteriteDeBase, joueurConstitutionDeBase, equipement, experience, argent);
+        return lePersonnageJouable;
+
     }
 
-    public void CreerJoueur(){
+    public Joueur CreerJoueur(){
         pseudo = CreerPseudo();
         race = ChoixDeLaRace();
         classe = ChoixDeLaClasse();
@@ -86,7 +88,8 @@ public class CreationDePersonnage {
 
         // Construction du personnage jouable.
         lePersonnageJouable = new Joueur(pseudo, race, classe, joueurNiveauInitial, joueurVieDeBase, joueurManaDeBase, joueurForceDeBase, joueurIntelligenceDeBase, joueurAgiliteDeBase, joueurDexteriteDeBase, joueurConstitutionDeBase, equipement, experience, argent);
-    }
+        return lePersonnageJouable;
+}
 
     public String CreerPseudo(){
         String joueurPseudo = entreUtilisateur.EntreeUtilisateurString("Bonjour,\nVeuillez entrer un pseudo.");
