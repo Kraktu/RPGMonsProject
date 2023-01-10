@@ -8,33 +8,6 @@ import proto.Stat.StatistiqueBonus;
  * TousLesEnnemis Créé par Bruno
  * Base de données des ennemis 
  */
-/*
-	string nom;
-
-Race race;
-
-Classe classe;
-
-int niveau;
-
-int vie;
-
-int mana;
-
-Statistique force;
-
-Statistique intelligence;
-
-Statistique agilite;
-
-Statistique dexterite;
-
-Statistique constitution;
-
-Arme arme;
-
-Equipement equipement [] possibleLoot;
-*/
 
 public final class TousLesEnnemis{
 
@@ -60,11 +33,11 @@ public final class TousLesEnnemis{
 
 	// Les races
 
-	ToutesLesRaces.GetInstance().humain,
+	ToutesLesRaces.GetInstance().GetHumain(),
 
 	// Classe
 
-	ToutesLesClasses.GetInstance().voleur,
+	ToutesLesClasses.GetInstance().GetVoleur(),
 
 	1, // Niveau
 
@@ -94,11 +67,11 @@ public final class TousLesEnnemis{
 
 	// Les races
 
-	ToutesLesRaces.GetInstance().gobelin,
+	ToutesLesRaces.GetInstance().GetGobelin(),
 
 	// Classe
 
-	ToutesLesClasses.GetInstance().guerrier,
+	ToutesLesClasses.GetInstance().GetGuerrier(),
 
 	1, // Niveau
 
@@ -127,11 +100,11 @@ public final class TousLesEnnemis{
 
 	// Les races
 
-	ToutesLesRaces.GetInstance().elfe,
+	ToutesLesRaces.GetInstance().GetElfe(),
 
 	// Classe
 
-	ToutesLesClasses.GetInstance().mage,
+	ToutesLesClasses.GetInstance().GetMage(),
 
 	3, // Niveau
 
@@ -160,11 +133,11 @@ public final class TousLesEnnemis{
 
 	// Les races
 
-	ToutesLesRaces.GetInstance().humain,
+	ToutesLesRaces.GetInstance().GetHumain(),
 
 	// Classe
 
-	ToutesLesClasses.GetInstance().archer,
+	ToutesLesClasses.GetInstance().GetArcher(),
 
 	1, // Niveau
 
@@ -193,11 +166,11 @@ public final class TousLesEnnemis{
 
 	// Les races
 
-	ToutesLesRaces.GetInstance().nain,
+	ToutesLesRaces.GetInstance().GetNain(),
 
 	// Classe
 
-	ToutesLesClasses.GetInstance().guerrier,
+	ToutesLesClasses.GetInstance().GetGuerrier(),
 
 	1, // Niveau
 

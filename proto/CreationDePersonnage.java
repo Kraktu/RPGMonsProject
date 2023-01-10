@@ -45,8 +45,8 @@ public class CreationDePersonnage {
 
     public void CreerJoueurRapide(){
         pseudo = "No Name";
-        race = ToutesLesRaces.GetInstance().humain;
-        classe = ToutesLesClasses.GetInstance().guerrier;
+        race = ToutesLesRaces.GetInstance().GetHumain();
+        classe = ToutesLesClasses.GetInstance().GetGuerrier();
         joueurNiveauInitial = 5;
         joueurVieDeBase = 100;
         joueurManaDeBase = 100;

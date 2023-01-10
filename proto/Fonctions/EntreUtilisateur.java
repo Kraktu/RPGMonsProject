@@ -107,7 +107,7 @@ public class EntreUtilisateur {
 
         int _choix;
 
-        Race _raceSelection = ToutesLesRaces.GetInstance().elfe;
+        Race _raceSelection = ToutesLesRaces.GetInstance().GetElfe();
 
         do {
 
@@ -118,23 +118,23 @@ public class EntreUtilisateur {
             switch (_choix) {
                 case 1:
                     System.out.println("Vous avez choisi humain.");
-                    _raceSelection = ToutesLesRaces.GetInstance().humain;
+                    _raceSelection = ToutesLesRaces.GetInstance().GetHumain();
                     break;
                 case 2:
                     System.out.println("Vous avez choisi elfe.");
-                    _raceSelection = ToutesLesRaces.GetInstance().elfe;
+                    _raceSelection = ToutesLesRaces.GetInstance().GetElfe();
                     break;
                 case 3:
                     System.out.println("Vous avez choisi nain.");
-                    _raceSelection = ToutesLesRaces.GetInstance().nain;
+                    _raceSelection = ToutesLesRaces.GetInstance().GetNain();
                     break;
                 case 4:
                     System.out.println("Vous avez choisi troll.");
-                    _raceSelection = ToutesLesRaces.GetInstance().troll;
+                    _raceSelection = ToutesLesRaces.GetInstance().GetTroll();
                     break;
                 case 5:
                     System.out.println("Vous avez choisi gobelin.");
-                    _raceSelection = ToutesLesRaces.GetInstance().gobelin;
+                    _raceSelection = ToutesLesRaces.GetInstance().GetGobelin();
                     break;
 
                 default:
@@ -153,7 +153,7 @@ public class EntreUtilisateur {
         // Scanner _entree = new Scanner(System.in);
 
         int _choix;
-        Classe _classeSelection = ToutesLesClasses.GetInstance().archer;
+        Classe _classeSelection = ToutesLesClasses.GetInstance().GetArcher();
         do {
 
             String _question = "Choisissez votre classe : tapez\n1 pour archer, \n2 pour guerrier, \n3 pour mage, \n4 pour voleur";
@@ -163,19 +163,19 @@ public class EntreUtilisateur {
             switch (_choix) {
                 case 1:
                     System.out.println("Vous avez choisi archer.");
-                    _classeSelection = ToutesLesClasses.GetInstance().archer;
+                    _classeSelection = ToutesLesClasses.GetInstance().GetArcher();
                     break;
                 case 2:
                     System.out.println("Vous avez choisi guerrier.");
-                    _classeSelection = ToutesLesClasses.GetInstance().guerrier;
+                    _classeSelection = ToutesLesClasses.GetInstance().GetGuerrier();
                     break;
                 case 3:
                     System.out.println("Vous avez choisi mage.");
-                    _classeSelection = ToutesLesClasses.GetInstance().mage;
+                    _classeSelection = ToutesLesClasses.GetInstance().GetMage();
                     break;
                 case 4:
                     System.out.println("Vous avez choisi voleur.");
-                    _classeSelection = ToutesLesClasses.GetInstance().voleur;
+                    _classeSelection = ToutesLesClasses.GetInstance().GetVoleur();
                     break;
                 default:
                     System.out.println("Erreur, veuillez choisir un nombre compris entre 1 et 4.");
