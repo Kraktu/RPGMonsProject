@@ -31,6 +31,7 @@ A) Création du personnage.
         CreationDePersonnage creationDePersonnage = new CreationDePersonnage();
         lesPersonnagesEnCombat lesPersos = new lesPersonnagesEnCombat();
         Combat combatClass = new Combat();
+        ChallengeFonctions challengeFonction = new ChallengeFonctions();
 
 
         // Création du personnage joueur.
@@ -82,10 +83,11 @@ A) Création du personnage.
                                                         break;
                                         }
 
-                                        //combatClass.QuiCommence();
+                                        combatClass.QuiCommence();
                                         break;
                                 case 2:
-                                        System.out.println("Un autre évènement se produit !");
+                                        System.out.println("Challenge !");
+                                        challengeFonction.PrintDescriptionChallenge();
                                         break;
                                 case 3:
                                         System.out.println("Au revoir.");

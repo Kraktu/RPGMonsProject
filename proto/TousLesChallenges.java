@@ -56,7 +56,7 @@ public final class TousLesChallenges {
 	
 	String[] typeDeRecompenses = {"testTypeRecompense"};
 
-	Challenge pontEnRuine = new Challenge("Pont en ruine",
+	private Challenge pontEnRuine = new Challenge("Pont en ruine",
 
 	"C'est un pont",
 
@@ -91,4 +91,21 @@ public final class TousLesChallenges {
 	null
 	
 	);
+
+	// Getters.
+
+	public Challenge GetPontEnRuine(){
+
+		return pontEnRuine;
+	
+	}
+
+	// Setters.
+
+	public void SetPontEnRuine(Challenge _pontEnRuine){
+
+		pontEnRuine = _pontEnRuine;
+
+	}
+
 }
