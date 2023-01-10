@@ -48,28 +48,30 @@ public class Combat {
         }
     }
 
-    /*
-     * public void SeBattre() {
-     * 
-     * MenuCombat _MenuCombat = new MenuCombat();
-     * do {
-     * 
-     * 
-     * _pointDeVieRestant=FormuleDegat(6, 5);
-     * 
-     * System.out.
-     * println("Vous attaquez votre adversaire.\nSes points de vie restants sont " +
-     * _pointDeVieRestant );
-     * _MenuCombat.ChoixMenuCombat();
-     * 
-     * _pointDeVieRestant=formuleCombat(50, 9, 2);
-     * System.out.println(
-     * "Votre adversaire vous attaque. Vos points de vie restant sont " +
-     * _pointDeVieRestant);
-     * _MenuCombat.ChoixMenuCombat();
-     * 
-     * 
-     * } while (_pointDeVieRestant>0);
-     * }.
-     */
+    public void SeBattre() {
+     
+      MenuCombat _MenuCombat = new MenuCombat();
+int _pointDeVieRestantDuJoueur=0;
+int _pointDeVieRestantDeEnnemi=0;      
+QuiCommence();
+      do {
+      if (condition) {
+_pointDeVieRestantDeEnnemi = perso.GetEnnemisActuel().GetVie()-FormuleDegatPourEnnemi();
+        System.out.println("Vous attaquez votre adversaire.\n Il lui reste " + _pointDeVieRestantDeEnnemi + ".");
+        _pointDeVieRestantDuJoueur = perso.GetLePersonnageJouable().GetVie()-FormuleDegatPourJoueur();
+        System.out.println("C'est autour de votre ennemi de vous attaquer.\nIl vous rest " + _pointDeVieRestantDuJoueur);       
+      }
+      else if() {
+        _pointDeVieRestantDuJoueur = perso.GetLePersonnageJouable().GetVie()-FormuleDegatPourJoueur();
+        System.out.println("Votre ennemi vous attaque.\nIl vous rest " + _pointDeVieRestantDuJoueur);       
+        _pointDeVieRestantDeEnnemi = perso.GetEnnemisActuel().GetVie()-FormuleDegatPourEnnemi();
+        System.out.println("C'est à votre tour d'attaquer votre adversaire.\n Il lui reste " + _pointDeVieRestantDeEnnemi + ".");
+
+      }
+
+
+     
+      } while (_pointDeVieRestantDeEnnemi>0 || _pointDeVieRestantDuJoueur>0);
+      }
+
 }
