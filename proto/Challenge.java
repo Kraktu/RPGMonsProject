@@ -42,9 +42,9 @@ public class Challenge {
 
 	// Tableaux d'int
 
-	protected int[] valeurMalus = new int[1];
+	protected int[] valeurMalus = new int[3];
 
-	protected int[] valeurRecompense = new int[1];
+	protected int[] valeurRecompense = new int[3];
 
 	protected Equipement equipement;
 
