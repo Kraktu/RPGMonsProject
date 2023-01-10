@@ -3,7 +3,7 @@ package proto;
 import proto.Stat.Statistique;
 
 /**
- * Creer par David.
+ * Créé par David.
  */
 public class Arme extends Equipement {
 
