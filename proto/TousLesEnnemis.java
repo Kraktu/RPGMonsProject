@@ -41,7 +41,7 @@ public final class TousLesEnnemis{
 
 	1, // Niveau
 
-	1, // Vie
+	10, // Vie
 
 	2,// mana
 
@@ -75,7 +75,7 @@ public final class TousLesEnnemis{
 
 	1, // Niveau
 
-	1, // Vie
+	10, // Vie
 
 	2,// mana
 
@@ -108,7 +108,7 @@ public final class TousLesEnnemis{
 
 	3, // Niveau
 
-	3, // Vie
+	30, // Vie
 
 	3,// mana
 
@@ -141,7 +141,7 @@ public final class TousLesEnnemis{
 
 	1, // Niveau
 
-	1, // Vie
+	10, // Vie
 
 	2,// mana
 
@@ -174,7 +174,7 @@ public final class TousLesEnnemis{
 
 	1, // Niveau
 
-	1, // Vie
+	10, // Vie
 
 	2,// mana
 
