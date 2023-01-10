@@ -1,7 +1,6 @@
 package proto;
 
 import proto.Fonctions.*;
-import proto.Stat.*;
 
 /**
  * Combat crée par Seb
@@ -51,7 +50,7 @@ public class Combat {
 
     /*
      * public void SeBattre() {
-     * int _pointDeVieRestant=0;
+     * 
      * MenuCombat _MenuCombat = new MenuCombat();
      * do {
      * 
