@@ -51,7 +51,7 @@ public class CreationDePersonnage {
         joueurVieDeBase = 100;
         joueurManaDeBase = 100;
 
-        joueurForceDeBase = new Force(persoDeBase.GetForce().GetValeur() + race.GetforceBonus().GetValeur() + classe.GetforceBonus().GetValeur());
+        joueurForceDeBase = new Force(persoDeBase.GetForce().GetValeur() + race.GetforceBonus().GetValeur() + classe.GetForceBonus().GetValeur());
         joueurIntelligenceDeBase = new Intelligence(persoDeBase.GetIntelligence().GetValeur() + race.GetIntelligenceBonus().GetValeur() + classe.GetIntelligenceBonus().GetValeur());
         joueurAgiliteDeBase = new Agilite(persoDeBase.GetAgilite().GetValeur() + race.GetAgiliteBonus().GetValeur() + classe.GetAgiliteBonus().GetValeur());
         joueurDexteriteDeBase = new Dexterite(persoDeBase.GetDexterite().GetValeur() + race.GetDexteriteBonus().GetValeur() + classe.GetDexteriteBonus().GetValeur());
@@ -74,7 +74,7 @@ public class CreationDePersonnage {
         joueurVieDeBase = 100;
         joueurManaDeBase = 100;
 
-        joueurForceDeBase = new Force(persoDeBase.GetForce().GetValeur() + race.GetforceBonus().GetValeur() + classe.GetforceBonus().GetValeur());
+        joueurForceDeBase = new Force(persoDeBase.GetForce().GetValeur() + race.GetforceBonus().GetValeur() + classe.GetForceBonus().GetValeur());
         joueurIntelligenceDeBase = new Intelligence(persoDeBase.GetIntelligence().GetValeur() + race.GetIntelligenceBonus().GetValeur() + classe.GetIntelligenceBonus().GetValeur());
         joueurAgiliteDeBase = new Agilite(persoDeBase.GetAgilite().GetValeur() + race.GetAgiliteBonus().GetValeur() + classe.GetAgiliteBonus().GetValeur());
         joueurDexteriteDeBase = new Dexterite(persoDeBase.GetDexterite().GetValeur() + race.GetDexteriteBonus().GetValeur() + classe.GetDexteriteBonus().GetValeur());

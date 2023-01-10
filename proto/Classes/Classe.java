@@ -72,7 +72,7 @@ public class Classe {
 
 	}
 
-	public StatistiqueBonus GetforceBonus() {
+	public StatistiqueBonus GetForceBonus() {
 
 		return forceBonus;
 
