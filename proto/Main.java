@@ -82,7 +82,7 @@ A) Création du personnage.
                                                         break;
                                         }
 
-                                        combatClass.QuiCommence();
+                                        //combatClass.QuiCommence();
                                         break;
                                 case 2:
                                         System.out.println("Un autre évènement se produit !");
