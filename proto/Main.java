@@ -1,5 +1,6 @@
 package proto;
 
+import java.lang.*;
 /**
  * main, créé par David
  */
@@ -10,6 +11,9 @@ public class Main {
 //         a faire :
 //         - Menu de description pour les Classes.
 //         - Répartition des points de stats (Force, Intelligence, Agilité, Dextérité, Constitution).
+
+//         Runtime.getRuntime().exec("cls");
+//         pour clean la console.
 
     public static void main(String[] args) {
 
@@ -145,4 +149,25 @@ public class Main {
         _fonctions.GetCombatManageur().SeBattre(_fonctions.GetLesPersonnagesEnCombat());
     }
 
+    public final static void clearConsole()
+    {
+        try
+        {
+            final String os = System.getProperty("os.name");
+            
+            if (os.contains("Windows"))
+            {
+                Runtime.getRuntime().exec("cls");
+            }
+            else
+            {
+                Runtime.getRuntime().exec("clear");
+            }
+        }
+        catch (final Exception e)
+        {
+            //  Handle any exceptions.
+        }
+    }
+    
 }
