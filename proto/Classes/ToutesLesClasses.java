@@ -83,6 +83,9 @@ public final class ToutesLesClasses {
         return voleur;
     }
 
+    public Classe[] TableauToutesLesClasses() {
+        return tableauToutesLesClasses;
+    }
     // Setters :
 
     public static void SetInstance(proto.Classes.ToutesLesClasses _instance) {

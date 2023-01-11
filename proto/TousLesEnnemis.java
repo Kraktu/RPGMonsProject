@@ -187,11 +187,9 @@ public final class TousLesEnnemis {
 
 			null);
 
-
 	// tableau de tous les ennemis
 	Ennemi[] tableauTousLesEnnemis = { bruno, leRater, leRuser, flecheur, lePtitGars };
-	
-	
+
 	// Getters :
 
 	public Ennemi GetBruno() {
@@ -218,6 +216,9 @@ public final class TousLesEnnemis {
 		return tableauTousLesEnnemis;
 	}
 
+	public Ennemi[] TableauTousLesEnnemis() {
+		return tableauTousLesEnnemis;
+	}
 	// Setters :
 
 	public void SetBruno(Ennemi _bruno) {

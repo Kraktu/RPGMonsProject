@@ -10,126 +10,125 @@ public final class ToutesLesArmes {
     private static ToutesLesArmes instance;
 
     // constructeur privé.
-    private ToutesLesArmes(){
+    private ToutesLesArmes() {
 
     }
 
-    public static ToutesLesArmes GetInstance(){
+    public static ToutesLesArmes GetInstance() {
         if (instance == null) {
             instance = new ToutesLesArmes();
         }
         return instance;
     }
 
-
-
     // Corps à corps.
 
     Arme dague = new Arme("dague",
-    "c'est petit mais ca pique",
-    "commun",
-    50,
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    "DEX",
-    1,
-    3);
+            "c'est petit mais ca pique",
+            "commun",
+            50,
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            "DEX",
+            1,
+            3);
 
     Equipement dague2 = new Equipement(
-    "dague2",
-    "c'est petit mais ca pique",
-    "commun",
-    50,
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0)
-    );
+            "dague2",
+            "c'est petit mais ca pique",
+            "commun",
+            50,
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0));
 
     Arme epee = new Arme("epee",
-    "ca coupe",
-    "commun",
-    100,
-    new StatistiqueBonus(1),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    "FOR",
-    2,
-    4);
+            "ca coupe",
+            "commun",
+            100,
+            new StatistiqueBonus(1),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            "FOR",
+            2,
+            4);
 
     Arme hache = new Arme("hache",
-    "fait mal",
-    "commun",
-    120,
-    new StatistiqueBonus(2),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    "FOR",
-    2,
-    5);
+            "fait mal",
+            "commun",
+            120,
+            new StatistiqueBonus(2),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            "FOR",
+            2,
+            5);
 
     Arme lance = new Arme("lance",
-    "c'est long et ca pique",
-    "commun",
-    80,
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    "FOR",
-    2,
-    3);
+            "c'est long et ca pique",
+            "commun",
+            80,
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            "FOR",
+            2,
+            3);
 
     Arme masse = new Arme("masse",
-    "c'est lourd",
-    "commun",
-    100,
-    new StatistiqueBonus(3),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    "FOR",
-    3,
-    5);
+            "c'est lourd",
+            "commun",
+            100,
+            new StatistiqueBonus(3),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            "FOR",
+            3,
+            5);
 
     // Combat à distance.
 
     Arme arc = new Arme("arc",
-    "ca va loin",
-    "commun",
-    70,
-    new StatistiqueBonus(1),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    "DEX",
-    2,
-    4);
+            "ca va loin",
+            "commun",
+            70,
+            new StatistiqueBonus(1),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            "DEX",
+            2,
+            4);
 
-    Arme arbalete  = new Arme("arbalète ",
-    "ca va pas si loin",
-    "commun",
-    80,
-    new StatistiqueBonus(2),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    new StatistiqueBonus(0),
-    "DEX",
-    3,
-    5);
+    Arme arbalete = new Arme("arbalète ",
+            "ca va pas si loin",
+            "commun",
+            80,
+            new StatistiqueBonus(2),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            new StatistiqueBonus(0),
+            "DEX",
+            3,
+            5);
+    // tableau de toutes les armes
 
+    Arme[] tableauToutesLesArmes = { dague, epee, hache, lance, masse, arc, arbalete };
 
     // Getters :
 
@@ -161,6 +160,9 @@ public final class ToutesLesArmes {
         return arbalete;
     }
 
+    public Arme[] TableauToutesLesArmes() {
+        return tableauToutesLesArmes;
+    }
     // Setters :
 
     public void SetDague(Arme _dague) {

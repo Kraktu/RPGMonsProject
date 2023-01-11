@@ -89,6 +89,9 @@ public final class ToutesLesRaces {
                 return gobelin;
         }
 
+        public Race[] TableauToutesLesRaces() {
+                return tableauToutesLesRaces;
+        }
         // Setters :
 
         public static void setInstance(proto.Race.ToutesLesRaces _instance) {
