@@ -5,17 +5,13 @@ import proto.Fonctions.*;
  * main, créé par David
  */
 public class Main {
-/*
-A) Création du personnage.
 
-        1) On nous demande notre pseudo.
-        2) On nous propose de choisir une Race (Humain, Elfe, Nain, Troll, Gobelin).
-        3) On nous propose de choisir une Classe (Archer, Guerrier, Mage, Voleur).
-        4) On nous propose de répartir 5 points dans les caractéristiques que l'on veut (Force, Intelligence, Agilité, Dextérité, Constitution).
+// A) Création du personnage.
 
-        Question pour Philip :
-        1. Quand peut-on fermer le ou les scanners dans le fichier "Entrée utilisateur" ?
-*/
+//         a faire :
+//         - Menu de description pour les Classes.
+//         - Répartition des points de stats (Force, Intelligence, Agilité, Dextérité, Constitution).
+
     public static void main(String[] args) {
 
         // variable boolean pour pouvoir passer la création de personnage.
@@ -62,7 +58,7 @@ A) Création du personnage.
                                         break;
                                 case 2:
                                         System.out.println("Challenge !");
-                                        challengeFonction.PrintDescriptionChallenge();
+                                        //challengeFonction.PrintDescriptionChallenge();
                                         break;
                                 case 3:
                                         System.out.println("Au revoir.");
@@ -141,7 +137,7 @@ A) Création du personnage.
 
         System.out.println("Vous vous battez !");
 
-        int ennemiAleatoireIndex = nombreGenererAleatoirement.GenererNbrAleatoireBorne(1, TousLesEnnemis.getInstance().GetTableauTousLesEnnemis().length);
+        int ennemiAleatoireIndex = nombreGenererAleatoirement.GenererNbrAleatoireBorne(1, TousLesEnnemis.getInstance().GetTableauTousLesEnnemis().length - 1);
         
         //lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().tableauTousLesEnnemis[ennemiAleatoireIndex]);
         lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().GetTableauTousLesEnnemis()[ennemiAleatoireIndex]);
