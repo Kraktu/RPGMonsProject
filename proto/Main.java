@@ -1,6 +1,6 @@
 package proto;
 
-import java.lang.*;
+import java.io.IOException;
 /**
  * main, créé par David
  */
@@ -15,7 +15,7 @@ public class Main {
 //         Runtime.getRuntime().exec("cls");
 //         pour clean la console.
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException, IOException {
 
         // variable boolean pour pouvoir passer la création de personnage.
         // true pour avoir un personnage par defaut, false pour créer le personnage manuellement.
@@ -28,6 +28,10 @@ public class Main {
 
         // Création du personnage joueur.
         Joueur leJoueur = CreationDuPersonnage();
+
+
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+
 
         // Enregistrement du personnage nouvellement créé dans le fichier LesPersonnagesEnCombat.
         fonctions.GetLesPersonnagesEnCombat().SetLePersonnageJouable(leJoueur);
@@ -149,25 +153,25 @@ public class Main {
         _fonctions.GetCombatManageur().SeBattre(_fonctions.GetLesPersonnagesEnCombat());
     }
 
-    public final static void clearConsole()
-    {
-        try
-        {
-            final String os = System.getProperty("os.name");
+    // public final static void clearConsole()
+    // {
+    //     try
+    //     {
+    //         final String os = System.getProperty("os.name");
             
-            if (os.contains("Windows"))
-            {
-                Runtime.getRuntime().exec("cls");
-            }
-            else
-            {
-                Runtime.getRuntime().exec("clear");
-            }
-        }
-        catch (final Exception e)
-        {
-            //  Handle any exceptions.
-        }
-    }
+    //         if (os.contains("Windows"))
+    //         {
+    //             Runtime.getRuntime().exec("cls");
+    //         }
+    //         else
+    //         {
+    //             Runtime.getRuntime().exec("clear");
+    //         }
+    //     }
+    //     catch (final Exception e)
+    //     {
+    //         //  Handle any exceptions.
+    //     }
+    // }
     
 }
