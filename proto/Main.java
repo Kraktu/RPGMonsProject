@@ -1,5 +1,4 @@
 package proto;
-import proto.Fonctions.*;
 
 /**
  * main, créé par David
@@ -21,23 +20,16 @@ public class Main {
         // défini si le jeu en lui même est en cours ou non
         boolean aventureEnCours = false;
 
-        Main monFichierMain = new Main();
-        EntreUtilisateur eUtil = new EntreUtilisateur();
-        NbrAleatoire nombreGenererAleatoirement = new NbrAleatoire();
-        CreationDePersonnage creationDePersonnage = new CreationDePersonnage();
-        lesPersonnagesEnCombat lesPersos = new lesPersonnagesEnCombat();
-        CombatManageur combatManageur = new CombatManageur();
-        ChallengeFonctions challengeFonction = new ChallengeFonctions();
-
+        ToutesLesFonctions fonctions = ToutesLesFonctions.GetInstance();
 
         // Création du personnage joueur.
-        Joueur leJoueur = monFichierMain.CreationDuPersonnage(eUtil, creationDePersonnage);
+        Joueur leJoueur = CreationDuPersonnage();
 
         // Enregistrement du personnage nouvellement créé dans le fichier LesPersonnagesEnCombat.
-        lesPersos.SetLePersonnageJouable(leJoueur);
+        fonctions.GetLesPersonnagesEnCombat().SetLePersonnageJouable(leJoueur);
 
         // TEMPORAIRE ; Explication concernant l'enregistrement des variables.
-        monFichierMain.ExplicationEnregistrementVariable(eUtil, lesPersos, creationDePersonnage);
+        ExplicationEnregistrementVariable();
 
         // Début de l'aventure.
 
@@ -50,11 +42,11 @@ public class Main {
 
                 do {
 
-                        choixEntreLesCombats = eUtil.EntreeUtilisateurInt("Que voulez-vous faire ?\n[1 : continuer]\n[2 : autre]\n[3 : quitter]");
+                        choixEntreLesCombats = fonctions.GetEntreUtilisateur().EntreeUtilisateurInt("Que voulez-vous faire ?\n[1 : continuer]\n[2 : autre]\n[3 : quitter]");
 
                         switch (choixEntreLesCombats) {
                                 case 1:
-                                        monFichierMain.LancerNouveauCombat(eUtil, nombreGenererAleatoirement, lesPersos, combatManageur);
+                                        LancerNouveauCombat();
                                         break;
                                 case 2:
                                         System.out.println("Challenge !");
@@ -74,77 +66,83 @@ public class Main {
         }
 
         // Fermeture du scanner de EntreeUtilisateur. (test)
-        eUtil.fermerScanner();
+        fonctions.GetEntreUtilisateur().fermerScanner();
 
     }
 
-    private Joueur CreationDuPersonnage(EntreUtilisateur eUtil, CreationDePersonnage creationDePersonnage){
+    private static Joueur CreationDuPersonnage(){
+
+        ToutesLesFonctions _fonctions = ToutesLesFonctions.GetInstance();
 
         Joueur _joueur;
 
-        if (eUtil.DemanderOuiOuNon("Creer votre personnage ?")) {
-                _joueur = creationDePersonnage.CreerJoueur();
-                System.out.println(creationDePersonnage.GetLePersonnageJouable().toString());
+        if (_fonctions.GetEntreUtilisateur().DemanderOuiOuNon("Creer votre personnage ?")) {
+                _joueur = _fonctions.GetCreationDePersonnage().CreerJoueur();
+                System.out.println(_fonctions.GetCreationDePersonnage().GetLePersonnageJouable().toString());
                 return _joueur;
         } else {
-                _joueur = creationDePersonnage.CreerJoueurRapide();
-                System.out.println(creationDePersonnage.GetLePersonnageJouable().toString());
+                _joueur = _fonctions.GetCreationDePersonnage().CreerJoueurRapide();
+                System.out.println(_fonctions.GetCreationDePersonnage().GetLePersonnageJouable().toString());
                 return _joueur;
         }
 
     }
 
-    private void ExplicationEnregistrementVariable(EntreUtilisateur eUtil, lesPersonnagesEnCombat lesPersos, CreationDePersonnage creationDePersonnage){
+    private static void ExplicationEnregistrementVariable(){
 
-        if (eUtil.DemanderOuiOuNon("Souhaitez vous relire les explications concernant l'enregistrement de fichier ?")) {
+        ToutesLesFonctions _fonctions = ToutesLesFonctions.GetInstance();
 
-        eUtil.TexteQuiAttend("\nBonjour, je vais vous expliquer le principe de stocker nos personnages dans un autre fichier");
+        if (_fonctions.GetEntreUtilisateur().DemanderOuiOuNon("Souhaitez vous relire les explications concernant l'enregistrement de fichier ?")) {
 
-        eUtil.TexteQuiAttend("Quand le joueur est creer toutes ses informations sont stocké dans un autre fichier qui sert de mémoire.");
-        eUtil.TexteQuiAttend("Se fichier s'appelle les personnages en combat.");
-        eUtil.TexteQuiAttend("Vu que le jeu propose des combats en 1 contre 1, le fichier ne contient que un joueur et un ennemis.");
+                _fonctions.GetEntreUtilisateur().TexteQuiAttend("\nBonjour, je vais vous expliquer le principe de stocker nos personnages dans un autre fichier");
 
-        eUtil.TexteQuiAttend("passons au concret");
+                _fonctions.GetEntreUtilisateur().TexteQuiAttend("Quand le joueur est creer toutes ses informations sont stocké dans un autre fichier qui sert de mémoire.");
+                _fonctions.GetEntreUtilisateur().TexteQuiAttend("Se fichier s'appelle les personnages en combat.");
+                _fonctions.GetEntreUtilisateur().TexteQuiAttend("Vu que le jeu propose des combats en 1 contre 1, le fichier ne contient que un joueur et un ennemis.");
 
-        eUtil.TexteQuiAttend("d'abord, je print les valeurs nom, force et constitution du joueur qui se trouve dans le fichier les personnages en combats");
+                _fonctions.GetEntreUtilisateur().TexteQuiAttend("passons au concret");
 
-        eUtil.TexteQuiAttend("Pour le nom par exemple, je fait un print de lesPersos.GetLePersonnageJouable().GetNom()");
-        eUtil.TexteQuiAttend("les résultats pour nom, force et constitution est :");
+                _fonctions.GetEntreUtilisateur().TexteQuiAttend("d'abord, je print les valeurs nom, force et constitution du joueur qui se trouve dans le fichier les personnages en combats");
 
-        System.out.println(lesPersos.GetLePersonnageJouable().GetNom());
-        System.out.println(lesPersos.GetLePersonnageJouable().GetForce());
-        System.out.println(lesPersos.GetLePersonnageJouable().GetConstitution());
+                _fonctions.GetEntreUtilisateur().TexteQuiAttend("Pour le nom par exemple, je fait un print de GetLesPersonnagesEnCombat().GetLePersonnageJouable().GetNom()");
+                _fonctions.GetEntreUtilisateur().TexteQuiAttend("les résultats pour nom, force et constitution est :");
 
-        eUtil.TexteQuiAttend("toute les valeurs sont null car l'objet de base est vide");
-        eUtil.TexteQuiAttend("maintenant je vais remplir le fichier avec les valeurs generé par la création de personnage");
-        eUtil.TexteQuiAttend("pour ca j'utilise la commande :");
-        eUtil.TexteQuiAttend("lesPersos.SetLePersonnageJouable(creationDePersonnage.GetLePersonnageJouable());");
+        System.out.println(_fonctions.GetLesPersonnagesEnCombat().GetLePersonnageJouable().GetNom());
+        System.out.println(_fonctions.GetLesPersonnagesEnCombat().GetLePersonnageJouable().GetForce());
+        System.out.println(_fonctions.GetLesPersonnagesEnCombat().GetLePersonnageJouable().GetConstitution());
 
-        lesPersos.SetLePersonnageJouable(creationDePersonnage.GetLePersonnageJouable());
+        _fonctions.GetEntreUtilisateur().TexteQuiAttend("toute les valeurs sont null car l'objet de base est vide");
+        _fonctions.GetEntreUtilisateur().TexteQuiAttend("maintenant je vais remplir le fichier avec les valeurs generé par la création de personnage");
+        _fonctions.GetEntreUtilisateur().TexteQuiAttend("pour ca j'utilise la commande :");
+        _fonctions.GetEntreUtilisateur().TexteQuiAttend("GetLesPersonnagesEnCombat().SetLePersonnageJouable(GetCreationDePersonnage().GetLePersonnageJouable());");
 
-        //System.out.println(lesPersos.GetLePersonnageJouable().toString());
-        System.out.println(lesPersos.GetLePersonnageJouable().GetNom());
-        System.out.println(lesPersos.GetLePersonnageJouable().GetForce());
-        System.out.println(lesPersos.GetLePersonnageJouable().GetConstitution());
+        _fonctions.GetLesPersonnagesEnCombat().SetLePersonnageJouable(_fonctions.GetCreationDePersonnage().GetLePersonnageJouable());
 
-        eUtil.TexteQuiAttend("voila, maintenant, les informations de la création de personnage sont stockée dans le fichier les personnages en combat.");
+        //System.out.println(GetLesPersonnagesEnCombat().GetLePersonnageJouable().toString());
+        System.out.println(_fonctions.GetLesPersonnagesEnCombat().GetLePersonnageJouable().GetNom());
+        System.out.println(_fonctions.GetLesPersonnagesEnCombat().GetLePersonnageJouable().GetForce());
+        System.out.println(_fonctions.GetLesPersonnagesEnCombat().GetLePersonnageJouable().GetConstitution());
+
+        _fonctions.GetEntreUtilisateur().TexteQuiAttend("voila, maintenant, les informations de la création de personnage sont stockée dans le fichier les personnages en combat.");
 
         }
 
     }
 
-    private void LancerNouveauCombat(EntreUtilisateur eUtil, NbrAleatoire nombreGenererAleatoirement, lesPersonnagesEnCombat lesPersos, CombatManageur combatManageur){
+    private static void LancerNouveauCombat(){
+
+        ToutesLesFonctions _fonctions = ToutesLesFonctions.GetInstance();
 
         System.out.println("Vous vous battez !");
 
-        int ennemiAleatoireIndex = nombreGenererAleatoirement.GenererNbrAleatoireBorne(1, TousLesEnnemis.getInstance().GetTableauTousLesEnnemis().length - 1);
+        int ennemiAleatoireIndex = _fonctions.GetNbrAleatoire().GenererNbrAleatoireBorne(1, TousLesEnnemis.getInstance().GetTableauTousLesEnnemis().length - 1);
         
-        //lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().tableauTousLesEnnemis[ennemiAleatoireIndex]);
-        lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().GetTableauTousLesEnnemis()[ennemiAleatoireIndex]);
+        //GetLesPersonnagesEnCombat().SetEnnemisActuel(TousLesEnnemis.getInstance().tableauTousLesEnnemis[ennemiAleatoireIndex]);
+        _fonctions.GetLesPersonnagesEnCombat().SetEnnemisActuel(TousLesEnnemis.getInstance().GetTableauTousLesEnnemis()[ennemiAleatoireIndex]);
         
-        eUtil.TexteQuiAttend(lesPersos.GetEnnemisActuel().toString());
+        _fonctions.GetEntreUtilisateur().TexteQuiAttend(_fonctions.GetLesPersonnagesEnCombat().GetEnnemisActuel().toString());
         
-        combatManageur.SeBattre(lesPersos);
+        _fonctions.GetCombatManageur().SeBattre(_fonctions.GetLesPersonnagesEnCombat());
     }
 
 }
