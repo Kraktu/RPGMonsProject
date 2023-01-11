@@ -64,6 +64,8 @@ public final class ToutesLesRaces {
                         new StatistiqueBonus(2),
                         new StatistiqueBonus(2),
                         new StatistiqueBonus(-2));
+        // tableau de toutes les races
+        Race[] tableauToutesLesRaces = { humain, elfe, nain, troll, gobelin };
 
         // Getters :
 

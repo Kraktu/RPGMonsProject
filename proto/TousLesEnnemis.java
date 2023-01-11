@@ -1,15 +1,17 @@
 package proto;
 
+import proto.Classes.Classe;
 import proto.Classes.ToutesLesClasses;
+import proto.Race.Race;
 import proto.Race.ToutesLesRaces;
 import proto.Stat.StatistiqueBonus;
 
 /**
  * TousLesEnnemis Créé par Bruno
- * Base de données des ennemis 
+ * Base de données des ennemis
  */
 
-public final class TousLesEnnemis{
+public final class TousLesEnnemis {
 
 	private static TousLesEnnemis instance;
 
@@ -31,168 +33,163 @@ public final class TousLesEnnemis{
 
 	Ennemi bruno = new Ennemi("Bruno",
 
-	// Les races
+			// Les races
 
-	ToutesLesRaces.GetInstance().GetHumain(),
+			ToutesLesRaces.GetInstance().GetHumain(),
 
-	// Classe
+			// Classe
 
-	ToutesLesClasses.GetInstance().GetVoleur(),
+			ToutesLesClasses.GetInstance().GetVoleur(),
 
-	1, // Niveau
+			1, // Niveau
 
-	10, // Vie
+			10, // Vie
 
-	2,// mana
+			2, // mana
 
-	new StatistiqueBonus(2),// Stat Force
-	new StatistiqueBonus(5),// Stat Intelligence
-	new StatistiqueBonus(5),// Stat Agilite
-	new StatistiqueBonus(3),// Stat Dexterite
-	new StatistiqueBonus(4), // Stat Constitution
+			new StatistiqueBonus(2), // Stat Force
+			new StatistiqueBonus(5), // Stat Intelligence
+			new StatistiqueBonus(5), // Stat Agilite
+			new StatistiqueBonus(3), // Stat Dexterite
+			new StatistiqueBonus(4), // Stat Constitution
 
-	// Armes
+			// Armes
 
-	ToutesLesArmes.GetInstance().dague,
+			ToutesLesArmes.GetInstance().dague,
 
-	// équipement
+			// équipement
 
-	null
-	);
+			null);
 
-
-	// création du 2ème ennemi le rater qui est  un gobelin, 
+	// création du 2ème ennemi le rater qui est un gobelin,
 
 	Ennemi leRater = new Ennemi("Le raté",
 
-	// Les races
+			// Les races
 
-	ToutesLesRaces.GetInstance().GetGobelin(),
+			ToutesLesRaces.GetInstance().GetGobelin(),
 
-	// Classe
+			// Classe
 
-	ToutesLesClasses.GetInstance().GetGuerrier(),
+			ToutesLesClasses.GetInstance().GetGuerrier(),
 
-	1, // Niveau
+			1, // Niveau
 
-	10, // Vie
+			10, // Vie
 
-	2,// mana
+			2, // mana
 
-	new StatistiqueBonus(5),// Stat Force
-	new StatistiqueBonus(1),// Stat Intelligence
-	new StatistiqueBonus(1),// Stat Agilite
-	new StatistiqueBonus(2),// Stat Dexterite
-	new StatistiqueBonus(3), // Stat Constitution
+			new StatistiqueBonus(5), // Stat Force
+			new StatistiqueBonus(1), // Stat Intelligence
+			new StatistiqueBonus(1), // Stat Agilite
+			new StatistiqueBonus(2), // Stat Dexterite
+			new StatistiqueBonus(3), // Stat Constitution
 
-	// Armes
+			// Armes
 
-	ToutesLesArmes.GetInstance().hache,
+			ToutesLesArmes.GetInstance().hache,
 
-	// équipement
+			// équipement
 
-	null
-	);
+			null);
 
 	// création du 3ème ennemie, Le ruser qui est un Elfe
 
 	Ennemi leRuser = new Ennemi("Le rusé",
 
-	// Les races
+			// Les races
 
-	ToutesLesRaces.GetInstance().GetElfe(),
+			ToutesLesRaces.GetInstance().GetElfe(),
 
-	// Classe
+			// Classe
 
-	ToutesLesClasses.GetInstance().GetMage(),
+			ToutesLesClasses.GetInstance().GetMage(),
 
-	3, // Niveau
+			3, // Niveau
 
-	30, // Vie
+			30, // Vie
 
-	3,// mana
+			3, // mana
 
-	new StatistiqueBonus(2),// Stat Force
-	new StatistiqueBonus(5),// Stat Intelligence
-	new StatistiqueBonus(3),// Stat Agilite
-	new StatistiqueBonus(3),// Stat Dexterite
-	new StatistiqueBonus(4), // Stat Constitution
+			new StatistiqueBonus(2), // Stat Force
+			new StatistiqueBonus(5), // Stat Intelligence
+			new StatistiqueBonus(3), // Stat Agilite
+			new StatistiqueBonus(3), // Stat Dexterite
+			new StatistiqueBonus(4), // Stat Constitution
 
-	// Armes
+			// Armes
 
-	ToutesLesArmes.GetInstance().dague,
+			ToutesLesArmes.GetInstance().dague,
 
-	// équipement
+			// équipement
 
-	null
-	);
+			null);
 
-	// création du 4ème ennemie,  qui est un humain Flècheur
+	// création du 4ème ennemie, qui est un humain Flècheur
 
 	Ennemi flecheur = new Ennemi("Flècheur",
 
-	// Les races
+			// Les races
 
-	ToutesLesRaces.GetInstance().GetHumain(),
+			ToutesLesRaces.GetInstance().GetHumain(),
 
-	// Classe
+			// Classe
 
-	ToutesLesClasses.GetInstance().GetArcher(),
+			ToutesLesClasses.GetInstance().GetArcher(),
 
-	1, // Niveau
+			1, // Niveau
 
-	10, // Vie
+			10, // Vie
 
-	2,// mana
+			2, // mana
 
-	new StatistiqueBonus(2),// Stat Force
-	new StatistiqueBonus(5),// Stat Intelligence
-	new StatistiqueBonus(5),// Stat Agilite
-	new StatistiqueBonus(3),// Stat Dexterite
-	new StatistiqueBonus(4), // Stat Constitution
+			new StatistiqueBonus(2), // Stat Force
+			new StatistiqueBonus(5), // Stat Intelligence
+			new StatistiqueBonus(5), // Stat Agilite
+			new StatistiqueBonus(3), // Stat Dexterite
+			new StatistiqueBonus(4), // Stat Constitution
 
-	// Armes
+			// Armes
 
-	ToutesLesArmes.GetInstance().arc,
+			ToutesLesArmes.GetInstance().arc,
 
-	// équipement
+			// équipement
 
-	null
-	);
+			null);
 
 	// création du 5ème ennemie, Le ptit gars qui est un nain
 
 	Ennemi lePtitGars = new Ennemi("Le ptit gars",
 
-	// Les races
+			// Les races
 
-	ToutesLesRaces.GetInstance().GetNain(),
+			ToutesLesRaces.GetInstance().GetNain(),
 
-	// Classe
+			// Classe
 
-	ToutesLesClasses.GetInstance().GetGuerrier(),
+			ToutesLesClasses.GetInstance().GetGuerrier(),
 
-	1, // Niveau
+			1, // Niveau
 
-	10, // Vie
+			10, // Vie
 
-	2,// mana
+			2, // mana
 
-	new StatistiqueBonus(2),// Stat Force
-	new StatistiqueBonus(2),// Stat Intelligence
-	new StatistiqueBonus(2),// Stat Agilite
-	new StatistiqueBonus(2),// Stat Dexterite
-	new StatistiqueBonus(1), // Stat Constitution
+			new StatistiqueBonus(2), // Stat Force
+			new StatistiqueBonus(2), // Stat Intelligence
+			new StatistiqueBonus(2), // Stat Agilite
+			new StatistiqueBonus(2), // Stat Dexterite
+			new StatistiqueBonus(1), // Stat Constitution
 
-	// Armes
+			// Armes
 
-	ToutesLesArmes.GetInstance().masse,
+			ToutesLesArmes.GetInstance().masse,
 
-	// équipement
+			// équipement
 
-	null
-	);
-
+			null);
+	// tableau de tous les ennemis
+	Ennemi[] tableauTousLesEnnemis = { bruno, leRater, leRuser, flecheur, lePtitGars };
 	// Getters :
 
 	public Ennemi GetBruno() {
@@ -215,9 +212,7 @@ public final class TousLesEnnemis{
 		return leRuser;
 	}
 
-
 	// Setters :
-
 
 	public static void SetInstance(proto.TousLesEnnemis _instance) {
 		TousLesEnnemis.instance = _instance;
