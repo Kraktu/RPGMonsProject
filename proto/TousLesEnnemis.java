@@ -1,8 +1,6 @@
 package proto;
 
-import proto.Classes.Classe;
 import proto.Classes.ToutesLesClasses;
-import proto.Race.Race;
 import proto.Race.ToutesLesRaces;
 import proto.Stat.StatistiqueBonus;
 
@@ -31,7 +29,7 @@ public final class TousLesEnnemis {
 
 	// création du premier ennemie, Bruno humain
 
-	Ennemi bruno = new Ennemi("Bruno",
+	private Ennemi bruno = new Ennemi("Bruno",
 
 			// Les races
 
@@ -63,7 +61,7 @@ public final class TousLesEnnemis {
 
 	// création du 2ème ennemi le rater qui est un gobelin,
 
-	Ennemi leRater = new Ennemi("Le raté",
+	private Ennemi leRater = new Ennemi("Le raté",
 
 			// Les races
 
@@ -95,7 +93,7 @@ public final class TousLesEnnemis {
 
 	// création du 3ème ennemie, Le ruser qui est un Elfe
 
-	Ennemi leRuser = new Ennemi("Le rusé",
+	private Ennemi leRuser = new Ennemi("Le rusé",
 
 			// Les races
 
@@ -127,7 +125,7 @@ public final class TousLesEnnemis {
 
 	// création du 4ème ennemie, qui est un humain Flècheur
 
-	Ennemi flecheur = new Ennemi("Flècheur",
+	private Ennemi flecheur = new Ennemi("Flècheur",
 
 			// Les races
 
@@ -159,7 +157,7 @@ public final class TousLesEnnemis {
 
 	// création du 5ème ennemie, Le ptit gars qui est un nain
 
-	Ennemi lePtitGars = new Ennemi("Le ptit gars",
+	private Ennemi lePtitGars = new Ennemi("Le ptit gars",
 
 			// Les races
 
@@ -188,8 +186,12 @@ public final class TousLesEnnemis {
 			// équipement
 
 			null);
+
+
 	// tableau de tous les ennemis
 	Ennemi[] tableauTousLesEnnemis = { bruno, leRater, leRuser, flecheur, lePtitGars };
+	
+	
 	// Getters :
 
 	public Ennemi GetBruno() {
@@ -212,11 +214,11 @@ public final class TousLesEnnemis {
 		return leRuser;
 	}
 
-	// Setters :
-
-	public static void SetInstance(proto.TousLesEnnemis _instance) {
-		TousLesEnnemis.instance = _instance;
+	public Ennemi[] GetTableauTousLesEnnemis() {
+		return tableauTousLesEnnemis;
 	}
+
+	// Setters :
 
 	public void SetBruno(Ennemi _bruno) {
 		bruno = _bruno;
@@ -236,5 +238,9 @@ public final class TousLesEnnemis {
 
 	public void SetLeRuser(Ennemi _leRuser) {
 		leRuser = _leRuser;
+	}
+
+	public void SetTableauTousLesEnnemis(Ennemi[] _tableauTousLesEnnemis) {
+		tableauTousLesEnnemis = _tableauTousLesEnnemis;
 	}
 }

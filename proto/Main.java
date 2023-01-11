@@ -58,35 +58,7 @@ A) Création du personnage.
 
                         switch (choixEntreLesCombats) {
                                 case 1:
-                                        System.out.println("Vous vous battez !");
-
-                                        int ennemiAleatoireIndex = nombreGenererAleatoirement.GenererNbrAleatoireBorne(1, 5);
-                                        eUtil.TexteQuiAttend("le nombre générer est : " + ennemiAleatoireIndex);
-
-                                        switch (ennemiAleatoireIndex) {
-                                                case 1:
-                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().GetBruno());
-                                                eUtil.TexteQuiAttend(lesPersos.GetEnnemisActuel().toString());
-                                                        break;
-                                                case 2:
-                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().GetLeRater());
-                                                eUtil.TexteQuiAttend(lesPersos.GetEnnemisActuel().toString());
-                                                        break;
-                                                case 3:
-                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().GetLeRuser());
-                                                eUtil.TexteQuiAttend(lesPersos.GetEnnemisActuel().toString());
-                                                        break;
-                                                case 4:
-                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().GetFlecheur());
-                                                eUtil.TexteQuiAttend(lesPersos.GetEnnemisActuel().toString());
-                                                        break;
-                                                case 5:
-                                                lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().GetLePtitGars());
-                                                eUtil.TexteQuiAttend(lesPersos.GetEnnemisActuel().toString());
-                                                        break;
-                                        }
-                                        System.out.println(lesPersos.GetLePersonnageJouable().GetNom());
-                                        combatManageur.SeBattre(lesPersos);
+                                        monFichierMain.LancerNouveauCombat(eUtil, nombreGenererAleatoirement, lesPersos, combatManageur);
                                         break;
                                 case 2:
                                         System.out.println("Challenge !");
@@ -163,6 +135,20 @@ A) Création du personnage.
 
         }
 
+    }
+
+    private void LancerNouveauCombat(EntreUtilisateur eUtil, NbrAleatoire nombreGenererAleatoirement, lesPersonnagesEnCombat lesPersos, CombatManageur combatManageur){
+
+        System.out.println("Vous vous battez !");
+
+        int ennemiAleatoireIndex = nombreGenererAleatoirement.GenererNbrAleatoireBorne(1, TousLesEnnemis.getInstance().GetTableauTousLesEnnemis().length);
+        
+        //lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().tableauTousLesEnnemis[ennemiAleatoireIndex]);
+        lesPersos.SetEnnemisActuel(TousLesEnnemis.getInstance().GetTableauTousLesEnnemis()[ennemiAleatoireIndex]);
+        
+        eUtil.TexteQuiAttend(lesPersos.GetEnnemisActuel().toString());
+        
+        combatManageur.SeBattre(lesPersos);
     }
 
 }
