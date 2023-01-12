@@ -21,36 +21,28 @@ public class CombatManageur {
         int _pointDeVieRestantDeEnnemi = 0;
         Joueur joueur = _lesPerso.GetLePersonnageJouable();
         Ennemi ennemi = _lesPerso.GetEnnemisActuel();
-        int _degatsFinauxPourEnnemi=FormuleDegat(joueur, ennemi); 
-int _degatsFinauxPourJoueur=FormuleDegat(ennemi, joueur);
-if (_degatsFinauxPourEnnemi==0) {
-_degatsFinauxPourEnnemi=1;    
-}
-if (_degatsFinauxPourJoueur==0) {
-_degatsFinauxPourJoueur=1;    
-}
 
-boolean leJoueurCommence = QuiCommence();
+        boolean leJoueurCommence = QuiCommence();
 
         do {
 
             if (leJoueurCommence) {
                 // Instruction pour le cas où le joueur commence.
-                _pointDeVieRestantDeEnnemi = ennemi.GetVie() - _degatsFinauxPourEnnemi;
+                _pointDeVieRestantDeEnnemi = ennemi.GetVie() - FormuleDegat(joueur, ennemi);
                 System.out
                         .println("Vous attaquez votre adversaire.\n Il lui reste " + _pointDeVieRestantDeEnnemi + ".");
                 ennemi.SetVie(_pointDeVieRestantDeEnnemi);
-                _pointDeVieRestantDuJoueur = joueur.GetVie() -_degatsFinauxPourJoueur ;
+                _pointDeVieRestantDuJoueur = joueur.GetVie() - FormuleDegat(ennemi, joueur);
                 System.out.println(
                         "C'est au tour de votre ennemi de vous attaquer.\nIl vous reste " + _pointDeVieRestantDuJoueur);
                 joueur.SetVie(_pointDeVieRestantDuJoueur);
             } else {
                 // Instruction pour le cas où l'ennemi commence.
-                _pointDeVieRestantDuJoueur = joueur.GetVie() -_degatsFinauxPourJoueur ;
+                _pointDeVieRestantDuJoueur = joueur.GetVie() - FormuleDegat(ennemi, joueur);
                 System.out.println(
                         "C'est au tour de votre ennemi de vous attaquer.\nIl vous reste " + _pointDeVieRestantDuJoueur);
                 joueur.SetVie(_pointDeVieRestantDuJoueur);
-                _pointDeVieRestantDeEnnemi = ennemi.GetVie() -_degatsFinauxPourEnnemi ;
+                _pointDeVieRestantDeEnnemi = ennemi.GetVie() - FormuleDegat(joueur, ennemi);
                 System.out
                         .println("Vous attaquez votre adversaire.\n Il lui reste " + _pointDeVieRestantDeEnnemi + ".");
                 ennemi.SetVie(_pointDeVieRestantDeEnnemi);
@@ -61,7 +53,7 @@ boolean leJoueurCommence = QuiCommence();
     }
 
     public int JetDeDe() {
-            int _jet = 0;
+        int _jet = 0;
         NbrAleatoire nbrAl = new NbrAleatoire();
         try {
             System.out.println("Le dé est lancé.");
@@ -74,7 +66,11 @@ boolean leJoueurCommence = QuiCommence();
     }
 
     public int FormuleDegat(Personnage _attaquant, Personnage _defenseur) {
-        return         _attaquant.GetForce().GetValeur() - _defenseur.GetConstitution().GetValeur();
+        int _degatsFinaux = _attaquant.GetForce().GetValeur() - _defenseur.GetConstitution().GetValeur();
+        if (_degatsFinaux <= 0) {
+            _degatsFinaux = 1;
+        }
+        return _degatsFinaux;
     }
 
     public boolean QuiCommence() {
