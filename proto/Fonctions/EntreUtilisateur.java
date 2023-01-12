@@ -37,7 +37,8 @@ public class EntreUtilisateur {
 
     }
 
-    public int EntreeUtilisateurInt(String _question) {
+    /*
+    public int EntreeUtilisateurInt_Obsolete(String _question) {
 
         // Scanner _entree = new Scanner(System.in);
 
@@ -50,6 +51,39 @@ public class EntreUtilisateur {
         // _entree.close();
 
         return _reponse;
+
+    }
+    */
+    
+    public int EntreeUtilisateurInt (String _question) {
+
+        // Scanner _entree = new Scanner(System.in);
+
+        int _Responce;
+
+        while (true) {
+
+            System.out.print("\n" + _question + "\nVotre Réponse : ");
+
+            if (_entree.hasNextInt()) {
+
+                _Responce = _entree.nextInt();
+
+                _entree.nextLine();
+
+                return _Responce;
+
+            } else {
+
+                System.err.println("Erreur, veuillez entrer un chiffre.");
+
+                _entree.nextLine();
+
+            }
+
+        }
+
+        // _entree.close();
 
     }
 
