@@ -11,8 +11,6 @@ public class Main {
         // sécurité sur la fonction oui-non
         // sécurité sur la fonction continuer - challenge - quitter attend une int, ne supporte pas les Strings
 
-        // créer une fonction qui réinitialise (ou initialise) les ennemis
-
         // dans entreeUtilisateur, essayer de créer un tableau, plutôt qu'un switch
 
 
