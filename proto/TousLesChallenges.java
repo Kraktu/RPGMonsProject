@@ -56,13 +56,13 @@ public final class TousLesChallenges {
 
 	String[] tempChoixPossible = {"Sautter au dessus", "Contourner le trou", "Ne pas prendre de risque"};
 
-	String[] typeDeMalus = {"testMalus"};
+	String[] typeDeMalus = {"Vous avez essayé de sauter au-dessus du trou donc vous perdrez : ", "Vous avez essayer de contourner l'obstacle, mais malheureusement, vous êtes tombé dans le trou, donc vous perdrez : ", "Vous êtes une poule mouillée, vous n'osez même pas jouer le challenge donc vous perdrez : "};
 
-	String[] typeDeRecompenses = {"testTypeRecompense"};
+	String[] typeDeRecompenses = {" vous avez magnifiquement sauter au-dessus du trou, donc vous gagnerez : ", "Vous avez contourné grâce a votre courage, l'obstacle et donc vous gagnerez : ", "comme vous n'osez même pas jouer, le challenge, vous gagnerez : "};
 
 	// déclaration des tableaux int :
 
-	int[] valeurMalus ={1, 1, 3};
+	private int[] valeurMalus = {2, 2, 1};
 
 	int[] valeurRecompense = {4, 4, 0};
 
