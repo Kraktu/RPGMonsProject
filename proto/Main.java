@@ -29,10 +29,6 @@ public class Main {
         // Création du personnage joueur.
         Joueur leJoueur = CreationDuPersonnage();
 
-
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-
-
         // Enregistrement du personnage nouvellement créé dans le fichier LesPersonnagesEnCombat.
         fonctions.GetLesPersonnagesEnCombat().SetLePersonnageJouable(leJoueur);
 
@@ -144,34 +140,14 @@ public class Main {
         System.out.println("Vous vous battez !");
 
         int ennemiAleatoireIndex = _fonctions.GetNbrAleatoire().GenererNbrAleatoireBorne(1, TousLesEnnemis.getInstance().GetTableauTousLesEnnemis().length - 1);
-        
+
         //GetLesPersonnagesEnCombat().SetEnnemisActuel(TousLesEnnemis.getInstance().tableauTousLesEnnemis[ennemiAleatoireIndex]);
         _fonctions.GetLesPersonnagesEnCombat().SetEnnemisActuel(TousLesEnnemis.getInstance().GetTableauTousLesEnnemis()[ennemiAleatoireIndex]);
-        
+
         _fonctions.GetEntreUtilisateur().TexteQuiAttend(_fonctions.GetLesPersonnagesEnCombat().GetEnnemisActuel().toString());
-        
+
         _fonctions.GetCombatManageur().SeBattre(_fonctions.GetLesPersonnagesEnCombat());
+
     }
 
-    // public final static void clearConsole()
-    // {
-    //     try
-    //     {
-    //         final String os = System.getProperty("os.name");
-            
-    //         if (os.contains("Windows"))
-    //         {
-    //             Runtime.getRuntime().exec("cls");
-    //         }
-    //         else
-    //         {
-    //             Runtime.getRuntime().exec("clear");
-    //         }
-    //     }
-    //     catch (final Exception e)
-    //     {
-    //         //  Handle any exceptions.
-    //     }
-    // }
-    
 }
