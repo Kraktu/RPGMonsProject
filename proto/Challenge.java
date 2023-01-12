@@ -24,9 +24,9 @@ public class Challenge {
 
 	protected String[] choixPossible = new String[3];
 
-	protected String[] typeDeMalus = new String[1];
+	protected String[] typeDeMalus = new String[3];
 
-	protected String[] typeDeRecompense = new String[1];
+	protected String[] typeDeRecompense = new String[3];
 
 	protected StatistiqueBonus forceBonus;
 
