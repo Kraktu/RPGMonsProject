@@ -2,7 +2,7 @@ package proto;
 
 import proto.Stat.StatistiqueBonus;
 /**
- * Challenge  Créé par Bruno
+ * Challenge  Créé par Bruno.
   */
 /*
   string name, description, defaultChoice;
