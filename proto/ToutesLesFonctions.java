@@ -27,6 +27,7 @@ public final class ToutesLesFonctions {
     private lesPersonnagesEnCombat lesPersos = new lesPersonnagesEnCombat();
     private CombatManageur combatManageur = new CombatManageur();
     private ChallengeFonctions challengeFonction = new ChallengeFonctions();
+    private MenuCombat MenuCombat = new MenuCombat();
 
     // Getters
 
@@ -52,6 +53,10 @@ public final class ToutesLesFonctions {
 
     public ChallengeFonctions GetChallengeFonctions(){
         return challengeFonction;
+    }
+
+    public MenuCombat GetMenuCombat(){
+        return MenuCombat;
     }
 
 }

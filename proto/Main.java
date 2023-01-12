@@ -7,13 +7,10 @@ import java.io.IOException;
  */
 public class Main {
 
-
         // sécurité sur la fonction oui-non
-        // sécurité sur la fonction continuer - challenge - quitter attend une int, ne supporte pas les Strings
+        // sécurité sur la fonction continuer - challenge - quitter attend une int, ne supporte pas les Strings ___ corrigé, a testé
 
-        // dans entreeUtilisateur, essayer de créer un tableau, plutôt qu'un switch
-
-
+        // dans entreeUtilisateur, essayer de créer un tableau, plutôt qu'un switch ____ WIP
 
         // a faire :
         // - Répartition des points de stats (Force, Intelligence, Agilité, Dextérité, Constitution).
