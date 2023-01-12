@@ -54,7 +54,7 @@ public class EntreUtilisateur {
 
     }
     */
-    
+
     public int EntreeUtilisateurInt (String _question) {
 
         // Scanner _entree = new Scanner(System.in);
