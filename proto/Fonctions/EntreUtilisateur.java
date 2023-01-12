@@ -115,7 +115,7 @@ public class EntreUtilisateur {
 
             do {
 
-                String _question = "Choisissez votre race :\n1 . humain\n2 . elfe\n3 . nain\n4 . troll\n5 . gobelin\n6 . Descriptions des classes.";
+                String _question = "Choisissez votre race :\n1 . humain\n2 . elfe\n3 . nain\n4 . troll\n5 . gobelin\n6 . Descriptions des races.";
 
                 _choix = EntreeUtilisateurInt(_question);
 
@@ -218,7 +218,7 @@ public class EntreUtilisateur {
         Classe _classeSelection = ToutesLesClasses.GetInstance().GetArcher();
         do {
 
-            String _question = "Choisissez votre classe : tapez\n1 pour archer, \n2 pour guerrier, \n3 pour mage, \n4 pour voleur";
+            String _question = "Choisissez votre classe : tapez\n1 pour archer, \n2 pour guerrier, \n3 pour mage, \n4 pour voleur \n5 . Descriptions des classes.";
 
             _choix = EntreeUtilisateurInt(_question);
 
@@ -239,6 +239,10 @@ public class EntreUtilisateur {
                     System.out.println("Vous avez choisi voleur.");
                     _classeSelection = ToutesLesClasses.GetInstance().GetVoleur();
                     break;
+                case 5:
+                    System.out.println("Vous Souhaitez obtenir des informations.");
+                    ChoixClasseInformation();
+                    break;
                 default:
                     System.out.println("Erreur, veuillez choisir un nombre compris entre 1 et 4.");
                     break;
@@ -248,6 +252,48 @@ public class EntreUtilisateur {
         // _entree.close();
 
         return _classeSelection;
+
+    }
+
+    public void ChoixClasseInformation() {
+
+        int _choix;
+
+        boolean _souhaiteInformation = true;
+
+        do {
+
+            do {
+
+                String _question = "Veuillez choisir la classe à décrire :\n1 . archer\n2 . guerrier\n3 . mage\n4 . voleur\n5 . Retour à la selection.";
+
+                _choix = EntreeUtilisateurInt(_question);
+
+                switch (_choix) {
+                    case 1:
+                        System.out.println(ToutesLesClasses.GetInstance().GetArcher().GetDescription() + "\n");
+                        break;
+                    case 2:
+                        System.out.println(ToutesLesClasses.GetInstance().GetGuerrier().GetDescription() + "\n");
+                        break;
+                    case 3:
+                        System.out.println(ToutesLesClasses.GetInstance().GetMage().GetDescription() + "\n");
+                        break;
+                    case 4:
+                        System.out.println(ToutesLesClasses.GetInstance().GetVoleur().GetDescription() + "\n");
+                        break;
+                    case 5:
+                        System.out.println("Retour au choix de la classe.\n");
+                        _souhaiteInformation = false;
+                        break;
+
+                    default:
+                        System.out.println("Erreur : vous devez choisir un nombre compris entre 1 et 5.");
+                        break;
+                }
+            } while (_choix < 1 || _choix > 6);
+
+        } while (_souhaiteInformation);
 
     }
 
