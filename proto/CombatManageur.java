@@ -14,7 +14,7 @@ public class CombatManageur {
 
     // integration des classes.
     final lesPersonnagesEnCombat perso = new lesPersonnagesEnCombat();
-private ToutesLesFonctions fonctions = ToutesLesFonctions.GetInstance();
+
     public void SeBattre(lesPersonnagesEnCombat _lesPerso) {
         int _pointDeVieRestantDuJoueur = 0;
         int _pointDeVieRestantDeEnnemi = 0;
@@ -22,7 +22,9 @@ private ToutesLesFonctions fonctions = ToutesLesFonctions.GetInstance();
         Ennemi ennemi = _lesPerso.GetEnnemisActuel();
 
         boolean leJoueurCommence = QuiCommence();
-fonctions.GetMenuCombat().ChoixMenuCombat();
+
+        ToutesLesFonctions.GetInstance().GetMenuCombat().ChoixMenuCombat();
+
         do {
 
             if (leJoueurCommence) {

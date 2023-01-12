@@ -1,6 +1,7 @@
 package proto.Fonctions;
 
 import proto.Combat;
+import proto.ToutesLesFonctions;
 
 /**
  * MenuCombat, crée par Seb
@@ -11,13 +12,13 @@ public class MenuCombat {
 
         int _choix;
 
-        EntreUtilisateur _EntreUtilisateur = new EntreUtilisateur();
+        //EntreUtilisateur _EntreUtilisateur = new EntreUtilisateur();
 
         Combat _Combat = new Combat();
 
         do {
 
-            _choix = _EntreUtilisateur.EntreeUtilisateurInt( "Que souhaitez-vous faire ?\nEntrer 1 pour lancer le combat,\nTaper 2 pour fuire,");
+            _choix = ToutesLesFonctions.GetInstance().GetEntreUtilisateur().EntreeUtilisateurInt( "Que souhaitez-vous faire ?\nEntrer 1 pour attaquer.\nTaper 2 pour fuire.");
             
             switch (_choix) {
                 
