@@ -14,8 +14,7 @@ public class CombatManageur {
 
     // integration des classes.
     final lesPersonnagesEnCombat perso = new lesPersonnagesEnCombat();
-    final MenuCombat _MenuCombat = new MenuCombat();
-
+private ToutesLesFonctions fonctions = ToutesLesFonctions.GetInstance();
     public void SeBattre(lesPersonnagesEnCombat _lesPerso) {
         int _pointDeVieRestantDuJoueur = 0;
         int _pointDeVieRestantDeEnnemi = 0;
@@ -23,7 +22,7 @@ public class CombatManageur {
         Ennemi ennemi = _lesPerso.GetEnnemisActuel();
 
         boolean leJoueurCommence = QuiCommence();
-
+fonctions.GetMenuCombat().ChoixMenuCombat();
         do {
 
             if (leJoueurCommence) {
@@ -36,6 +35,7 @@ public class CombatManageur {
                 System.out.println(
                         "C'est au tour de votre ennemi de vous attaquer.\nIl vous reste " + _pointDeVieRestantDuJoueur);
                 joueur.SetVie(_pointDeVieRestantDuJoueur);
+            
             } else {
                 // Instruction pour le cas où l'ennemi commence.
                 _pointDeVieRestantDuJoueur = joueur.GetVie() - FormuleDegat(ennemi, joueur);
@@ -47,7 +47,6 @@ public class CombatManageur {
                         .println("Vous attaquez votre adversaire.\n Il lui reste " + _pointDeVieRestantDeEnnemi + ".");
                 ennemi.SetVie(_pointDeVieRestantDeEnnemi);
             }
-
         } while (_pointDeVieRestantDeEnnemi > 0 && _pointDeVieRestantDuJoueur > 0);
 
     }
