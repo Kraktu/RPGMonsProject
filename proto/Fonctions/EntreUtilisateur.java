@@ -224,27 +224,35 @@ public class EntreUtilisateur {
 
             switch (_choix) {
                 case 1:
-                    System.out.println("Vous avez choisi archer.");
-                    _classeSelection = ToutesLesClasses.GetInstance().GetArcher();
+                    //System.out.println("Vous avez choisi archer.");
+                    //_classeSelection = ToutesLesClasses.GetInstance().GetArcher();
+                    System.out.println("Vous avez choissi : " + ToutesLesClasses.GetInstance().TableauToutesLesClasses()[_choix - 1].GetNom());
+                    _classeSelection = ToutesLesClasses.GetInstance().TableauToutesLesClasses()[_choix - 1];
                     break;
                 case 2:
-                    System.out.println("Vous avez choisi guerrier.");
-                    _classeSelection = ToutesLesClasses.GetInstance().GetGuerrier();
+                    // System.out.println("Vous avez choisi guerrier.");
+                    // _classeSelection = ToutesLesClasses.GetInstance().GetGuerrier();
+                    System.out.println("Vous avez choissi : " + ToutesLesClasses.GetInstance().TableauToutesLesClasses()[_choix - 1].GetNom());
+                    _classeSelection = ToutesLesClasses.GetInstance().TableauToutesLesClasses()[_choix - 1];
                     break;
                 case 3:
-                    System.out.println("Vous avez choisi mage.");
-                    _classeSelection = ToutesLesClasses.GetInstance().GetMage();
+                    // System.out.println("Vous avez choisi mage.");
+                    // _classeSelection = ToutesLesClasses.GetInstance().GetMage();
+                    System.out.println("Vous avez choissi : " + ToutesLesClasses.GetInstance().TableauToutesLesClasses()[_choix - 1].GetNom());
+                    _classeSelection = ToutesLesClasses.GetInstance().TableauToutesLesClasses()[_choix - 1];
                     break;
                 case 4:
-                    System.out.println("Vous avez choisi voleur.");
-                    _classeSelection = ToutesLesClasses.GetInstance().GetVoleur();
+                    // System.out.println("Vous avez choisi voleur.");
+                    // _classeSelection = ToutesLesClasses.GetInstance().GetVoleur();
+                    System.out.println("Vous avez choissi : " + ToutesLesClasses.GetInstance().TableauToutesLesClasses()[_choix - 1].GetNom());
+                    _classeSelection = ToutesLesClasses.GetInstance().TableauToutesLesClasses()[_choix - 1];
                     break;
                 case 5:
                     System.out.println("Vous Souhaitez obtenir des informations.");
                     ChoixClasseInformation();
                     break;
                 default:
-                    System.out.println("Erreur, veuillez choisir un nombre compris entre 1 et 4.");
+                    System.out.println("Erreur, veuillez choisir un nombre compris entre 1 et 5.");
                     break;
             }
         } while (_choix < 1 || _choix > 4);
