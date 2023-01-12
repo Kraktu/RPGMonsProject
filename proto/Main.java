@@ -13,6 +13,8 @@ public class Main {
 
         // créer une fonction qui réinitialise (ou initialise) les ennemis
 
+        // dans entreeUtilisateur, essayer de créer un tableau, plutôt qu'un switch
+
 
 
         // a faire :
@@ -121,13 +123,19 @@ public class Main {
 
                 System.out.println("Vous vous battez !");
 
+                //crée un nombre aléatoire dont la portée est comprise entre 1 et la taille maximal du tableau des ennemis disponibles.
                 int ennemiAleatoireIndex = _fonctions.GetNbrAleatoire().GenererNbrAleatoireBorne(1, TousLesEnnemis.getInstance().GetTableauTousLesEnnemis().length - 1);
 
-                // GetLesPersonnagesEnCombat().SetEnnemisActuel(TousLesEnnemis.getInstance().tableauTousLesEnnemis[ennemiAleatoireIndex]);
-                _fonctions.GetLesPersonnagesEnCombat().SetEnnemisActuel( TousLesEnnemis.getInstance().GetTableauTousLesEnnemis()[ennemiAleatoireIndex]);
+                // va chercher un ennemi dans le tableau des ennemis, et passe ses propriété dans "lesPersonnagesEnCombat".
+                //_fonctions.GetLesPersonnagesEnCombat().SetEnnemisActuel(TousLesEnnemis.getInstance().GetTableauTousLesEnnemis()[ennemiAleatoireIndex]);
 
+                // va chercher un ennemi dans le tableau des ennemis, et passe ses propriété dans "lesPersonnagesEnCombat".
+                _fonctions.GetLesPersonnagesEnCombat().InitialiseNewEnnemi(TousLesEnnemis.getInstance().GetTableauTousLesEnnemis()[ennemiAleatoireIndex]);
+
+                // Affiche les statistiques de l'ennemis choisis.
                 _fonctions.GetEntreUtilisateur().TexteQuiAttend(_fonctions.GetLesPersonnagesEnCombat().GetEnnemisActuel().toString());
 
+                // Lance la fonction SeBattre du combatManageur.
                 _fonctions.GetCombatManageur().SeBattre(_fonctions.GetLesPersonnagesEnCombat());
 
         }

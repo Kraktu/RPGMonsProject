@@ -60,4 +60,5 @@ public class Ennemi extends Personnage {
         Ennemi ennemi = (Ennemi) object;
         return java.util.Objects.equals(arme, ennemi.arme) && java.util.Objects.equals(equipement, ennemi.equipement);
     }
+
 }
