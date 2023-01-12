@@ -54,7 +54,7 @@ public class Main {
                                         break;
                                 case 2:
                                         System.out.println("Challenge !");
-                                        //challengeFonction.PrintDescriptionChallenge();
+                                        fonctions.GetChallengeFonctions().PrintDescriptionChallenge(fonctions.GetLesPersonnagesEnCombat());
                                         break;
                                 case 3:
                                         System.out.println("Au revoir.");
