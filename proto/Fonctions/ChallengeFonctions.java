@@ -1,5 +1,5 @@
 package proto.Fonctions;
-//Créé par bruno
+//Créé par bruno.
 import proto.TousLesChallenges;
 import proto.lesPersonnagesEnCombat;
 
