@@ -77,17 +77,19 @@ public class Main {
 
                         do {
 
-                                choixEntreLesCombats = _fonctions.GetEntreUtilisateur().EntreeUtilisateurInt("Que voulez-vous faire ?\n[1 : continuer]\n[2 : autre]\n[3 : quitter]");
+                                choixEntreLesCombats = _fonctions.GetEntreUtilisateur().EntreeUtilisateurInt("Que voulez-vous faire ?\n[1 : Lancer un combat]\n[2 : Lancer un challenge]\n[3 : quitter]");
 
                                 switch (choixEntreLesCombats) {
 
                                         case 1:
+                                                System.out.print("\n");
 
                                                 LancerNouveauCombat();
 
                                                 break;
 
                                         case 2:
+                                                System.out.print("\n");
 
                                                 LancerNouveauChallenge();
 

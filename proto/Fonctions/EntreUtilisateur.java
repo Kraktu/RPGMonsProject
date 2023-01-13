@@ -260,7 +260,7 @@ public class EntreUtilisateur {
         Classe _classeSelection = ToutesLesClasses.GetInstance().GetArcher();
         do {
 
-            String _question = "Choisissez votre classe : tapez\n1 pour archer, \n2 pour guerrier, \n3 pour mage, \n4 pour voleur \n5 . Descriptions des classes.";
+            String _question = "Choisissez votre classe : tapez\n1 . pour archer, \n2 . pour guerrier, \n3 . pour mage, \n4 . pour voleur \n5 . Descriptions des classes.";
 
             _choix = EntreeUtilisateurInt(_question);
 
