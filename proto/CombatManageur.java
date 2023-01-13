@@ -28,7 +28,7 @@ public class CombatManageur {
         boolean leJoueurCommence = QuiCommence();
 
         menucombat.ChoixMenuCombat();
-
+System.out.println("Le dé est lancé");
         if (leJoueurCommence) {
             // Instruction pour le cas où le joueur commence.
             _pointDeVieRestantDeEnnemi = ennemi.GetVie() - FormuleDegat(joueur, ennemi);
@@ -60,7 +60,6 @@ public class CombatManageur {
         int _jet = 0;
         NbrAleatoire nbrAl = new NbrAleatoire();
         try {
-            System.out.println("Le dé est lancé.");
             Thread.sleep(1000);
             _jet = nbrAl.GenererNbrAleatoireBorne(1, 6);
         } catch (Exception e) {
