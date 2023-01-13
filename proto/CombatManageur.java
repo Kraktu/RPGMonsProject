@@ -82,9 +82,9 @@ public class CombatManageur {
         EntreUtilisateur entreeUtilisateur = ToutesLesFonctions.GetInstance().GetEntreUtilisateur();
 
         int _votreJet = JetDeDe();
-        entreeUtilisateur.TexteQuiAttend("Vous avez obtenu " + _votreJet + ".");
         int _jetDeVotreAdversaire = JetDeDe();
-        entreeUtilisateur.TexteQuiAttend("Votre adversaire a obtenu " + _jetDeVotreAdversaire + ".");
+        entreeUtilisateur.TexteQuiAttend(
+                "Vous avez obtenu " + _votreJet + " et votre adversaire a obtenu " + _jetDeVotreAdversaire + ".");
         if (_votreJet > _jetDeVotreAdversaire) {
             System.out.println("C'est à vous de commencer.");
             return true;
