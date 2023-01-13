@@ -20,6 +20,9 @@ public class Main {
                 // Toutes les fonctions centralisées.
                 ToutesLesFonctions fonctions = ToutesLesFonctions.GetInstance();
 
+                // Salutation.
+                System.out.println("Bonjours,");
+
                 // Création du personnage joueur.
                 Joueur leJoueur = CreationDuPersonnage();
 
@@ -40,7 +43,7 @@ public class Main {
 
                 Joueur _joueur;
 
-                if (_fonctions.GetEntreUtilisateur().DemanderOuiOuNon("Creer votre personnage ?")) {
+                if (_fonctions.GetEntreUtilisateur().DemanderOuiOuNon("Souhaitez-vous personnaliser votre personnage ?")) {
 
                         _joueur = _fonctions.GetCreationDePersonnage().CreerJoueur();
 

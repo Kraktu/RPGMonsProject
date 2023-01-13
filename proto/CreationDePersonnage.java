@@ -11,7 +11,6 @@ import proto.Stat.*;
 public class CreationDePersonnage {
 
     EntreUtilisateur entreUtilisateur = new EntreUtilisateur();
-    //lesPersonnagesEnCombat lesPersonnages = new lesPersonnagesEnCombat();
     Personnage persoDeBase = new Personnage("default", null, null, 5, 100, 100, new Force(5), new Intelligence(5), new Agilite(5), new Dexterite(5), new Constitution(5));
 
     // Les propiétés.
@@ -92,8 +91,14 @@ public class CreationDePersonnage {
 }
 
     public String CreerPseudo(){
-        String joueurPseudo = entreUtilisateur.EntreeUtilisateurString("Bonjour,\nVeuillez entrer un pseudo.");
-        System.out.println("votre pseudo sera " + joueurPseudo + ".\n");
+
+        String joueurPseudo;
+        do {
+            joueurPseudo = entreUtilisateur.EntreeUtilisateurString("Veuillez entrer un pseudo.");
+            System.out.println("votre pseudo sera " + joueurPseudo + ".\n");
+            
+        } while (!entreUtilisateur.ConfirmationChoix());
+        
         return joueurPseudo;
     }
     public Race ChoixDeLaRace(){
