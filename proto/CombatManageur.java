@@ -79,6 +79,9 @@ public class CombatManageur {
     }
 
     public boolean QuiCommence() {
+        
+        EntreUtilisateur entreeUtilisateur = ToutesLesFonctions.GetInstance().GetEntreUtilisateur();
+
         int _votreJet = JetDeDe();
         entreeUtilisateur.TexteQuiAttend("Vous avez obtenu " + _votreJet + ".");
         int _jetDeVotreAdversaire = JetDeDe();
