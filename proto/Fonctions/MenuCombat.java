@@ -34,7 +34,7 @@ public class MenuCombat {
                     System.out.println("Erreur.");
                     break;
             }
-        } while (_choix < 1 || _choix > 2);
+        } while (_choix == 1);
 
         return _choix;
 
