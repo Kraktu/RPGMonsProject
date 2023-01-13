@@ -71,7 +71,7 @@ public class Main {
                 int choixEntreLesCombats;
 
 
-                System.out.println("A présent, votre aventure commence.\n");
+                System.out.println("A présent, votre aventure commence.");
 
                 while (aventureEnCours) {
 
