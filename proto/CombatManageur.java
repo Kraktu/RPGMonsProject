@@ -6,51 +6,59 @@ import proto.Fonctions.*;
  * Combat crée par Seb
  */
 
-// Les changements :
-// - constantes joueur et ennemi pour raccourcir les lignes de codes.
-// - formule de combat avec deux paramêtre Personnage.
-
 public class CombatManageur {
 
-    // integration des classes.
-    final lesPersonnagesEnCombat perso = new lesPersonnagesEnCombat();
-
     public void SeBattre(lesPersonnagesEnCombat _lesPerso) {
-        MenuCombat menucombat = ToutesLesFonctions.GetInstance().GetMenuCombat();
 
+        MenuCombat menuCombat = ToutesLesFonctions.GetInstance().GetMenuCombat();
         EntreUtilisateur entreeUtilisateur = ToutesLesFonctions.GetInstance().GetEntreUtilisateur();
 
         int _pointDeVieRestantDuJoueur = 0;
         int _pointDeVieRestantDeEnnemi = 0;
         Joueur joueur = _lesPerso.GetLePersonnageJouable();
         Ennemi ennemi = _lesPerso.GetEnnemisActuel();
+        boolean leJoueurCommence;
 
-        boolean leJoueurCommence = QuiCommence();
+        while (ennemi.GetVie() > 0 && joueur.GetVie() > 0) {
 
-        if (leJoueurCommence) {
-            // Instruction pour le cas où le joueur commence.
-            _pointDeVieRestantDeEnnemi = ennemi.GetVie() - FormuleDegat(joueur, ennemi);
-            entreeUtilisateur.TexteQuiAttend("Vous attaquez votre adversaire.");
-            entreeUtilisateur.TexteQuiAttend("Il lui reste " + _pointDeVieRestantDeEnnemi + " points de vie.");
-            ennemi.SetVie(_pointDeVieRestantDeEnnemi);
-            _pointDeVieRestantDuJoueur = joueur.GetVie() - FormuleDegat(ennemi, joueur);
-            entreeUtilisateur.TexteQuiAttend("C'est au tour de votre ennemi de vous attaquer.");
-            entreeUtilisateur.TexteQuiAttend("Il vous reste " + _pointDeVieRestantDuJoueur + " points de vie.");
-            joueur.SetVie(_pointDeVieRestantDuJoueur);
-            menucombat.ChoixMenuCombat();
-        } else {
-            // Instruction pour le cas où l'ennemi commence.
-            _pointDeVieRestantDuJoueur = joueur.GetVie() - FormuleDegat(ennemi, joueur);
-            entreeUtilisateur.TexteQuiAttend("C'est au tour de votre ennemi de vous attaquer.");
-            entreeUtilisateur.TexteQuiAttend("Il vous reste " + _pointDeVieRestantDuJoueur + " points de vie.");
+            // tous les personnages peuvent se battre !
+            while (menuCombat.ChoixMenuCombat() == 1) {
 
-            joueur.SetVie(_pointDeVieRestantDuJoueur);
-            _pointDeVieRestantDeEnnemi = ennemi.GetVie() - FormuleDegat(joueur, ennemi);
-            entreeUtilisateur.TexteQuiAttend("Vous attaquez votre adversaire.");
-            entreeUtilisateur.TexteQuiAttend("Il lui reste " + _pointDeVieRestantDeEnnemi + " points de vie.");
-            ennemi.SetVie(_pointDeVieRestantDeEnnemi);
-            menucombat.ChoixMenuCombat();
+                leJoueurCommence = QuiCommence();
+
+                if (leJoueurCommence) {
+                    // Instruction pour le cas où le joueur commence.
+                    System.out.println("");
+                    _pointDeVieRestantDeEnnemi = ennemi.GetVie() - FormuleDegat(joueur, ennemi);
+                    entreeUtilisateur.TexteQuiAttend("Vous attaquez votre adversaire.");
+                    entreeUtilisateur.TexteQuiAttend("Il lui reste " + _pointDeVieRestantDeEnnemi + " points de vie.");
+                    ennemi.SetVie(_pointDeVieRestantDeEnnemi);
+
+                    _pointDeVieRestantDuJoueur = joueur.GetVie() - FormuleDegat(ennemi, joueur);
+                    entreeUtilisateur.TexteQuiAttend("C'est au tour de votre ennemi de vous attaquer.");
+                    entreeUtilisateur.TexteQuiAttend("Il vous reste " + _pointDeVieRestantDuJoueur + " points de vie.");
+                    joueur.SetVie(_pointDeVieRestantDuJoueur);
+                    // menucombat.ChoixMenuCombat();
+                } else {
+                    // Instruction pour le cas où l'ennemi commence.
+                    System.out.println("");
+                    _pointDeVieRestantDuJoueur = joueur.GetVie() - FormuleDegat(ennemi, joueur);
+                    entreeUtilisateur.TexteQuiAttend("C'est au tour de votre ennemi de vous attaquer.");
+                    entreeUtilisateur.TexteQuiAttend("Il vous reste " + _pointDeVieRestantDuJoueur + " points de vie.");
+                    joueur.SetVie(_pointDeVieRestantDuJoueur);
+
+                    _pointDeVieRestantDeEnnemi = ennemi.GetVie() - FormuleDegat(joueur, ennemi);
+                    entreeUtilisateur.TexteQuiAttend("Vous attaquez votre adversaire.");
+                    entreeUtilisateur.TexteQuiAttend("Il lui reste " + _pointDeVieRestantDeEnnemi + " points de vie.");
+                    ennemi.SetVie(_pointDeVieRestantDeEnnemi);
+                    // menucombat.ChoixMenuCombat();
+                }
+
+            }
+
         }
+
+        System.out.println("Il y a un vainqueur !");
 
     }
 
@@ -77,7 +85,8 @@ public class CombatManageur {
     public boolean QuiCommence() {
 
         EntreUtilisateur entreeUtilisateur = ToutesLesFonctions.GetInstance().GetEntreUtilisateur();
-System.out.println("Le dé est lancé");
+
+        System.out.println("\nLe dé est lancé");
         int _votreJet = JetDeDe();
         int _jetDeVotreAdversaire = JetDeDe();
         entreeUtilisateur.TexteQuiAttend(

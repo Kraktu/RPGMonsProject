@@ -1,6 +1,6 @@
 package proto.Fonctions;
 
-import proto.Combat;
+//import proto.Combat;
 import proto.ToutesLesFonctions;
 
 /**
@@ -14,7 +14,7 @@ public class MenuCombat {
 
         //EntreUtilisateur _EntreUtilisateur = new EntreUtilisateur();
 
-        Combat _Combat = new Combat();
+        //Combat _Combat = new Combat();
 
         do {
 
@@ -24,17 +24,17 @@ public class MenuCombat {
                 
                 case 1:
                     System.out.println("C'est parti.");
-                    ToutesLesFonctions.GetInstance().GetCombatManageur().SeBattre();
-                    break;
+                    return _choix;
                 
                 case 2:
                     System.out.println("On dirait que vous avez peur !");
-                
+                    return _choix;
+                    
                 default:
                     System.out.println("Erreur.");
                     break;
             }
-        } while (_choix == 1);
+        } while (_choix > 1 || _choix < 2);
 
         return _choix;
 

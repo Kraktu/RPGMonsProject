@@ -121,7 +121,7 @@ public class Main {
 
                 ToutesLesFonctions _fonctions = ToutesLesFonctions.GetInstance();
 
-                System.out.println("Vous vous battez !");
+                System.out.println("Vous vous battez !\n");
 
                 //crée un nombre aléatoire dont la portée est comprise entre 1 et la taille maximal du tableau des ennemis disponibles.
                 int ennemiAleatoireIndex = _fonctions.GetNbrAleatoire().GenererNbrAleatoireBorne(1, TousLesEnnemis.getInstance().GetTableauTousLesEnnemis().length - 1);
@@ -134,6 +134,8 @@ public class Main {
 
                 // Affiche les statistiques de l'ennemis choisis.
                 _fonctions.GetEntreUtilisateur().TexteQuiAttend(_fonctions.GetLesPersonnagesEnCombat().GetEnnemisActuel().toString());
+
+                System.out.println("");
 
                 // Lance la fonction SeBattre du combatManageur.
                 _fonctions.GetCombatManageur().SeBattre(_fonctions.GetLesPersonnagesEnCombat());
