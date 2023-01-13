@@ -113,25 +113,33 @@ public class EntreUtilisateur {
 
     public boolean DemanderOuiOuNon(String _Question) {
 
-        String _choix;
+        String _Responce = "";
 
-        do {
+        while (true) {
 
-            System.out.println(_Question + "\n[o/n]");
+            System.out.print("\n" + _Question + " [o/n]\nVotre Réponse : ");
 
-            _choix = _entree.nextLine().toLowerCase();
-    
-            if (_choix.equals("o")) {
-    
-                return true;
-    
-            } else  {
-    
-                return false;
-    
+            _Responce = _entree.nextLine().toUpperCase();
+
+            switch (_Responce) {
+
+                case "O":
+
+                    return true;
+
+                case "N":
+
+                    return false;
+
+                default:
+
+                    System.err.println("Erreur, votre réponse doit être \"o\" ou \"n\"");
+
+                    continue;
+
             }
 
-        } while (!(_choix.equals("o") || _choix.equals("n")));
+        }
 
     }
 
