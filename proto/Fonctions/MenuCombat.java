@@ -24,7 +24,7 @@ public class MenuCombat {
                 
                 case 1:
                     System.out.println("C'est parti.");
-                    _Combat.QuiCommence();
+                    ToutesLesFonctions.GetInstance().GetCombatManageur().SeBattre();
                     break;
                 
                 case 2:
