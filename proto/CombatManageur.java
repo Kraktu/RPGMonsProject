@@ -16,6 +16,9 @@ public class CombatManageur {
     final lesPersonnagesEnCombat perso = new lesPersonnagesEnCombat();
 
     public void SeBattre(lesPersonnagesEnCombat _lesPerso) {
+
+        EntreUtilisateur entreeUtilisateur = ToutesLesFonctions.GetInstance().GetEntreUtilisateur();
+
         int _pointDeVieRestantDuJoueur = 0;
         int _pointDeVieRestantDeEnnemi = 0;
         Joueur joueur = _lesPerso.GetLePersonnageJouable();
@@ -30,8 +33,7 @@ public class CombatManageur {
             if (leJoueurCommence) {
                 // Instruction pour le cas où le joueur commence.
                 _pointDeVieRestantDeEnnemi = ennemi.GetVie() - FormuleDegat(joueur, ennemi);
-                ToutesLesFonctions.GetInstance().GetEntreUtilisateur()
-                        .TexteQuiAttend("Vous attaquez votre adversaire.");
+                entreeUtilisateur.TexteQuiAttend("Vous attaquez votre adversaire.");
                 ToutesLesFonctions.GetInstance().GetEntreUtilisateur()
                         .TexteQuiAttend("Il lui reste " + _pointDeVieRestantDeEnnemi + " points de vie.");
                 ennemi.SetVie(_pointDeVieRestantDeEnnemi);
