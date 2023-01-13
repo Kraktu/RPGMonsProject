@@ -34,30 +34,23 @@ public class CombatManageur {
                 // Instruction pour le cas où le joueur commence.
                 _pointDeVieRestantDeEnnemi = ennemi.GetVie() - FormuleDegat(joueur, ennemi);
                 entreeUtilisateur.TexteQuiAttend("Vous attaquez votre adversaire.");
-                ToutesLesFonctions.GetInstance().GetEntreUtilisateur()
-                        .TexteQuiAttend("Il lui reste " + _pointDeVieRestantDeEnnemi + " points de vie.");
+                entreeUtilisateur.TexteQuiAttend("Il lui reste " + _pointDeVieRestantDeEnnemi + " points de vie.");
                 ennemi.SetVie(_pointDeVieRestantDeEnnemi);
                 _pointDeVieRestantDuJoueur = joueur.GetVie() - FormuleDegat(ennemi, joueur);
-                ToutesLesFonctions.GetInstance().GetEntreUtilisateur()
-                        .TexteQuiAttend("C'est au tour de votre ennemi de vous attaquer.");
-                ToutesLesFonctions.GetInstance().GetEntreUtilisateur()
-                        .TexteQuiAttend("Il vous reste " + _pointDeVieRestantDuJoueur + " points de vie.");
+                entreeUtilisateur.TexteQuiAttend("C'est au tour de votre ennemi de vous attaquer.");
+                entreeUtilisateur.TexteQuiAttend("Il vous reste " + _pointDeVieRestantDuJoueur + " points de vie.");
                 joueur.SetVie(_pointDeVieRestantDuJoueur);
 
             } else {
                 // Instruction pour le cas où l'ennemi commence.
                 _pointDeVieRestantDuJoueur = joueur.GetVie() - FormuleDegat(ennemi, joueur);
-                ToutesLesFonctions.GetInstance().GetEntreUtilisateur()
-                        .TexteQuiAttend("C'est au tour de votre ennemi de vous attaquer.");
-                ToutesLesFonctions.GetInstance().GetEntreUtilisateur()
-                        .TexteQuiAttend("Il vous reste " + _pointDeVieRestantDuJoueur + " points de vie.");
+                entreeUtilisateur.TexteQuiAttend("C'est au tour de votre ennemi de vous attaquer.");
+                entreeUtilisateur.TexteQuiAttend("Il vous reste " + _pointDeVieRestantDuJoueur + " points de vie.");
 
                 joueur.SetVie(_pointDeVieRestantDuJoueur);
                 _pointDeVieRestantDeEnnemi = ennemi.GetVie() - FormuleDegat(joueur, ennemi);
-                ToutesLesFonctions.GetInstance().GetEntreUtilisateur()
-                        .TexteQuiAttend("Vous attaquez votre adversaire.");
-                ToutesLesFonctions.GetInstance().GetEntreUtilisateur()
-                        .TexteQuiAttend("Il lui reste " + _pointDeVieRestantDeEnnemi + " points de vie.");
+                entreeUtilisateur.TexteQuiAttend("Vous attaquez votre adversaire.");
+                entreeUtilisateur.TexteQuiAttend("Il lui reste " + _pointDeVieRestantDeEnnemi + " points de vie.");
                 ennemi.SetVie(_pointDeVieRestantDeEnnemi);
             }
         } while (_pointDeVieRestantDeEnnemi > 0 && _pointDeVieRestantDuJoueur > 0);
@@ -87,9 +80,9 @@ public class CombatManageur {
 
     public boolean QuiCommence() {
         int _votreJet = JetDeDe();
-        ToutesLesFonctions.GetInstance().GetEntreUtilisateur().TexteQuiAttend("Vous avez obtenu " + _votreJet + ".");
+        entreeUtilisateur.TexteQuiAttend("Vous avez obtenu " + _votreJet + ".");
         int _jetDeVotreAdversaire = JetDeDe();
-ToutesLesFonctions.GetInstance().GetEntreUtilisateur().TexteQuiAttend("Votre adversaire a obtenu " + _jetDeVotreAdversaire + ".");
+        entreeUtilisateur.TexteQuiAttend("Votre adversaire a obtenu " + _jetDeVotreAdversaire + ".");
         if (_votreJet > _jetDeVotreAdversaire) {
             System.out.println("C'est à vous de commencer.");
             return true;
