@@ -16,6 +16,7 @@ public class CombatManageur {
     final lesPersonnagesEnCombat perso = new lesPersonnagesEnCombat();
 
     public void SeBattre(lesPersonnagesEnCombat _lesPerso) {
+        MenuCombat menucombat = ToutesLesFonctions.GetInstance().GetMenuCombat();
 
         EntreUtilisateur entreeUtilisateur = ToutesLesFonctions.GetInstance().GetEntreUtilisateur();
 
@@ -26,34 +27,32 @@ public class CombatManageur {
 
         boolean leJoueurCommence = QuiCommence();
 
-        ToutesLesFonctions.GetInstance().GetMenuCombat().ChoixMenuCombat();
+        menucombat.ChoixMenuCombat();
 
-        do {
+        if (leJoueurCommence) {
+            // Instruction pour le cas où le joueur commence.
+            _pointDeVieRestantDeEnnemi = ennemi.GetVie() - FormuleDegat(joueur, ennemi);
+            entreeUtilisateur.TexteQuiAttend("Vous attaquez votre adversaire.");
+            entreeUtilisateur.TexteQuiAttend("Il lui reste " + _pointDeVieRestantDeEnnemi + " points de vie.");
+            ennemi.SetVie(_pointDeVieRestantDeEnnemi);
+            _pointDeVieRestantDuJoueur = joueur.GetVie() - FormuleDegat(ennemi, joueur);
+            entreeUtilisateur.TexteQuiAttend("C'est au tour de votre ennemi de vous attaquer.");
+            entreeUtilisateur.TexteQuiAttend("Il vous reste " + _pointDeVieRestantDuJoueur + " points de vie.");
+            joueur.SetVie(_pointDeVieRestantDuJoueur);
+            menucombat.ChoixMenuCombat();
+        } else {
+            // Instruction pour le cas où l'ennemi commence.
+            _pointDeVieRestantDuJoueur = joueur.GetVie() - FormuleDegat(ennemi, joueur);
+            entreeUtilisateur.TexteQuiAttend("C'est au tour de votre ennemi de vous attaquer.");
+            entreeUtilisateur.TexteQuiAttend("Il vous reste " + _pointDeVieRestantDuJoueur + " points de vie.");
 
-            if (leJoueurCommence) {
-                // Instruction pour le cas où le joueur commence.
-                _pointDeVieRestantDeEnnemi = ennemi.GetVie() - FormuleDegat(joueur, ennemi);
-                entreeUtilisateur.TexteQuiAttend("Vous attaquez votre adversaire.");
-                entreeUtilisateur.TexteQuiAttend("Il lui reste " + _pointDeVieRestantDeEnnemi + " points de vie.");
-                ennemi.SetVie(_pointDeVieRestantDeEnnemi);
-                _pointDeVieRestantDuJoueur = joueur.GetVie() - FormuleDegat(ennemi, joueur);
-                entreeUtilisateur.TexteQuiAttend("C'est au tour de votre ennemi de vous attaquer.");
-                entreeUtilisateur.TexteQuiAttend("Il vous reste " + _pointDeVieRestantDuJoueur + " points de vie.");
-                joueur.SetVie(_pointDeVieRestantDuJoueur);
-
-            } else {
-                // Instruction pour le cas où l'ennemi commence.
-                _pointDeVieRestantDuJoueur = joueur.GetVie() - FormuleDegat(ennemi, joueur);
-                entreeUtilisateur.TexteQuiAttend("C'est au tour de votre ennemi de vous attaquer.");
-                entreeUtilisateur.TexteQuiAttend("Il vous reste " + _pointDeVieRestantDuJoueur + " points de vie.");
-
-                joueur.SetVie(_pointDeVieRestantDuJoueur);
-                _pointDeVieRestantDeEnnemi = ennemi.GetVie() - FormuleDegat(joueur, ennemi);
-                entreeUtilisateur.TexteQuiAttend("Vous attaquez votre adversaire.");
-                entreeUtilisateur.TexteQuiAttend("Il lui reste " + _pointDeVieRestantDeEnnemi + " points de vie.");
-                ennemi.SetVie(_pointDeVieRestantDeEnnemi);
-            }
-        } while (_pointDeVieRestantDeEnnemi > 0 && _pointDeVieRestantDuJoueur > 0);
+            joueur.SetVie(_pointDeVieRestantDuJoueur);
+            _pointDeVieRestantDeEnnemi = ennemi.GetVie() - FormuleDegat(joueur, ennemi);
+            entreeUtilisateur.TexteQuiAttend("Vous attaquez votre adversaire.");
+            entreeUtilisateur.TexteQuiAttend("Il lui reste " + _pointDeVieRestantDeEnnemi + " points de vie.");
+            ennemi.SetVie(_pointDeVieRestantDeEnnemi);
+            menucombat.ChoixMenuCombat();
+        }
 
     }
 
@@ -79,7 +78,7 @@ public class CombatManageur {
     }
 
     public boolean QuiCommence() {
-        
+
         EntreUtilisateur entreeUtilisateur = ToutesLesFonctions.GetInstance().GetEntreUtilisateur();
 
         int _votreJet = JetDeDe();
