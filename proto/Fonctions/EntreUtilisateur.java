@@ -353,4 +353,26 @@ public class EntreUtilisateur {
         _entree.nextLine();
     }
 
+    public int JetDeDeMinMax (int _max) {
+
+        int _jet = 0;
+
+        NbrAleatoire nbrAl = new NbrAleatoire();
+
+        try {
+
+            Thread.sleep(200);
+
+            _jet = nbrAl.GenererNbrAleatoireBorne(1, _max);
+
+        } catch (Exception e) {
+
+            System.out.println("Erreur.");
+
+        }
+
+        return _jet;
+
+    }
+
 }
