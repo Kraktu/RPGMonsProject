@@ -353,7 +353,7 @@ public class EntreUtilisateur {
         _entree.nextLine();
     }
 
-    public int JetDeDeMinMax (int _max) {
+    public int JetDeDeMax (int _max) {
 
         int _jet = 0;
 
