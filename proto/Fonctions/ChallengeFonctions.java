@@ -1,7 +1,10 @@
 package proto.Fonctions;
+import proto.Joueur;
 //Créé par bruno.
 import proto.TousLesChallenges;
+import proto.ToutesLesFonctions;
 import proto.lesPersonnagesEnCombat;
+import proto.Stat.Statistique;
 
 public class ChallengeFonctions {
 
@@ -19,52 +22,131 @@ public class ChallengeFonctions {
 
 	private int[] tableauvaleurRecompense = TousLesChallenges.GetInstance().GetPontEnRuine().GetValeurRecompense();
 
+	/**
+	 * @param _lesPerso
+	 */
 	public void PrintDescriptionChallenge(lesPersonnagesEnCombat _lesPerso){
 
-	//	int _pointDeVieRestantDuJoueur = 0;
+		EntreUtilisateur entreUtilisateur = ToutesLesFonctions.GetInstance().GetEntreUtilisateur();
 
-	//	Joueur joueur = _lesPerso.GetLePersonnageJouable();
+		//	int _pointDeVieRestantDuJoueur = 0;
 
-		System.out.println("Parfait " + _lesPerso.GetLePersonnageJouable().GetNom() +
+			Joueur joueur = _lesPerso.GetLePersonnageJouable();
+
+		System.out.println("Parfait " + joueur.GetNom() +
 		
-		"\nVous avez décidé de faire un challenge\n" +
+		"\nVous avez décidé de faire un challenge\n");
 
-		"Pas de chance, c'est " + TousLesChallenges.GetInstance().GetPontEnRuine().GetNom() + " !!\n" +
-		
-		"Plusieurs choix s'offrent à vous ! Les voicis :\n" +
+		entreUtilisateur.TexteQuiAttend("Plein de chance, c'est le " + TousLesChallenges.GetInstance().GetPontEnRuine().GetNom() + " !!\n");
 
-		tableauChoixPossible[0] + ",\n" +
+		System.out.println(TousLesChallenges.GetInstance().GetPontEnRuine().GetDescription());
 
-		tableauChoixPossible[1] + " ou\n" +
+		entreUtilisateur.TexteQuiAttend("Plusieurs choix s'offrent à vous, mais, en fonction de ce que vous choisirez, vous aurez plus ou moins de point de vie ! Les voicis :\n");
 
-		tableauChoixPossible[2] + "\n" +
-
-		"Voici vos choix possibles ainsi que les points gagnés, mais évidemment ceux perdus !\n" +
-
-		"1) Désignation des choix, challenges et points perdus probable :\n" +
-
-		tableauTypeDeMalus[0] +
+		System.out.println(tableauTypeDeMalus[0] +
 
 		tableauValeurMalus[0] + " points de vie !!\n" +
 
-		tableauTypeDeMalus[1] + tableauValeurMalus[1] + " points de vie !!\n" +
+		tableauTypeDeMalus[1] +
 
-		tableauTypeDeMalus[2] + tableauValeurMalus[2] + " points de vie !!\n" +
+		tableauValeurMalus[1] + " points de vie !!");
 
-		"2) Désignation des choix, challenges et points gagnés probable :\n" +
+		entreUtilisateur.TexteQuiAttend(tableauTypeDeMalus[2] +
 
-		tableauTypeDeRecompense[0] +
+		tableauValeurMalus[2] + " points de vie !!\n");
+
+		entreUtilisateur.TexteQuiAttend("Voici ce que vous gagnerez en cas de franchissement :\n");
+
+		System.out.println(tableauTypeDeRecompense[0] +
 
 		tableauvaleurRecompense[0] + " points de vie !!\n" +
 
 		tableauTypeDeRecompense[1] +
 
-		tableauvaleurRecompense[1] + " points de vie !!\n" +
+		tableauvaleurRecompense[1] + " points de vie !!");
 
-		tableauTypeDeRecompense[2] +
+		entreUtilisateur.TexteQuiAttend(tableauTypeDeRecompense[2] +
 
-		tableauvaleurRecompense[2] + " points de vie !!\n"
-		);
+		tableauvaleurRecompense[2] + " points de vie !!\n" +
 
+		"Pour info, il vous reste " + joueur.GetVie() + " points de vie !!");
+
+		int _choix3Proposition;
+
+		do {
+
+			_choix3Proposition = entreUtilisateur.EntreeUtilisateurInt("Que voulez-vous faire ?\n\n" +
+
+			"Tapez 1 pour " + tableauChoixPossible[0] +
+
+			".\nTapez 2 pour " + tableauChoixPossible[1] +
+
+			".\nTapez 3 pour " + tableauChoixPossible[2] + "."
+			);
+
+			switch (_choix3Proposition) {
+				case 1:
+
+					System.out.println("Très bien, vous avez choisi " + tableauChoixPossible[0] +
+
+					".\nSuper ;) En cas de victoire, vous gagnerez " + tableauvaleurRecompense[0] + " point de vie !!" +
+
+					"\nSuper ;) En cas de défaite, et ce sera le cas :-) vous perdrez " + tableauValeurMalus[0] + "Point de vie !!"
+
+					);
+
+					
+					break;
+
+					case 2:
+
+					System.out.println("Très bien, vous avez choisi " + tableauChoixPossible[1] +
+
+					".\nSuper ;) En cas de victoire, vous gagnerez " + tableauvaleurRecompense[1] + " point de vie !!" +
+
+					"\nSuper ;) En cas de défaite, et ce sera le cas :-) vous perdrez " + tableauValeurMalus[1] + "Point de vie !!"
+
+					);
+
+					break;
+
+					case 3:
+
+					System.out.println("Très bien, vous avez choisi " + tableauChoixPossible[2] +
+
+					".\nSuper ;) En cas de victoire, vous gagnerez " + tableauvaleurRecompense[2] + " point de vie !!" +
+
+					"\nSuper ;) En cas de défaite, et ce sera le cas :-) vous perdrez " + tableauValeurMalus[2] + "Point de vie !!"
+
+					);
+
+					break;
+			
+				default:
+
+				System.out.println("Vous devez uniquement mettre un chiffre entre 1 et 3 !!! Veuillez recommencer !!");
+					break;
+			}
+		
+		} while(_choix3Proposition > 3 || _choix3Proposition <= 0);
+
+		System.out.println("Du coup, c'est parti !!");
+	
+		if (_choix3Proposition == 1) {
+	
+			Statistique _agilitePont = TousLesChallenges.GetInstance().GetPontEnRuine().GetAgiliteBonus();
+	
+			Statistique _agiliteJoueur = _lesPerso.GetLePersonnageJouable().GetAgilite();
+	
+			System.out.println(" pour savoir franchir ceci vous avez besoin d' au moins " + _agilitePont + " points d'agilité !!" +
+
+			"Il vous reste " + _agiliteJoueur + " points d'agilité !!");
+
+		System.out.println("Bonne chance, les dés sont lancés…");
+
+		int _jetResultat = entreUtilisateur.JetDeDeMax(3);
+
+		System.out.println(_jetResultat);
+		}
 	}
 }
