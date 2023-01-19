@@ -4,7 +4,7 @@ import proto.Joueur;
 import proto.TousLesChallenges;
 import proto.ToutesLesFonctions;
 import proto.lesPersonnagesEnCombat;
-import proto.Stat.Statistique;
+//import proto.Stat.Statistique;
 
 public class ChallengeFonctions {
 
@@ -29,7 +29,7 @@ public class ChallengeFonctions {
 
 		EntreUtilisateur entreUtilisateur = ToutesLesFonctions.GetInstance().GetEntreUtilisateur();
 
-		//	int _pointDeVieRestantDuJoueur = 0;
+			int _pointDeVieRestantDuJoueur = 0;
 
 			Joueur joueur = _lesPerso.GetLePersonnageJouable();
 
@@ -128,25 +128,48 @@ public class ChallengeFonctions {
 					break;
 			}
 		
-		} while(_choix3Proposition > 3 || _choix3Proposition <= 0);
+		}
+		while(_choix3Proposition > 3 || _choix3Proposition <= 0);
 
 		System.out.println("Du coup, c'est parti !!");
 	
-		if (_choix3Proposition == 1) {
+			int _agilitePont = TousLesChallenges.GetInstance().GetPontEnRuine().GetAgiliteBonus().GetValeur();
 	
-			Statistique _agilitePont = TousLesChallenges.GetInstance().GetPontEnRuine().GetAgiliteBonus();
-	
-			Statistique _agiliteJoueur = _lesPerso.GetLePersonnageJouable().GetAgilite();
-	
-			System.out.println(" pour savoir franchir ceci vous avez besoin d' au moins " + _agilitePont + " points d'agilité !!" +
+			int _agiliteJoueur = _lesPerso.GetLePersonnageJouable().GetAgilite().GetValeur();
 
-			"Il vous reste " + _agiliteJoueur + " points d'agilité !!");
+			_pointDeVieRestantDuJoueur = joueur.GetVie();
+
+		if (_choix3Proposition == 1) {
+
+			entreUtilisateur.TexteQuiAttend("Pour savoir franchir ceci vous avez besoin d' au moins " + _agilitePont + " points d'agilité !!\n");
+
+			System.out.println( "Il vous reste " + _agiliteJoueur + " points d'agilité !!");
 
 		System.out.println("Bonne chance, les dés sont lancés…");
 
-		int _jetResultat = entreUtilisateur.JetDeDeMax(3);
+		int _jetResultat = entreUtilisateur.JetDeDeMax(_agiliteJoueur);
 
-		System.out.println(_jetResultat);
+		if (_jetResultat > _agilitePont) {
+
+			int _res = (_pointDeVieRestantDuJoueur + tableauvaleurRecompense[0]);
+
+			System.out.println("Vous avez réussi à franchir le pont, vous avez maintenant " + _res + " points de vies :-)");
+		}
+
+		else if (_jetResultat < _agilitePont) {
+
+			System.out.println(_jetResultat + " Perdu");
+		}
+
+		else if (_jetResultat == _agilitePont) {
+
+			System.out.println(_jetResultat + "Egalité");
+		}
+
+		else {
+
+			System.out.println("Erreur de programme");
+		}
 		}
 	}
 }
