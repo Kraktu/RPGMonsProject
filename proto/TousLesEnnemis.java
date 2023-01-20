@@ -255,7 +255,7 @@ public final class TousLesEnnemis {
 
 	public Ennemi GenererEnnemiAleatoire(){
 
-		Ennemi ennemiAleatoire = new Ennemi(EnnemiNomAleatoire(), EnnemiRaceAleatoire(), EnnemiClasseAleatoire(), EnnemiNiveauAleatoire(), 0, 0, null, null, null, null, null, null, null);
+		Ennemi ennemiAleatoire = new Ennemi(EnnemiNomAleatoire(), EnnemiRaceAleatoire(), EnnemiClasseAleatoire(), EnnemiNiveauAleatoire(), EnnemiPVAleatoire(), EnnemiManaAleatoire(), null, null, null, null, null, null, null);
 
 		return ennemiAleatoire;
 
@@ -296,11 +296,12 @@ public final class TousLesEnnemis {
 	}
 
 	private int EnnemiNiveauAleatoire(){
-
-		// Cette fonction va chercher le niveau du joueur stocké dans le fichier lesPersonnagesEnCombats.
-		// Ensuite, cette valeur va varier positivement ou négativement grace à une variable int appelé variance.
-		// Par exemple : si le joueur est niveau 5, et la valeur de variance est de 3,
-		// le niveau de l'ennemi sera compris entre 2 et 8.
+		/**
+		* Cette fonction va chercher le niveau du joueur stocké dans le fichier lesPersonnagesEnCombats.
+		* Ensuite, cette valeur va varier positivement ou négativement grace à une variable int appelé variance.
+		* Par exemple : si le joueur est niveau 5, et la valeur de variance est de 3,
+		* le niveau de l'ennemi sera compris entre 2 et 8.
+		*/
 
 		ToutesLesFonctions fonctions = ToutesLesFonctions.GetInstance();
 
@@ -320,4 +321,31 @@ public final class TousLesEnnemis {
 
 	}
 
+	private int EnnemiPVAleatoire(){
+
+		ToutesLesFonctions fonctions = ToutesLesFonctions.GetInstance();
+
+		final int _variance = 5;
+
+		int _basePV = 10;
+
+		int _ennemiPV = fonctions.GetMathFonction().NbrAleatoireEntreDeuxValeur(_basePV - _variance, _basePV + _variance);
+
+		return _ennemiPV;
+
+	}
+
+	private int EnnemiManaAleatoire(){
+
+		ToutesLesFonctions fonctions = ToutesLesFonctions.GetInstance();
+
+		final int _variance = 5;
+
+		int _baseMana = 10;
+
+		int _ennemiMana = fonctions.GetMathFonction().NbrAleatoireEntreDeuxValeur(_baseMana - _variance, _baseMana + _variance);
+
+		return _ennemiMana;
+
+	}
 }

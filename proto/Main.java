@@ -36,8 +36,10 @@ public class Main {
                                 "\nNom : " + ennemiAleatoire.GetNom() +
                                 "\nRace : " + ennemiAleatoire.GetRace().GetNom() +
                                 "\nClasse : " + ennemiAleatoire.GetClasse().GetNom() +
-                                "\nNiveau : " + ennemiAleatoire.GetNiveau()
-                                );                        
+                                "\nNiveau : " + ennemiAleatoire.GetNiveau() +
+                                "\nPoint de vie : " + ennemiAleatoire.GetVie() +
+                                "\nPoint de mana : " + ennemiAleatoire.GetMana() +
+                                "\n");                        
                 
                 }
 
