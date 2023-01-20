@@ -1,6 +1,9 @@
 package proto;
 
+import proto.Classes.Classe;
 import proto.Classes.ToutesLesClasses;
+import proto.Fonctions.EntreUtilisateur;
+import proto.Race.Race;
 import proto.Race.ToutesLesRaces;
 import proto.Stat.StatistiqueBonus;
 
@@ -26,6 +29,9 @@ public final class TousLesEnnemis {
 		}
 		return instance;
 	}
+
+
+
 
 	// création du premier ennemie, Bruno humain
 
@@ -244,4 +250,49 @@ public final class TousLesEnnemis {
 	public void SetTableauTousLesEnnemis(Ennemi[] _tableauTousLesEnnemis) {
 		tableauTousLesEnnemis = _tableauTousLesEnnemis;
 	}
+
+	// Methodes.
+
+	public Ennemi GenererEnnemiAleatoire(){
+
+		Ennemi ennemiAleatoire = new Ennemi(EnnemiNomAleatoire(), EnnemiRaceAleatoire(), EnnemiClasseAleatoire(), 0, 0, 0, null, null, null, null, null, null, null);
+
+		return ennemiAleatoire;
+
+	}
+
+	private EntreUtilisateur entreUtilisateur = ToutesLesFonctions.GetInstance().GetEntreUtilisateur();
+
+	private String EnnemiNomAleatoire(){
+
+		String[] _ennemiNomTableau = {
+			"Ennemi aléatoire A",
+			"Ennemi aléatoire B",
+			"Ennemi aléatoire C",
+			"Ennemi aléatoire D",
+			"Ennemi aléatoire E"
+		};
+
+		int _nbrAleatoire = entreUtilisateur.JetDeDeMax(_ennemiNomTableau.length - 1);
+
+		return _ennemiNomTableau[_nbrAleatoire];
+
+	}
+
+	private Race EnnemiRaceAleatoire(){
+
+		int _nbrAleatoire = entreUtilisateur.JetDeDeMax(ToutesLesRaces.GetInstance().TableauToutesLesRaces().length - 1);
+
+		return ToutesLesRaces.GetInstance().TableauToutesLesRaces()[_nbrAleatoire];
+
+	}
+
+	private Classe EnnemiClasseAleatoire(){
+
+		int _nbrAleatoire = entreUtilisateur.JetDeDeMax(ToutesLesClasses.GetInstance().TableauToutesLesClasses().length - 1);
+
+		return ToutesLesClasses.GetInstance().TableauToutesLesClasses()[_nbrAleatoire];
+
+	}
+
 }

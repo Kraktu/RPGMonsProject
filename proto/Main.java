@@ -23,6 +23,29 @@ public class Main {
                 // Salutation.
                 System.out.println("Bonjours,");
 
+                //#region - Temporaire : test de la création d'ennemis aléatoires.
+
+                Ennemi ennemiAleatoire;
+
+                for (int i = 0; i < 10; i++) {
+
+                        System.out.println(ToutesLesFonctions.GetInstance().GetMathFonction().NbrAleatoireEntreDeuxValeur(10, 15));
+
+                        /*
+                        ennemiAleatoire = TousLesEnnemis.getInstance().GenererEnnemiAleatoire();
+
+                        System.out.print(
+                                "\nNom : " + ennemiAleatoire.GetNom() +
+                                "\nRace : " + ennemiAleatoire.GetRace().GetNom() +
+                                "\nClasse : " + ennemiAleatoire.GetClasse().GetNom()
+                                );                        
+                */
+                }
+
+                System.out.println("");
+
+                //#endregion - Temporaire : fin du test de la création d'ennemis aléatoires.
+
                 // Création du personnage joueur.
                 Joueur leJoueur = CreationDuPersonnage();
 
