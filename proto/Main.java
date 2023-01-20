@@ -29,17 +29,16 @@ public class Main {
 
                 for (int i = 0; i < 10; i++) {
 
-                        System.out.println(ToutesLesFonctions.GetInstance().GetMathFonction().NbrAleatoireEntreDeuxValeur(10, 15));
-
-                        /*
+                        
                         ennemiAleatoire = TousLesEnnemis.getInstance().GenererEnnemiAleatoire();
 
                         System.out.print(
                                 "\nNom : " + ennemiAleatoire.GetNom() +
                                 "\nRace : " + ennemiAleatoire.GetRace().GetNom() +
-                                "\nClasse : " + ennemiAleatoire.GetClasse().GetNom()
+                                "\nClasse : " + ennemiAleatoire.GetClasse().GetNom() +
+                                "\nNiveau : " + ennemiAleatoire.GetNiveau()
                                 );                        
-                */
+                
                 }
 
                 System.out.println("");

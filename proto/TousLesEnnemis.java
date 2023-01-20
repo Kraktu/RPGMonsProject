@@ -255,7 +255,7 @@ public final class TousLesEnnemis {
 
 	public Ennemi GenererEnnemiAleatoire(){
 
-		Ennemi ennemiAleatoire = new Ennemi(EnnemiNomAleatoire(), EnnemiRaceAleatoire(), EnnemiClasseAleatoire(), 0, 0, 0, null, null, null, null, null, null, null);
+		Ennemi ennemiAleatoire = new Ennemi(EnnemiNomAleatoire(), EnnemiRaceAleatoire(), EnnemiClasseAleatoire(), EnnemiNiveauAleatoire(), 0, 0, null, null, null, null, null, null, null);
 
 		return ennemiAleatoire;
 
@@ -292,6 +292,31 @@ public final class TousLesEnnemis {
 		int _nbrAleatoire = entreUtilisateur.JetDeDeMax(ToutesLesClasses.GetInstance().TableauToutesLesClasses().length - 1);
 
 		return ToutesLesClasses.GetInstance().TableauToutesLesClasses()[_nbrAleatoire];
+
+	}
+
+	private int EnnemiNiveauAleatoire(){
+
+		// Cette fonction va chercher le niveau du joueur stocké dans le fichier lesPersonnagesEnCombats.
+		// Ensuite, cette valeur va varier positivement ou négativement grace à une variable int appelé variance.
+		// Par exemple : si le joueur est niveau 5, et la valeur de variance est de 3,
+		// le niveau de l'ennemi sera compris entre 2 et 8.
+
+		ToutesLesFonctions fonctions = ToutesLesFonctions.GetInstance();
+
+		final int variance = 3;
+
+		int joueurNiveau = fonctions.GetLesPersonnagesEnCombat().GetLePersonnageJouable().GetNiveau();
+
+		int ennemiNiveau = fonctions.GetMathFonction().NbrAleatoireEntreDeuxValeur(joueurNiveau - variance, joueurNiveau + variance);
+
+		if (ennemiNiveau < 1) {
+
+			ennemiNiveau = 1;
+
+		}
+
+		return ennemiNiveau;
 
 	}
 
