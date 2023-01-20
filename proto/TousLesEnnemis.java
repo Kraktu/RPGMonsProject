@@ -3,6 +3,7 @@ package proto;
 import proto.Classes.Classe;
 import proto.Classes.ToutesLesClasses;
 import proto.Fonctions.EntreUtilisateur;
+import proto.Fonctions.MathFonction;
 import proto.Race.Race;
 import proto.Race.ToutesLesRaces;
 import proto.Stat.StatistiqueBonus;
@@ -255,13 +256,17 @@ public final class TousLesEnnemis {
 
 	public Ennemi GenererEnnemiAleatoire(){
 
-		Ennemi ennemiAleatoire = new Ennemi(EnnemiNomAleatoire(), EnnemiRaceAleatoire(), EnnemiClasseAleatoire(), EnnemiNiveauAleatoire(), EnnemiPVAleatoire(), EnnemiManaAleatoire(), null, null, null, null, null, null, null);
+		Race ennemiRaceAleatoire = EnnemiRaceAleatoire();
+		Classe ennemiClasseAleatoire = EnnemiClasseAleatoire();
+
+		Ennemi ennemiAleatoire = new Ennemi(EnnemiNomAleatoire(), ennemiRaceAleatoire, ennemiClasseAleatoire, EnnemiNiveauAleatoire(), EnnemiPVAleatoire(), EnnemiManaAleatoire(), EnnemiStatBonusAleatoire(), EnnemiStatBonusAleatoire(), EnnemiStatBonusAleatoire(), EnnemiStatBonusAleatoire(), EnnemiStatBonusAleatoire(), null, null);
 
 		return ennemiAleatoire;
 
 	}
 
 	private EntreUtilisateur entreUtilisateur = ToutesLesFonctions.GetInstance().GetEntreUtilisateur();
+	private MathFonction mathFonction = ToutesLesFonctions.GetInstance().GetMathFonction();
 
 	private String EnnemiNomAleatoire(){
 
@@ -273,7 +278,7 @@ public final class TousLesEnnemis {
 			"Ennemi aléatoire E"
 		};
 
-		int _nbrAleatoire = entreUtilisateur.JetDeDeMax(_ennemiNomTableau.length - 1);
+		int _nbrAleatoire = mathFonction.NbrAleatoireEntreDeuxValeur(0, _ennemiNomTableau.length - 1);
 
 		return _ennemiNomTableau[_nbrAleatoire];
 
@@ -281,7 +286,7 @@ public final class TousLesEnnemis {
 
 	private Race EnnemiRaceAleatoire(){
 
-		int _nbrAleatoire = entreUtilisateur.JetDeDeMax(ToutesLesRaces.GetInstance().TableauToutesLesRaces().length - 1);
+		int _nbrAleatoire = mathFonction.NbrAleatoireEntreDeuxValeur(0, ToutesLesRaces.GetInstance().TableauToutesLesRaces().length - 1);
 
 		return ToutesLesRaces.GetInstance().TableauToutesLesRaces()[_nbrAleatoire];
 
@@ -325,11 +330,9 @@ public final class TousLesEnnemis {
 
 		ToutesLesFonctions fonctions = ToutesLesFonctions.GetInstance();
 
-		final int _variance = 5;
+		final int _variance = 1;
 
-		int _basePV = 10;
-
-		int _ennemiPV = fonctions.GetMathFonction().NbrAleatoireEntreDeuxValeur(_basePV - _variance, _basePV + _variance);
+		int _ennemiPV = fonctions.GetMathFonction().NbrAleatoireEntreDeuxValeur(-_variance, _variance);
 
 		return _ennemiPV;
 
@@ -348,4 +351,13 @@ public final class TousLesEnnemis {
 		return _ennemiMana;
 
 	}
+
+	private StatistiqueBonus EnnemiStatBonusAleatoire(){
+
+		ToutesLesFonctions fonctions = ToutesLesFonctions.GetInstance();
+
+		return new StatistiqueBonus(5 + fonctions.GetMathFonction().NbrAleatoireEntreDeuxValeur(-2,2));
+		
+	}
+
 }

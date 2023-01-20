@@ -23,29 +23,9 @@ public class Main {
                 // Salutation.
                 System.out.println("Bonjours,");
 
-                //#region - Temporaire : test de la création d'ennemis aléatoires.
-
-                Ennemi ennemiAleatoire;
-
-                for (int i = 0; i < 10; i++) {
-
-                        
-                        ennemiAleatoire = TousLesEnnemis.getInstance().GenererEnnemiAleatoire();
-
-                        System.out.print(
-                                "\nNom : " + ennemiAleatoire.GetNom() +
-                                "\nRace : " + ennemiAleatoire.GetRace().GetNom() +
-                                "\nClasse : " + ennemiAleatoire.GetClasse().GetNom() +
-                                "\nNiveau : " + ennemiAleatoire.GetNiveau() +
-                                "\nPoint de vie : " + ennemiAleatoire.GetVie() +
-                                "\nPoint de mana : " + ennemiAleatoire.GetMana() +
-                                "\n");                        
-                
-                }
-
+                // Temporaire : test de la création d'ennemis aléatoires.
+                CreerEnnemiAleatoire();
                 System.out.println("");
-
-                //#endregion - Temporaire : fin du test de la création d'ennemis aléatoires.
 
                 // Création du personnage joueur.
                 Joueur leJoueur = CreationDuPersonnage();
@@ -173,6 +153,38 @@ public class Main {
                 System.out.println("Challenge !");
 
                 _fonctions.GetChallengeFonctions().PrintDescriptionChallenge(_fonctions.GetLesPersonnagesEnCombat());
+
+        }
+
+        private static void CreerEnnemiAleatoire() {
+
+                boolean oui = ToutesLesFonctions.GetInstance().GetEntreUtilisateur().DemanderOuiOuNon("Voulez-vous créer des ennemis aléatoire ?");
+
+                if (oui) {
+
+                        Ennemi ennemiAleatoire;
+
+                        for (int i = 0; i < 10; i++) {
+        
+                                ennemiAleatoire = TousLesEnnemis.getInstance().GenererEnnemiAleatoire();
+        
+                                System.out.print(
+                                        "\nNom : " + ennemiAleatoire.GetNom() +
+                                        "\nRace : " + ennemiAleatoire.GetRace().GetNom() +
+                                        "\nClasse : " + ennemiAleatoire.GetClasse().GetNom() +
+                                        "\nNiveau : " + ennemiAleatoire.GetNiveau() +
+                                        "\nPoint de vie : " + ennemiAleatoire.GetVie() +
+                                        "\nPoint de mana : " + ennemiAleatoire.GetMana() +
+                                        "\nForce : " + ennemiAleatoire.GetForce() +
+                                        "\nIntelligence : " + ennemiAleatoire.GetIntelligence() +
+                                        "\nAgilité : " + ennemiAleatoire.GetAgilite() +
+                                        "\nDexterité : " + ennemiAleatoire.GetDexterite() +
+                                        "\nConstitution : " + ennemiAleatoire.GetConstitution() +
+                                        "\n");                        
+                        
+                        }
+
+                }
 
         }
 

@@ -25,13 +25,14 @@ public class Personnage {
         race = _race;
         classe = _classe;
         niveau = _niveau;
-        vie = _vie;
+        vie = vieBaseCalcul() + _vie;
         mana = _mana;
         force = _force;
         intelligence = _intelligence;
         agilite = _agilite;
         dexterite = _dexterite;
         constitution = _constitution;
+
     }
 
     //Getters
@@ -141,6 +142,16 @@ public class Personnage {
         if (o == null || getClass() != o.getClass()) return false;
         Personnage _personnage = (Personnage) o;
         return niveau == _personnage.niveau && vie == _personnage.vie && mana == _personnage.mana && Objects.equals(nom, _personnage.nom) && Objects.equals(race, _personnage.race) && Objects.equals(classe, _personnage.classe) && Objects.equals(force, _personnage.force) && Objects.equals(intelligence, _personnage.intelligence) && Objects.equals(agilite, _personnage.agilite) && Objects.equals(dexterite, _personnage.dexterite) && Objects.equals(constitution, _personnage.constitution);
+    }
+
+    private int vieBaseCalcul(){
+
+        final int _vieBase = 3;
+        //final int _vieParConstitution = 2;
+        final int _vieParNiveau = 1;
+        
+        return _vieBase + /*(GetConstitution().GetValeur() * _vieParConstitution) + */(GetNiveau() * ( 1 + _vieParNiveau));
+
     }
 
 }
