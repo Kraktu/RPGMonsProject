@@ -294,7 +294,7 @@ public final class TousLesEnnemis {
 
 	private Classe EnnemiClasseAleatoire(){
 
-		int _nbrAleatoire = entreUtilisateur.JetDeDeMax(ToutesLesClasses.GetInstance().TableauToutesLesClasses().length - 1);
+		int _nbrAleatoire = entreUtilisateur.JetDeDeMax(1, ToutesLesClasses.GetInstance().TableauToutesLesClasses().length - 1);
 
 		return ToutesLesClasses.GetInstance().TableauToutesLesClasses()[_nbrAleatoire];
 
