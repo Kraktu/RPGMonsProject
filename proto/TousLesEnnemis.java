@@ -278,35 +278,33 @@ public final class TousLesEnnemis {
 			"Ennemi aléatoire E"
 		};
 
-		int _nbrAleatoire = mathFonction.NbrAleatoireEntreDeuxValeur(0, _ennemiNomTableau.length - 1);
-
-		return _ennemiNomTableau[_nbrAleatoire];
+		return _ennemiNomTableau[mathFonction.NbrAleatoireEntreDeuxValeur(0, _ennemiNomTableau.length - 1)];
 
 	}
 
 	private Race EnnemiRaceAleatoire(){
 
-		int _nbrAleatoire = mathFonction.NbrAleatoireEntreDeuxValeur(0, ToutesLesRaces.GetInstance().TableauToutesLesRaces().length - 1);
-
-		return ToutesLesRaces.GetInstance().TableauToutesLesRaces()[_nbrAleatoire];
+		return ToutesLesRaces.GetInstance().TableauToutesLesRaces()
+		[mathFonction.NbrAleatoireEntreDeuxValeur(0, ToutesLesRaces.GetInstance().TableauToutesLesRaces().length - 1)];
 
 	}
 
 	private Classe EnnemiClasseAleatoire(){
 
-		int _nbrAleatoire = entreUtilisateur.JetDeDeMax(1, ToutesLesClasses.GetInstance().TableauToutesLesClasses().length - 1);
-
-		return ToutesLesClasses.GetInstance().TableauToutesLesClasses()[_nbrAleatoire];
+		return ToutesLesClasses.GetInstance().TableauToutesLesClasses()
+		[entreUtilisateur.JetDeDeMax(1, ToutesLesClasses.GetInstance().TableauToutesLesClasses().length - 1)];
 
 	}
 
+	//#region doc EnnemiNiveauAleatoire
+	/**
+	* Cette fonction va chercher le niveau du joueur stocké dans le fichier lesPersonnagesEnCombats.
+	* Ensuite, cette valeur va varier positivement ou négativement grace à une variable int appelé variance.
+	* Par exemple : si le joueur est niveau 5, et la valeur de variance est de 3,
+	* le niveau de l'ennemi sera compris entre 2 et 8.
+	*/
+	//#endregion doc EnnemiNiveauAleatoire
 	private int EnnemiNiveauAleatoire(){
-		/**
-		* Cette fonction va chercher le niveau du joueur stocké dans le fichier lesPersonnagesEnCombats.
-		* Ensuite, cette valeur va varier positivement ou négativement grace à une variable int appelé variance.
-		* Par exemple : si le joueur est niveau 5, et la valeur de variance est de 3,
-		* le niveau de l'ennemi sera compris entre 2 et 8.
-		*/
 
 		ToutesLesFonctions fonctions = ToutesLesFonctions.GetInstance();
 
