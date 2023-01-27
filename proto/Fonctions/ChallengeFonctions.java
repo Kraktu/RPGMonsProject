@@ -26,6 +26,10 @@ public class ChallengeFonctions {
 
 			int _pointDeVieRestantDuJoueur = 0;
 
+			int _agiliteJoueur = 0;
+
+			int _dexteriteJoueur = 0;
+
 	/**
 	 * @param _lesPerso
 	 */
@@ -133,11 +137,11 @@ public class ChallengeFonctions {
 		}
 		while(_choix3Proposition > 3 || _choix3Proposition <= 0);
 
-			int _agiliteJoueur = _lesPerso.GetLePersonnageJouable().GetAgilite().GetValeur();
+			int _agiliteJoueur = joueur.GetAgilite().GetValeur();
 
 			int _agiliteNecessairePont = TousLesChallenges.GetInstance().GetPontEnRuine().GetAgiliteBonus().GetValeur();
 
-			int _dexteriteJoueur = _lesPerso.GetLePersonnageJouable().GetDexterite().GetValeur();
+			int _dexteriteJoueur = joueur.GetDexterite().GetValeur();
 
 			int _dexteriteNecessairePont = TousLesChallenges.GetInstance().GetPontEnRuine().GetDexteriteBonus().GetValeur();
 
@@ -149,7 +153,7 @@ public class ChallengeFonctions {
 
 			System.out.println( "Il vous reste " + _agiliteJoueur + " points d'agilité !!");
 
-			ScenarioChallengeSauter(_lesPerso, _agiliteJoueur, _agiliteNecessairePont, 0, 0, 0);
+			ScenarioChallengeSauter(_lesPerso, _agiliteNecessairePont, 0, 0);
 
 		}
 		
@@ -159,7 +163,7 @@ public class ChallengeFonctions {
 
 			System.out.println( "Il vous reste " + _agiliteJoueur + " points d'agilités, ainsi que " + _dexteriteJoueur + " points de dextérités !!");
 
-			ScenarioChallengeEscalader(_lesPerso, _agiliteJoueur, _agiliteNecessairePont, _dexteriteJoueur, _dexteriteNecessairePont, 1);
+			ScenarioChallengeEscalader(_lesPerso, _agiliteNecessairePont, _dexteriteNecessairePont, 1);
 		}
 
 		else if (_choix3Proposition == 3) {
@@ -175,11 +179,13 @@ public class ChallengeFonctions {
 	}
 
 
-	public void ScenarioChallengeSauter(lesPersonnagesEnCombat _lesPerso, int _agiliteJoueur, int _agiliteNecessairePont, int _dexteriteJoueur, int _dexteriteNecessairePont, int _valeurTableau) {
+	public void ScenarioChallengeSauter(lesPersonnagesEnCombat _lesPerso, int _agiliteNecessairePont, int _dexteriteNecessairePont, int _valeurTableau) {
 
 		EntreUtilisateur entreUtilisateur = ToutesLesFonctions.GetInstance().GetEntreUtilisateur();
 
 		Joueur joueur = _lesPerso.GetLePersonnageJouable();
+
+		int _agiliteJoueur = joueur.GetAgilite().GetValeur();
 
 		boolean egalite= false;
 	
@@ -233,11 +239,15 @@ public class ChallengeFonctions {
 	}
 
 
-	public void ScenarioChallengeEscalader(lesPersonnagesEnCombat _lesPerso, int _agiliteJoueur, int _agiliteNecessairePont, int _dexteriteJoueur, int _dexteriteNecessairePont, int _valeurTableau) {
+	public void ScenarioChallengeEscalader(lesPersonnagesEnCombat _lesPerso, int _agiliteNecessairePont, int _dexteriteNecessairePont, int _valeurTableau) {
 
 		EntreUtilisateur entreUtilisateur = ToutesLesFonctions.GetInstance().GetEntreUtilisateur();
 
 		Joueur joueur = _lesPerso.GetLePersonnageJouable();
+
+		int _agiliteJoueur = joueur.GetAgilite().GetValeur();
+
+		int _dexteriteJoueur = joueur.GetDexterite().GetValeur();
 
 		boolean egalite= false;
 	
