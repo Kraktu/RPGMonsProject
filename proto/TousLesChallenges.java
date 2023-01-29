@@ -1,5 +1,8 @@
 package proto;
 
+import java.util.Arrays;
+import java.util.List;
+
 import proto.Stat.StatistiqueBonus;
 
 /**
@@ -9,7 +12,7 @@ import proto.Stat.StatistiqueBonus;
  /*
  String nom,description,choixParDefaut;
 
-	 Tableaux de String
+	 Tableaux/ Liste de String
 
 	String[] choixPossible;
 
@@ -52,13 +55,19 @@ public final class TousLesChallenges {
 
 	// Création du 1er challenge :
 
-	// déclaration des tableaux de String :
+	// déclaration des tableaux/ Liste de String :
 
 	String[] tempChoixPossible = {"Sautter au dessus", "Escalader le mur à côté du trou", "Ne pas prendre de risque"};
 
-	String[] typeDeMalus = {"A : Si vous essayez de sauter au-dessus de celui-ci et que vous tombez dedans, vous perdrez ", "B : Si vous essayez d'escalader le mur à côté du trou et que vous tombez dedans, vous perdrez ", "C : Si comme une poule mouillée, vous n'osez même pas jouer, vous perdrez "};
+	List<String> listeChoixPossible = Arrays.asList(tempChoixPossible);
+
+	String[] typeDeMalus = {"A : Si vous essayez de sauter au-dessus de celui-ci et que vous tombez dedans, vous perdrez ", "B : Si vous essayez d'escalader le mur à côté du trou et que vous tombez, vous perdrez ", "C : Si comme une poule mouillée, vous n'osez même pas jouer, vous perdrez "};
+
+	List<String> listeTypeDeMalus = Arrays.asList(typeDeMalus);
 
 	String[] typeDeRecompenses = {"A : Si magnifiquement vous sautez au-dessus du trou, vous gagnerez ", "B : Par contre, plus difficile ! Si vous escaladez grâce a votre courage l'obstacle, vous gagnerez ", "C : Comme vous n'osez même pas jouer, vous gagnerez "};
+
+	List<String> listeTypeDeRecompense = Arrays.asList(typeDeRecompenses);
 
 	// déclaration des tableaux int :
 
@@ -72,11 +81,11 @@ public final class TousLesChallenges {
 
 	"Par défaut",
 
-	tempChoixPossible,
+	listeChoixPossible,
 
-	typeDeMalus,
+	listeTypeDeMalus,
 	
-	typeDeRecompenses,
+	listeTypeDeRecompense,
 
 	new StatistiqueBonus(0), // Stat Force
 
@@ -84,7 +93,7 @@ public final class TousLesChallenges {
 
 	new StatistiqueBonus(3),// Stat Agilité
 
-	new StatistiqueBonus(6),// Stat Dextérité
+	new StatistiqueBonus(4),// Stat Dextérité
 
 	new StatistiqueBonus(0),// Stat Constitution
 

@@ -1,32 +1,26 @@
 package proto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import proto.Stat.StatistiqueBonus;
 /**
  * Challenge  Créé par Bruno.
   */
-/*
-  string name, description, defaultChoice;
-string[] possibleChoices, malusType, rewardType;
-Stat[] neededStat;
-int level,flatXPgiven,bonusXPPerLevel;
 
-int[] malusValue, rewardValue;
-
-Equipement[] possibleLoot;
-*/
 public class Challenge {
 
 	// Propriétés :
 
 	protected String nom,description,choixParDefaut;
 
-	// Tableaux de String
+	// Liste de String
 
-	protected String[] choixPossible = new String[3];
+	protected List<String> choixPossible = new ArrayList<String>();
 
-	protected String[] typeDeMalus = new String[3];
+	protected List <String> typeDeMalus = new ArrayList<String>();
 
-	protected String[] typeDeRecompense = new String[3];
+	protected List <String> typeDeRecompense = new ArrayList<String>();
 
 	protected StatistiqueBonus forceBonus;
 
@@ -50,23 +44,40 @@ public class Challenge {
 
 	// Constructeur :
 
-	public Challenge(String _nom, String _description, String _choixParDefaut, String[] _choixPossible, String[] _typeDeMalus, String[] _typeDeRecompense, StatistiqueBonus _forceBonus, StatistiqueBonus _intelligenceBonus, StatistiqueBonus _agiliteBonus, StatistiqueBonus _dexteriteBonus, StatistiqueBonus _constitutionBonus, int _niveau, int _experienceBrute, int _experienceBonusParNiveau, int[] _valeurMalus, int[] _valeurRecompense, Equipement _equipement) {
+	public Challenge(String _nom, String _description, String _choixParDefaut, List<String> _choixPossible, List<String> _typeDeMalus, List<String> _typeDeRecompense, StatistiqueBonus _forceBonus, StatistiqueBonus _intelligenceBonus, StatistiqueBonus _agiliteBonus, StatistiqueBonus _dexteriteBonus, StatistiqueBonus _constitutionBonus, int _niveau, int _experienceBrute, int _experienceBonusParNiveau, int[] _valeurMalus, int[] _valeurRecompense, Equipement _equipement) {
+
 		nom = _nom;
+
 		description = _description;
+
 		choixParDefaut = _choixParDefaut;
+
 		choixPossible = _choixPossible;
+
 		typeDeMalus = _typeDeMalus;
+
 		typeDeRecompense = _typeDeRecompense;
+
 		forceBonus = _forceBonus;
+
 		intelligenceBonus = _intelligenceBonus;
+
 		agiliteBonus = _agiliteBonus;
+
 		dexteriteBonus = _dexteriteBonus;
+
 		constitutionBonus = _constitutionBonus;
+
 		niveau = _niveau;
+
 		experienceBrute = _experienceBrute;
+
 		experienceBonusParNiveau = _experienceBonusParNiveau;
+
 		valeurMalus = _valeurMalus;
+
 		valeurRecompense = _valeurRecompense;
+
 		equipement = _equipement;
 	}
 
@@ -84,15 +95,15 @@ public class Challenge {
 		return choixParDefaut;
 	}
 
-	public String[] GetChoixPossible() {
+	public List<String> GetChoixPossible() {
 		return choixPossible;
 	}
 
-	public String[] GetTypeDeMalus() {
+	public List<String> GetTypeDeMalus() {
 		return typeDeMalus;
 	}
 
-	public String[] GetTypeDeRecompense() {
+	public List<String> GetTypeDeRecompense() {
 		return typeDeRecompense;
 	}
 
@@ -154,15 +165,15 @@ public class Challenge {
 		choixParDefaut = _choixParDefaut;
 	}
 
-	public void SetChoixPossible(String[] _choixPossible) {
+	public void SetChoixPossible(List<String> _choixPossible) {
 		choixPossible = _choixPossible;
 	}
 
-	public void SetTypeDeMalus(String[] _typeDeMalus) {
+	public void SetTypeDeMalus(List<String> _typeDeMalus) {
 		typeDeMalus = _typeDeMalus;
 	}
 
-	public void SetTypeDeRecompense(String[] _typeDeRecompense) {
+	public void SetTypeDeRecompense(List<String> _typeDeRecompense) {
 		typeDeRecompense = _typeDeRecompense;
 	}
 
@@ -208,48 +219,5 @@ public class Challenge {
 
 	public void SetEquipement(Equipement _equipement) {
 		equipement = _equipement;
-	}
-
-	// Override :
-
-	@Override
-	public String toString() {
-		return "Challenge{" +
-				"nom='" + nom + '\'' +
-				", description='" + description + '\'' +
-				", choixParDefaut='" + choixParDefaut + '\'' +
-				", choixPossible=" + java.util.Arrays.toString(choixPossible) +
-				", typeDeMalus=" + java.util.Arrays.toString(typeDeMalus) +
-				", typeDeRecompense=" + java.util.Arrays.toString(valeurRecompense) +
-				", forceBonus=" + forceBonus +
-				", intelligenceBonus=" + intelligenceBonus +
-				", agiliteBonus=" + agiliteBonus +
-				", dexteriteBonus=" + dexteriteBonus +
-				", constitutionBonus=" + constitutionBonus +
-				", niveau=" + niveau +
-				", experienceBrute=" + experienceBrute +
-				", experienceBonusParNiveau=" + experienceBonusParNiveau +
-				", valeurMalus=" + java.util.Arrays.toString(valeurMalus) +
-				", valeurRecompense=" + java.util.Arrays.toString(valeurRecompense) +
-				", equipement=" + equipement +
-				'}';
-	}
-
-	@Override
-
-
-	public boolean equals(Object object) {
-		if (this == object) return true;
-		if (object == null || getClass() != object.getClass()) return false;
-		if (!super.equals(object)) return false;
-		Challenge challenge = (Challenge) object;
-		return niveau == challenge.niveau && experienceBrute == challenge.experienceBrute && experienceBonusParNiveau == challenge.experienceBonusParNiveau && java.util.Objects.equals(nom, challenge.nom) && java.util.Objects.equals(description, challenge.description) && java.util.Objects.equals(choixParDefaut, challenge.choixParDefaut) && java.util.Arrays.equals(choixPossible, challenge.choixPossible) && java.util.Arrays.equals(typeDeMalus, challenge.typeDeMalus) && java.util.Arrays.equals(typeDeRecompense, challenge.typeDeRecompense) && java.util.Objects.equals(forceBonus, challenge.forceBonus) && java.util.Objects.equals(intelligenceBonus, challenge.intelligenceBonus) && java.util.Objects.equals(agiliteBonus, challenge.agiliteBonus) && java.util.Objects.equals(dexteriteBonus, challenge.dexteriteBonus) && java.util.Objects.equals(constitutionBonus, challenge.constitutionBonus) && java.util.Arrays.equals(valeurMalus, challenge.valeurMalus) && java.util.Arrays.equals(valeurRecompense, challenge.valeurRecompense) && java.util.Objects.equals(equipement, challenge.equipement);
-	}
-
-	public int hashCode() {
-		int result = java.util.Objects.hash(super.hashCode(), experienceBonusParNiveau, equipement);
-		result = 31 * result + java.util.Arrays.hashCode(valeurMalus);
-		result = 31 * result + java.util.Arrays.hashCode(valeurRecompense);
-		return result;
 	}
 }

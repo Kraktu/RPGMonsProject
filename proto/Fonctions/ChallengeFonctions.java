@@ -1,4 +1,6 @@
 package proto.Fonctions;
+import java.util.List;
+
 import proto.Joueur;
 //Créé par bruno.
 import proto.TousLesChallenges;
@@ -10,19 +12,17 @@ public class ChallengeFonctions {
 
 	// Création de variables de tableau String :
 
-	private String[] tableauChoixPossible = TousLesChallenges.GetInstance().GetPontEnRuine().GetChoixPossible();
+	private List <String> tableauChoixPossible = TousLesChallenges.GetInstance().GetPontEnRuine().GetChoixPossible();
 
-	private String[] tableauTypeDeMalus = TousLesChallenges.GetInstance().GetPontEnRuine().GetTypeDeMalus();
+	private List<String> tableauTypeDeMalus = TousLesChallenges.GetInstance().GetPontEnRuine().GetTypeDeMalus();
 
-	private String[] tableauTypeDeRecompense = TousLesChallenges.GetInstance().GetPontEnRuine().GetTypeDeRecompense();
+	private List < String> tableauTypeDeRecompense = TousLesChallenges.GetInstance().GetPontEnRuine().GetTypeDeRecompense();
 
 	// Création de variables de tableau int :
 
 	private int[] tableauValeurMalus = TousLesChallenges.GetInstance().GetPontEnRuine().GetValeurMalus();
 
 	private int[] tableauvaleurRecompense = TousLesChallenges.GetInstance().GetPontEnRuine().GetValeurRecompense();
-
-
 
 			int _pointDeVieRestantDuJoueur = 0;
 
@@ -49,29 +49,29 @@ public class ChallengeFonctions {
 
 		entreUtilisateur.TexteQuiAttend("Plusieurs choix s'offrent à vous, mais, en fonction de ce que vous choisirez, vous aurez plus ou moins de point de vie ! Les voicis :\n");
 
-		System.out.println(tableauTypeDeMalus[0] +
+		System.out.println(tableauTypeDeMalus.get(0) +
 
 		tableauValeurMalus[0] + " points de vie !!\n" +
 
-		tableauTypeDeMalus[1] +
+		tableauTypeDeMalus.get(1) +
 
 		tableauValeurMalus[1] + " points de vie !!");
 
-		entreUtilisateur.TexteQuiAttend(tableauTypeDeMalus[2] +
+		entreUtilisateur.TexteQuiAttend(tableauTypeDeMalus.get(2) +
 
 		tableauValeurMalus[2] + " points de vie !!\n");
 
 		entreUtilisateur.TexteQuiAttend("Voici ce que vous gagnerez en cas de franchissement :\n");
 
-		System.out.println(tableauTypeDeRecompense[0] +
+		System.out.println(tableauTypeDeRecompense.get(0) +
 
 		tableauvaleurRecompense[0] + " points de vie !!\n" +
 
-		tableauTypeDeRecompense[1] +
+		tableauTypeDeRecompense.get(1) +
 
 		tableauvaleurRecompense[1] + " points de vie !!");
 
-		entreUtilisateur.TexteQuiAttend(tableauTypeDeRecompense[2] +
+		entreUtilisateur.TexteQuiAttend(tableauTypeDeRecompense.get(2) +
 
 		tableauvaleurRecompense[2] + " points de vie !!\n" +
 
@@ -83,17 +83,16 @@ public class ChallengeFonctions {
 
 			_choix3Proposition = entreUtilisateur.EntreeUtilisateurInt("Que voulez-vous faire ?\n\n" +
 
-			"Tapez 1 pour " + tableauChoixPossible[0] +
+			"Tapez 1 pour " + tableauChoixPossible.get(0) +
 
-			".\nTapez 2 pour " + tableauChoixPossible[1] +
+			".\nTapez 2 pour " + tableauChoixPossible.get(1) +
 
-			".\nTapez 3 pour " + tableauChoixPossible[2] + "."
-			);
+			".\nTapez 3 pour " + tableauChoixPossible.get(2) 		);
 
 			switch (_choix3Proposition) {
 				case 1:
 
-					System.out.println("Très bien, vous avez choisi " + tableauChoixPossible[0] +
+					System.out.println("Très bien, vous avez choisi " + tableauChoixPossible.get(0) +
 
 					".\nSuper ;) En cas de victoire, vous gagnerez " + tableauvaleurRecompense[0] + " point de vie !!" +
 
@@ -106,7 +105,7 @@ public class ChallengeFonctions {
 
 					case 2:
 
-					System.out.println("Très bien, vous avez choisi " + tableauChoixPossible[1] +
+					System.out.println("Très bien, vous avez choisi " + tableauChoixPossible.get(1) +
 
 					".\nSuper ;) En cas de victoire, vous gagnerez " + tableauvaleurRecompense[1] + " point de vie !!" +
 
@@ -118,7 +117,7 @@ public class ChallengeFonctions {
 
 					case 3:
 
-					System.out.println("Très bien, vous avez choisi " + tableauChoixPossible[2] +
+					System.out.println("Très bien, vous avez choisi " + tableauChoixPossible.get(2) +
 
 					".\nPetit trouillard !! Comme vous ne voulez même pas essayer le challenge, vous gagnerez " + tableauvaleurRecompense[2] + " point de vie !!" +
 
@@ -253,22 +252,19 @@ public class ChallengeFonctions {
 	
 			while (!egalite) {
 
-		entreUtilisateur.TexteQuiAttend("Bonne chance, les dés sont lancés…");
+		entreUtilisateur.TexteQuiAttend(" les dés seront lancés quand vous appuierez sur la touche Enter ! Bonne chances ");
 
 		int _jetResultat = entreUtilisateur.JetDeDeMax(1, _agiliteJoueur);
 
-		entreUtilisateur.TexteQuiAttend("Agilité à battre : " + _agiliteNecessairePont + " points");
-
-		entreUtilisateur.TexteQuiAttend("Résultat des dés : " + _jetResultat);
-
-
-		entreUtilisateur.TexteQuiAttend("Voici le lancement des dés pour la dextérité !Bonne chance !!");
-
 		int _jetResultatDexteriter = entreUtilisateur.JetDeDeMax(1, _dexteriteJoueur);
+
+		entreUtilisateur.TexteQuiAttend("Agilité à battre : " + _agiliteNecessairePont + " points\n");
 
 		entreUtilisateur.TexteQuiAttend("Dextérité à battre : " + _dexteriteNecessairePont + " points");
 
-		entreUtilisateur.TexteQuiAttend("Résultat des dés : " + _jetResultatDexteriter);
+		entreUtilisateur.TexteQuiAttend("A : Résultat des dés pour l'agilité : " + _jetResultat +
+
+		"\nB: Résultat des dés pour la dextérité : " + _jetResultatDexteriter);
 
 		if (_jetResultat > _agiliteNecessairePont && _jetResultatDexteriter > _dexteriteNecessairePont) {
 
